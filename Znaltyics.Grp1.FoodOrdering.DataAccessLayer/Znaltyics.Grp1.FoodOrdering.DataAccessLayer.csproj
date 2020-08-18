@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="employeeloginn.cs" />
+    <Compile Include="EmployeeloginDataLayer.cs" />
     <Compile Include="foodiddetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

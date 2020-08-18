@@ -54,10 +54,6 @@
       <Project>{b61a8cd2-af22-44d0-acf3-7af6780d1b5e}</Project>
       <Name>Znalytics.Group1.FoodOrdering.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Znalytics.Grp1.FoodOrdering.Businesslayer\Znalytics.Grp1.FoodOrdering.Businesslayer.csproj">
-      <Project>{c983a413-9454-451d-8de0-cbe2d4d01669}</Project>
-      <Name>Znalytics.Grp1.FoodOrdering.Businesslayer</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

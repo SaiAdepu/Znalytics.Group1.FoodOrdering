@@ -1,4 +1,6 @@
-﻿class Program11
+﻿using Znalytics.Group1.FoodOrdering.Entities;
+
+class Program11
 {
     static void Main()
     {
@@ -10,7 +12,12 @@
         f.EmployeeID = (System.Convert.ToInt32(System.Console.ReadLine()));
         System.Console.WriteLine(f.EmployeeID);
 
+        System.Console.WriteLine("enter the Email");
+        f.Email = (System.Console.ReadLine());
+        System.Console.WriteLine(f.Email);
+
         System.Console.WriteLine("enter the EmployeeName");
+
 
         System.Console.WriteLine("enter the FirstName");
         f.FirstName = (System.Console.ReadLine());
@@ -35,5 +42,7 @@
         System.Console.WriteLine("enter the Food storeid ");
         f.FoodStoreID = (System.Console.ReadLine());
         System.Console.WriteLine(f.FoodStoreID);
+
     }
 }
+

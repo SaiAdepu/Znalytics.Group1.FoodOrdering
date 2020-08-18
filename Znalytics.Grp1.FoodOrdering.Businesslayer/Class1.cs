@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Znalytics.Group1.FoodOrdering.Entities;
+using Znaltyics.Grp1.FoodOrdering.DataAccessLayer;
 
 namespace Znalytics.Grp1.FoodOrdering.Businesslayer
 {
