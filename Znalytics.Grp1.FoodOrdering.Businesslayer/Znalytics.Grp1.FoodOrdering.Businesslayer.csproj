@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C8AAFD99-3852-4CBE-B009-96FF29283615}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Znalytics.Grp1.OnlineFoodOrdering</RootNamespace>
-    <AssemblyName>Znalytics.Grp1.OnlineFoodOrdering</AssemblyName>
+    <ProjectGuid>{C983A413-9454-451D-8DE0-CBE2D4D01669}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Znalytics.Grp1.FoodOrdering.Businesslayer</RootNamespace>
+    <AssemblyName>Znalytics.Grp1.FoodOrdering.Businesslayer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,20 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Znaltyics.Grp1.FoodOrdering.DataAccessLayer\Znaltyics.Grp1.FoodOrdering.DataAccessLayer.csproj">
+      <Project>{55ae538c-23f5-4a80-9340-ce43ee457e89}</Project>
+      <Name>Znaltyics.Grp1.FoodOrdering.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Znalytics.Group1.FoodOrdering.Entities\Znalytics.Group1.FoodOrdering.Entities.csproj">
       <Project>{b61a8cd2-af22-44d0-acf3-7af6780d1b5e}</Project>
       <Name>Znalytics.Group1.FoodOrdering.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Znalytics.Grp1.FoodOrdering.Businesslayer\Znalytics.Grp1.FoodOrdering.Businesslayer.csproj">
-      <Project>{c983a413-9454-451d-8de0-cbe2d4d01669}</Project>
-      <Name>Znalytics.Grp1.FoodOrdering.Businesslayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
