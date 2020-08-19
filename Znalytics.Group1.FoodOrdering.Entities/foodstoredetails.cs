@@ -11,7 +11,7 @@ public class FoodStoreDetails
     private int _rating;
     //automatic or auto implemented property
     public string Email { set; get; }
-    public string City { get; set; } = "hyderabad";
+    public string City { get; set; } = "warangal";
     /// <summary>
     /// Constructor that initializes details of FoodStoreDetails
     /// </summary>
