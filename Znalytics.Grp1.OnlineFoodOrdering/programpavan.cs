@@ -18,7 +18,7 @@
 
         System.Console.WriteLine("enter the LastName");
         f.LastName = (System.Console.ReadLine());
-        System.Console.WriteLine("enter the Name:" + f.LastName);
+        System.Console.WriteLine("enter the Name:" +f.LastName );
 
         System.Console.WriteLine("enter the Password");
         f.Password = (System.Console.ReadLine());

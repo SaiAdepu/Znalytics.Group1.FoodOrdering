@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Znaltyics.Grp1.FoodOrdering.DataAccessLayer
 {
-    public class Class1
+    class foodiddetails
     {
-
-  set
+        hfdjjdfkjd
     }
 }
