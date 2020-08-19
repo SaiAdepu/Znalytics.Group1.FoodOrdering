@@ -1,4 +1,5 @@
 ﻿using System;
+
 using Znalytics.Group1.FoodOrdering.Entities;
 
 class Program11
@@ -10,7 +11,7 @@ class Program11
         Console.WriteLine("enter the employeelogin details");
 
         Console.WriteLine("enter the employeeID");
-        f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));
+        f.EmployeeID = (Console.ReadLine());
         Console.WriteLine(f.EmployeeID);
 
         Console.WriteLine("enter the EmployeeName");

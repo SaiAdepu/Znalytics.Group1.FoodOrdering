@@ -44,7 +44,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             {
                 return _employeeID;
             }
-        }
+        } 
         /// <summary>
         /// Email details
         /// </summary>
