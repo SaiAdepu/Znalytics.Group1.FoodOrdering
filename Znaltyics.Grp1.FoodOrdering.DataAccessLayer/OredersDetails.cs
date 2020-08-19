@@ -1,4 +1,4 @@
-﻿namespace OnlineFoodOrderSystem;
+﻿namespace d;
 
 class OnlineFoodOrderSystem
 {
@@ -11,7 +11,7 @@ class OnlineFoodOrderSystem
         System.Console.WriteLine(od.Orderid);
 
         System.Console.WriteLine("enter OrederDate");
-        System.Console.WriteLine("The Date Only is " + Now.Date);
+        System.Console.WriteLine("The Date Only is " + Date.Now);
 
         System.Console.WriteLine("enter the Userid");
         System.Console.WriteLine(od.Userid);

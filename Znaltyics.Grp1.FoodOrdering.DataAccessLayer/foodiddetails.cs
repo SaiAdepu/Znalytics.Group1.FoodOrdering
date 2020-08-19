@@ -8,6 +8,6 @@ namespace Znaltyics.Grp1.FoodOrdering.DataAccessLayer
 {
     class foodiddetails
     {
-        hfdjjdfkjd
+       // hfdjjdfkjd
     }
 }

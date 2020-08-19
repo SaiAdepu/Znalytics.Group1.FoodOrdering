@@ -4,10 +4,10 @@ namespace Znaltyics.Grp1.FoodOrdering.DataAccessLayer
 {
    public  class EmployeeloginDataLayer
     {    
-                 public void AddCustomer(Employeelogin )
-            {
+        //         public void AddCustomer(Employeelogin )
+        //    {
 
-            .Add();
-            }
+        ////    .Add();
+        //    }
         }
     }
