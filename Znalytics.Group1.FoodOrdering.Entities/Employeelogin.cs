@@ -1,11 +1,19 @@
-﻿namespace Znalytics.Group1.FoodOrdering.Entities
+﻿using System;
+/// <summary>
+/// project of Foodordering ...Employeelogin module 
+/// </summary>
+
+namespace Znalytics.Group1.FoodOrdering.Entities
 {
     /// <summary>
     /// Represents Food Delivery Employeelogin
     /// </summary>
     public class Employeelogin
     {
-        private int _employeeID;
+        /// <summary>
+        /// private fields
+        /// </summary>
+        private string _employeeID;
         private string _email;
         private string _firstName;
         private string _lastName;
@@ -17,17 +25,19 @@
         /// <summary>
         /// employeeID details
         /// </summary>
-        public int EmployeeID
+        public string EmployeeID
         {
             set
             {
-                if (value >= 4)
+  ///IF Input value and Eployeeid present in database matches then the value will be assigned to the employeeid
+  ///Else it will throw an exception
+                if ("12345id" == value)
                 {
                     _employeeID = value;
                 }
                 else
                 {
-                    System.Console.WriteLine("enter valid data");
+                    throw new Exception("entered invalid data");
                 }
             }
             get
