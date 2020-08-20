@@ -14,6 +14,11 @@ namespace Znaltyics.Grp1.FoodOrdering.DataAccessLayer
         {
             foodItems.Add(fi);
         }
+        public void RemoveFoodItem(FoodItem fi)
+        {
+            foodItems.RemoveAll(item => fi.FoodId == item.FoodId);
+            
+        }
 
         public List<FoodItem> GetFoodItems()
         {

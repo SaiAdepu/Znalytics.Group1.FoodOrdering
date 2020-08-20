@@ -7,40 +7,39 @@ namespace Znalytics.Group1.FoodOrdering.PresentationLayer
 {
     class FoodTypeMenu
     {
-        //static void main() {
-        //    FoodTypeMenu t = new FoodTypeMenu();
-        //    t.DisplayMenu();
-        //}
 
         public void DisplayMenu()
         {
-            Console.WriteLine("1.Cool Drinks\n2.Ice Creams\n3.Non-Veg\n4.Veg");
-            Console.Write("Enter Choice:");
-            int choice = int.Parse(Console.ReadLine());
-            switch (choice)
-            {
-                case 1:
-                    CooldrinksMenu cm = new CooldrinksMenu();
-                    cm.AddCoolDrink();
-                    break;
+            int choice=0;
+            do {
+                Console.WriteLine("1.Cool Drinks\n2.Ice Creams\n3.Non-Veg\n4.Veg\n5.View Food Items\n6.Exit");
+                Console.Write("Enter choice: ");
+                choice = int.Parse(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        CooldrinksMenu cm = new CooldrinksMenu();
+                        cm.CoolDrinkOperation();
+                        break;
+                    case 5: FoodItemDisplay();break;
 
-            }
-            FoodItemDisplay();
+
+                }
+            } while (choice!=6);
+            
         }
         public void FoodItemDisplay()
         {
             AddFoodItem afi = new AddFoodItem();
             List<FoodItem> listFoodItems = new List<FoodItem>();
             listFoodItems = afi.GetFoodItemBusinessLayer();
+            Console.WriteLine("**************************************************************************************");
+            Console.WriteLine("FoodId\tFoodType\tFoodName\tFoodPrice\tFoodQuantity");
             foreach (FoodItem item in listFoodItems)
-            {
-                Console.WriteLine(item.FoodId);
-                Console.WriteLine(item.FoodType);
-                Console.WriteLine(item.FoodName);
-                Console.WriteLine(item.Price);
-                Console.WriteLine(item.Quantity);
-
+            { 
+                Console.WriteLine(item.FoodId+"\t" +item.FoodType+ "\t" + item.FoodName+ "\t" + item.Price+ "\t" + item.Quantity);
             }
+            Console.WriteLine("**************************************************************************************");
         }
     }
 

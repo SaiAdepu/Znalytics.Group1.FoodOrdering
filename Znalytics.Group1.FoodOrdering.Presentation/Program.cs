@@ -11,8 +11,9 @@ namespace Znalytics.Group1.FoodOrdering.Presentation
     {
         static void Main(string[] args)
         {
-            //FoodTypeMenu t = new FoodTypeMenu();
-            //t.DisplayMenu();
+            FoodTypeMenu t = new FoodTypeMenu();
+            t.DisplayMenu();
+            Console.ReadKey();
         }
     }
 }
