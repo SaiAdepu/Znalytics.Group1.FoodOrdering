@@ -8,6 +8,7 @@ public class FoodStoreDetails
     private string _storeName;
     private string _location;
     private string _phone;
+    private string _email;
     private int _rating;
     //automatic or auto implemented property
     public string Email { set; get; }
@@ -126,8 +127,26 @@ public class FoodStoreDetails
         }
     }
     /// <summary>
-    /// location of foodstore
+    /// email of foodstore
     /// </summary>
+    private string email
+    {
+        set
+        {
+            bool isSpaceFound = false;
+            for(int i=0;i<value.Length;i++)
+            {
+                if(value[i]==' ')
+                {
+                    isSpaceFound = true;
+                }
+            }
+            if (isSpaceFound == false)
+            {
+                _email = value;
+            }
+        }
+    }
 
     /// <summary>
     /// rating
