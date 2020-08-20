@@ -7,12 +7,10 @@ public class FoodStoreDetails
     private int _storeID;
     private string _storeName;
     private string _location;
-    private string _phone;
+    private int _phone;
     private string _email;
     private int _rating;
-    //automatic or auto implemented property
-    public string Email { set; get; }
-    public string City { get; set; } = "warangal";
+    
     /// <summary>
     /// Constructor that initializes details of FoodStoreDetails
     /// </summary>
@@ -23,14 +21,21 @@ public class FoodStoreDetails
     /// <param name="email">Represents email of the store</param>
     /// <param name="rating">Represents id of the store</param>
 
-    public FoodStoreDetails(int storeID, string storeName, string location, string phone, string email, int rating)
+    public FoodStoreDetails(int storeID, string storeName, string location, int phone, string email, int rating)
     {
-        //_storeID=storeid;
-        //_storeName = storename;
+        //_storeID=storeID;
+        //_storeName = storeName;
         //_location=location;
         //_phone = phone;
         //_email=email;
         //_rating=rating;
+
+        StoreID = storeID;
+        StoreName = storeName;
+        Location = location;
+        Phone = phone;
+        Email = email;
+        Rating = rating;
     }
     /// <summary>
     /// Parameterless constructor
@@ -40,6 +45,7 @@ public class FoodStoreDetails
         //not initializing
     }
     /// <summary>
+    /// 
     /// Static constructor
     /// </summary>
     static FoodStoreDetails()
@@ -49,7 +55,7 @@ public class FoodStoreDetails
     ///<sumary>
     /// Represents id of the store
     /// </sumary>
-    public int storeID
+    public int StoreID
     {
         set
         {
@@ -129,7 +135,7 @@ public class FoodStoreDetails
     /// <summary>
     /// email of foodstore
     /// </summary>
-    private string email
+    public string Email
     {
         set
         {
