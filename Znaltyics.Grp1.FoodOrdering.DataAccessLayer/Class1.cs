@@ -9,6 +9,6 @@ namespace Znaltyics.Grp1.FoodOrdering.DataAccessLayer
     public class Class1
     {
 
-  set
+  
     }
 }

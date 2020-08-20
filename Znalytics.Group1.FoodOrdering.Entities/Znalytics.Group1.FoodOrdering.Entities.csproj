@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employeelogin.cs" />
-    <Compile Include="foodstoredetails.cs" />
+    <Compile Include="Class pavan employee.cs" />
+    <Compile Include="FoodItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
