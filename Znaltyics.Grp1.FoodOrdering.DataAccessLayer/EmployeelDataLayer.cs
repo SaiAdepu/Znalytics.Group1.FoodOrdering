@@ -1,6 +1,6 @@
 ﻿using Znalytics.Group1.FoodOrdering.Entities;
 using System.Collections.Generic;
-    
+
 namespace Znaltyics.Grp1.FoodOrdering.DataAccessLayer
 {
     public class EmployeeDataLayer
@@ -19,3 +19,4 @@ namespace Znaltyics.Grp1.FoodOrdering.DataAccessLayer
             _employeeID.Add(f);
         }
     }
+}
