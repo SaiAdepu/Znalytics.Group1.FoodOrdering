@@ -3,7 +3,7 @@
 class OnlineFoodOrderSystem
 {
 
-    static void Main()
+    static void Main();
     {
         OrederDetails od = new OrederDetails();
 
