@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// Represents Food Delivery Employeelogin
 /// </summary>
-public class Employeelogin
+public class Employee
 {
     private int _employeeID;
     private string _firstName;
