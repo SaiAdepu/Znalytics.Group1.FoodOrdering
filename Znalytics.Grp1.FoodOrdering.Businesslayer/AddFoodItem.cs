@@ -9,13 +9,11 @@ using Znalytics.Group1.FoodOrdering.Entities;
 
 namespace Znalytics.Grp1.FoodOrdering.Businesslayer
 {
-    //vadliates food item
-    public class AddFoodItemBL
+    public class AddFoodItem
     {
-        //stores food into list
         public void AddFood(FoodItem fi)
         {
-            StoreFoodItemsDataAccessLayer sfi = new StoreFoodItemsDataAccessLayer();
+            StoreFoodItems sfi = new StoreFoodItems();
 
             if (fi.FoodId <= 50 && fi.FoodId >= 1)
             {
@@ -48,10 +46,9 @@ namespace Znalytics.Grp1.FoodOrdering.Businesslayer
             }
 
         }
-        //removes food item from list
         public void RemoveFoodItem(FoodItem fi)
         {
-            StoreFoodItemsDataAccessLayer sfi = new StoreFoodItemsDataAccessLayer();
+            StoreFoodItems sfi = new StoreFoodItems();
 
             if (fi.FoodId != 0)
             {
@@ -61,7 +58,7 @@ namespace Znalytics.Grp1.FoodOrdering.Businesslayer
 
         public List<FoodItem> GetFoodItemBusinessLayer()
         {
-            StoreFoodItemsDataAccessLayer sfi = new StoreFoodItemsDataAccessLayer();
+            StoreFoodItems sfi = new StoreFoodItems();
 
             return sfi.GetFoodItems();
         }
