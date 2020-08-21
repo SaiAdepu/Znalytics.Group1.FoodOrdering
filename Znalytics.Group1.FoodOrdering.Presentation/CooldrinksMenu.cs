@@ -8,11 +8,10 @@ using Znalytics.Grp1.FoodOrdering.Businesslayer;
 
 namespace Znalytics.Group1.FoodOrdering.PresentationLayer
 {
-    //Dsipalys cooldrink Menu
     public class CooldrinksMenu
     {
         FoodItem fi = new FoodItem();
-        AddFoodItemBL afi = new AddFoodItemBL();
+        AddFoodItem afi = new AddFoodItem();
         /// <summary>
         /// Perform operation on Cooldrinks
         /// </summary>
@@ -23,7 +22,7 @@ namespace Znalytics.Group1.FoodOrdering.PresentationLayer
             {
                 Console.WriteLine("1.Add CoolDrink");
                 Console.WriteLine("2.Delete CoolDrink");
-                Console.WriteLine("3.Update CoolDrink Quantity");
+                Console.WriteLine("3.Update Cool Drink Quantity");
                 Console.WriteLine("4.Exit");
                 Console.Write("Enter choice: ");
                 choice = int.Parse(Console.ReadLine());
@@ -43,34 +42,37 @@ namespace Znalytics.Group1.FoodOrdering.PresentationLayer
 
         }
         /// <summary>
-        /// Adding CoolDrinks details
+        /// Adding CoolDrinks
         /// </summary>
         public void AddCoolDrink()
         {
-            Console.WriteLine("Enter Cool Drink Id:");
+            Console.WriteLine("Enter CooldtrinkId:");
             fi.FoodId = int.Parse(Console.ReadLine());
             //Console.WriteLine("Enter Food Type:");
             fi.FoodType = "Cooldrink";
 
-            Console.WriteLine("Enter Cool Drink Name:");
+            Console.WriteLine("Enter Cooldtrik Name:");
             fi.FoodName = Console.ReadLine();
 
-            Console.WriteLine("Enter Cool Drink Price:");
+            Console.WriteLine("Enter Cooldtrink Price:");
             fi.Price = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Cool Drink Quantity:");
+            Console.WriteLine("Enter Cooldtrink Quantity:");
             fi.Quantity = int.Parse(Console.ReadLine());
 
            
             afi.AddFood(fi);
 
         }
-        //receving food item id to remove
         public void RemoveCoolDrink()
         {
             Console.WriteLine("Enter Existing Cooldtrink Id to remove:");
             fi.FoodId = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter Food Type:");
             fi.FoodType = "Cooldrink";
+
+         
+            //AddFoodItem afi = new AddFoodItem();
             afi.RemoveFoodItem(fi);
 
         }

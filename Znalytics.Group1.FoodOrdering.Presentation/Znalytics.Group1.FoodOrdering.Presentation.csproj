@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CooldrinksMenuPL.cs" />
+    <Compile Include="CooldrinksMenu.cs" />
     <Compile Include="employeelogindetails.cs" />
-    <Compile Include="FoodTypeMenuPL.cs" />
+    <Compile Include="FoodTypeMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="programfoodstoredetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
