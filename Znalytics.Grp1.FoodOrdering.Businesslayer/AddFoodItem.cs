@@ -11,16 +11,17 @@ namespace Znalytics.Grp1.FoodOrdering.Businesslayer
 {
     public class AddFoodItem
     {
-        StoreFoodItems sfi = new StoreFoodItems();
         public void AddFood(FoodItem fi)
         {
+            StoreFoodItems sfi = new StoreFoodItems();
+
             if (fi.FoodId <= 50 && fi.FoodId >= 1)
             {
                 if (fi.FoodName.Length <= 30)
                 {
-                    if (fi.Price < 250)
+                    if (fi.Price >0)
                     {
-                        if (fi.Quantity > 250)
+                        if (fi.Quantity > 0)
                         {
                             sfi.AddFoodItem(fi);
                         }
@@ -45,9 +46,20 @@ namespace Znalytics.Grp1.FoodOrdering.Businesslayer
             }
 
         }
+        public void RemoveFoodItem(FoodItem fi)
+        {
+            StoreFoodItems sfi = new StoreFoodItems();
+
+            if (fi.FoodId != 0)
+            {
+                sfi.RemoveFoodItem(fi);
+            }
+        }
 
         public List<FoodItem> GetFoodItemBusinessLayer()
         {
+            StoreFoodItems sfi = new StoreFoodItems();
+
             return sfi.GetFoodItems();
         }
     }

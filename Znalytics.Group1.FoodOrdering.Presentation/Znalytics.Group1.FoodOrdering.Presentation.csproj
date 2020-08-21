@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CooldrinksMenu.cs" />
-    <Compile Include="employeelogindetails.cs" />
+    <Compile Include="employeePrentation.cs" />
     <Compile Include="FoodTypeMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="foodstore.cs" />

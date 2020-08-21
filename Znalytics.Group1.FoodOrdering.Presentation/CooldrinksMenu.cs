@@ -11,21 +11,33 @@ namespace Znalytics.Group1.FoodOrdering.PresentationLayer
     public class CooldrinksMenu
     {
         FoodItem fi = new FoodItem();
+        AddFoodItem afi = new AddFoodItem();
         /// <summary>
         /// Perform operation on Cooldrinks
         /// </summary>
-        public void Operations()
+        public void CoolDrinkOperation()
         {
-            Console.WriteLine("1.Add CoolDrinks");
-            Console.WriteLine("2.Delete CoolDrinks");
-            Console.WriteLine("3.Exit");
-            int choice = int.Parse(Console.ReadLine());
-            switch (choice)
+            int choice;
+            do
             {
-                case 1:
-                    AddCoolDrink();
-                    break;
-            }
+                Console.WriteLine("1.Add CoolDrink");
+                Console.WriteLine("2.Delete CoolDrink");
+                Console.WriteLine("3.Update Cool Drink Quantity");
+                Console.WriteLine("4.Exit");
+                Console.Write("Enter choice: ");
+                choice = int.Parse(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        AddCoolDrink();
+                        break;
+                    case 2:
+                        RemoveCoolDrink();
+                        break;
+                    case 3:
+                        break;
+                }
+            } while (choice!=4);
         
 
         }
@@ -48,11 +60,23 @@ namespace Znalytics.Group1.FoodOrdering.PresentationLayer
             Console.WriteLine("Enter Cooldtrink Quantity:");
             fi.Quantity = int.Parse(Console.ReadLine());
 
-            AddFoodItem afi = new AddFoodItem();
+           
             afi.AddFood(fi);
 
         }
+        public void RemoveCoolDrink()
+        {
+            Console.WriteLine("Enter Existing Cooldtrink Id to remove:");
+            fi.FoodId = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter Food Type:");
+            fi.FoodType = "Cooldrink";
 
-       
+         
+            //AddFoodItem afi = new AddFoodItem();
+            afi.RemoveFoodItem(fi);
+
+        }
+
+
     }
 }
