@@ -18,7 +18,6 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         private string _firstName;
         private string _lastName;
         private string _password;
-        private string _confirmPassword;
         private long _mobileNumber;
         private string _foodStoreID;
 
@@ -29,10 +28,10 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         {
             set
             {
-                ///IF Input value and Eployeeid present in database matches then the value will be assigned to the employeeid
+                ///If Input value and Eployeeid 
                 ///Else it will throw an exception
-                if ("12345id" == value)
-                {
+                if (value.Length >=5 && value.Length <= 30)
+                    {
                     _employeeID = value;
                 }
                 else
