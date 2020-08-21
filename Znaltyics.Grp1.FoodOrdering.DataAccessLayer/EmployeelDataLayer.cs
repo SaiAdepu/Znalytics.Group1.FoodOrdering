@@ -1,22 +1,23 @@
-﻿using Znalytics.Group1.FoodOrdering.Entities;
+﻿using Znaltyics.Group1.FoodOrdering.Entities;
 using System.Collections.Generic;
 
 namespace Znaltyics.Grp1.FoodOrdering.DataAccessLayer
 {
     public class EmployeeDataLayer
     {
-        private List<Employee> _employeeID;
+        private List<Employee> employee;
+
         public EmployeeDataLayer()
         {
-            _employeeID = new List<Employee>();
+            employee = new List<Employee>();
         }
         /// <summary>
         /// adding employee
         /// </summary>
         /// <param name="f"></param>
-        public void Add(Employee f)
+        public void Add(Employee a)
         {
-            _employeeID.Add(f);
+            employee.Add(a);
         }
     }
 }

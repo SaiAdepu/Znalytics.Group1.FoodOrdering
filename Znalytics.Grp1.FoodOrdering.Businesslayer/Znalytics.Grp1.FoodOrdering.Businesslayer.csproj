@@ -42,16 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddFoodItem.cs" />
+    <Compile Include="EmployeeBusinessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Znaltyics.Grp1.FoodOrdering.DataAccessLayer\Znaltyics.Grp1.FoodOrdering.DataAccessLayer.csproj">
       <Project>{55ae538c-23f5-4a80-9340-ce43ee457e89}</Project>
       <Name>Znaltyics.Grp1.FoodOrdering.DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Znalytics.Group1.FoodOrdering.Entities\Znalytics.Group1.FoodOrdering.Entities.csproj">
-      <Project>{b61a8cd2-af22-44d0-acf3-7af6780d1b5e}</Project>
-      <Name>Znalytics.Group1.FoodOrdering.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

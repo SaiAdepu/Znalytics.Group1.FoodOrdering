@@ -1,6 +1,6 @@
 ﻿using System;
 /// <summary>
-/// project of Foodordering ...Employeelogin module 
+/// project of Foodordering ...Employeelogin module(PAVAN KUMAR) 
 /// </summary>
 
 namespace Znalytics.Group1.FoodOrdering.Entities
@@ -8,30 +8,29 @@ namespace Znalytics.Group1.FoodOrdering.Entities
     /// <summary>
     /// Represents Food Delivery Employeelogin
     /// </summary>
-    public class EmployeeDetail
+    public class Employee
+
     {
         /// <summary>
         /// private fields
         /// </summary>
-        private string _employeeID;
+        private int _employeeID;
         private string _email;
         private string _firstName;
         private string _lastName;
         private string _password;
         private long _mobileNumber;
-        private string _foodStoreID;
+
 
         /// <summary>
         /// employeeID details
         /// </summary>
-        public string EmployeeID
+        public int EmployeeID
         {
             set
             {
-                ///If Input value and Eployeeid 
-                ///Else it will throw an exception
-                if (value.Length >=5 && value.Length <= 30)
-                    {
+                if (value != 0)
+                {
                     _employeeID = value;
                 }
                 else
@@ -58,7 +57,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
                 }
                 else
                 {
-                    System.Console.WriteLine("enter valid data");
+                    throw new Exception("entered invalid data");
                 }
             }
             get
@@ -81,7 +80,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
                 }
                 else
                 {
-                    System.Console.WriteLine("enter valid data");
+                    throw new Exception("entered invalid data");
                 }
             }
             get
@@ -102,7 +101,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
                 }
                 else
                 {
-                    System.Console.WriteLine("enter valid data");
+                    throw new Exception("entered invalid data");
                 }
             }
             get
@@ -124,7 +123,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
                 }
                 else
                 {
-                    System.Console.WriteLine("enter valid data");
+                    throw new Exception("entered invalid data");
                 }
             }
 
@@ -133,30 +132,6 @@ namespace Znalytics.Group1.FoodOrdering.Entities
                 return _password;
             }
         }
-        /// <summary>
-        /// Confirm password 
-        /// </summary>
-        public string ConfirmPassword
-        {
-            set
-            {
-                if (value.Length >= 8 && value.Length <= 30)
-                {
-                    _confirmPassword = value;
-                }
-                else
-                {
-                    System.Console.WriteLine("enter valid data");
-                }
-            }
-
-            get
-            {
-                return
-                    _confirmPassword;
-            }
-        }
-
         /// <summary>
         /// Mobilenumber details
         /// </summary>
@@ -172,27 +147,6 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             get
             {
                 return _mobileNumber;
-            }
-        }
-        /// <summary>
-        /// FoodStorageid Details
-        /// </summary>
-        public string FoodStoreID
-        {
-            set
-            {
-                if (value.Length <= 20)
-                {
-                    _foodStoreID = value;
-                }
-                else
-                {
-                    System.Console.WriteLine("enter valid data");
-                }
-            }
-            get
-            {
-                return _foodStoreID;
             }
         }
     }
