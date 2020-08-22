@@ -22,7 +22,7 @@ public class FoodStoreDetails
     /// <param name="rating">Represents id of the store</param>
 
     public FoodStoreDetails(int storeID, string storeName, string location, int phone, string email, int rating)
-    {
+    { 
         //_storeID=storeID;
         //_storeName = storeName;
         //_location=location;
@@ -37,22 +37,8 @@ public class FoodStoreDetails
         Email = email;
         Rating = rating;
     }
-    /// <summary>
-    /// Parameterless constructor
-    /// </summary>
-    public FoodStoreDetails()
-    {
-        //not initializing
-    }
-    /// <summary>
-    /// 
-    /// Static constructor
-    /// </summary>
-    static FoodStoreDetails()
-    {
-
-    }
-    ///<sumary>
+    
+     ///<sumary>
     /// Represents id of the store
     /// </sumary>
     public int StoreID
@@ -60,15 +46,16 @@ public class FoodStoreDetails
         set
         {
             //id should contain  5 digits only
-            bool b = false;
-            if (storeID > int.MaxValue)
-            {
-                b = true;
-            }
-            if (b == false)
+            if (value != 0)
             {
                 _storeID = value;
             }
+            else
+            {
+                throw new Exception("invalid id");
+            }
+        }
+              
         }
         get
         {
@@ -161,11 +148,15 @@ public class FoodStoreDetails
     {
         set
         {
-            //rating should be less than or equal to 5 only
-            if (value <= 5)
-            {
-                _rating = value;
-            }
+        //rating should be less than or equal to 5 only
+        if (value <= 5)
+        {
+            _rating = value;
+        }
+        else
+        { 
+            throw new Exception("invalid rating");
+        }
         }
         get
         {
