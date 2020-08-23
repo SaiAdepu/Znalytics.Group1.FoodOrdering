@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,12 +8,12 @@ namespace Znalytics.Group1.FoodOrdering.Entities
 /// <summary>
 /// Represents FoodStoreDetails
 /// </summary>
-public class FoodStore
+  public class FoodStore
 {   //private fields
-    private int _storeID;
+    private string _storeID;
     private string _storeName;
     private string _location;
-    private int _phone;
+    private string _phone;
     private string _email;
     private int _rating;
 
@@ -28,32 +27,16 @@ public class FoodStore
     /// <param name="email">Represents email of the store</param>
     /// <param name="rating">Represents id of the store</param>
 
-    public FoodStore(int storeID, string storeName, string location, int phone, string email, int rating)
-    { 
-        //_storeID=storeID;
-        //_storeName = storeName;
-        //_location=location;
-        //_phone = phone;
-        //_email=email;
-        //_rating=rating;
-
-        StoreID = storeID;
-        StoreName = storeName;
-        Location = location;
-        Phone = phone;
-        Email = email;
-        Rating = rating;
-    }
-    
+         
      ///<sumary>
     /// Represents id of the store
     /// </sumary>
-    public int StoreID
+    public string StoreID
     {
         set
         {
-            //id of the store
-            if (value != 0)
+            //id of the store should be 5 digits 
+            if (value.Length== 5)
             {
                 _storeID = value;
             }
@@ -145,6 +128,10 @@ public class FoodStore
             {
                 _email = value;
             }
+            else
+                {
+                    throw new Exception("enter valid email");
+                }
         }
     }
 
@@ -155,14 +142,14 @@ public class FoodStore
     {
         set
         {
-        //rating should be less than or equal to 5 only
-        if (value <= 5)
+        //rating should be between 0 to 5 only
+        if (value>=0 && value<=5)
         {
             _rating = value;
         }
         else
         { 
-            throw new Exception("invalid rating");
+            throw new Exception("rating must be between 0 and 5");
         }
         }
         get
@@ -170,6 +157,15 @@ public class FoodStore
             return _rating;
         }
     }
+  public FoodStore(string storeID, string storeName, string location, string phone, string email, int rating)
+        {
+            this.StoreID = storeID;
+            this.StoreName = storeName;
+            this.Location = location;
+            this.Phone = phone;
+            this.Email = email;
+            this.Rating = rating;
+        }
 }
 }
 
