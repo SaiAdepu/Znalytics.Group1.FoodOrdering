@@ -1,8 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Znalytics.Group1.FoodOrdering.Entities
+{ 
 /// <summary>
 /// Represents FoodStoreDetails
 /// </summary>
-public class FoodStoreDetails
+public class FoodStore
 {   //private fields
     private int _storeID;
     private string _storeName;
@@ -12,7 +19,7 @@ public class FoodStoreDetails
     private int _rating;
 
     /// <summary>
-    /// Constructor that initializes details of FoodStoreDetails
+    /// Constructor that initializes details of FoodStore
     /// </summary>
     /// <param name="storeID">Represents id of the store</param>
     /// <param name="storeName">Represents name of the store</param>
@@ -21,8 +28,8 @@ public class FoodStoreDetails
     /// <param name="email">Represents email of the store</param>
     /// <param name="rating">Represents id of the store</param>
 
-    public FoodStoreDetails(int storeID, string storeName, string location, int phone, string email, int rating)
-    {
+    public FoodStore(int storeID, string storeName, string location, int phone, string email, int rating)
+    { 
         //_storeID=storeID;
         //_storeName = storeName;
         //_location=location;
@@ -37,39 +44,26 @@ public class FoodStoreDetails
         Email = email;
         Rating = rating;
     }
-    /// <summary>
-    /// Parameterless constructor
-    /// </summary>
-    public FoodStoreDetails()
-    {
-        //not initializing
-    }
-    /// <summary>
-    /// 
-    /// Static constructor
-    /// </summary>
-    static FoodStoreDetails()
-    {
-
-    }
-    ///<sumary>
+    
+     ///<sumary>
     /// Represents id of the store
     /// </sumary>
     public int StoreID
     {
         set
         {
-            //id should contain  5 digits only
-            bool b = false;
-            if (storeID > int.MaxValue)
-            {
-                b = true;
-            }
-            if (b == false)
+            //id of the store
+            if (value != 0)
             {
                 _storeID = value;
             }
+            else
+            {
+                throw new Exception("invalid id");
+            }
         }
+              
+        
         get
         {
             return _storeID;
@@ -161,17 +155,22 @@ public class FoodStoreDetails
     {
         set
         {
-            //rating should be less than or equal to 5 only
-            if (value <= 5)
-            {
-                _rating = value;
-            }
+        //rating should be less than or equal to 5 only
+        if (value <= 5)
+        {
+            _rating = value;
+        }
+        else
+        { 
+            throw new Exception("invalid rating");
+        }
         }
         get
         {
             return _rating;
         }
     }
+}
 }
 
 
