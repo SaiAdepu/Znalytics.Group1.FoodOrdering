@@ -7,6 +7,7 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
     public class CustomerDataAccess
     {
         //private fields
+        //stores the list of customers
         private static List<Customer> _customers;
 
         //constructor

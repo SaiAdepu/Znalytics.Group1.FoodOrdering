@@ -18,6 +18,7 @@ namespace Znalytics.Group1.FoodOrdering
             int choice = 0;
             do
             {
+                //displays customer menu
                 Console.WriteLine("CUSTOMERS MENU");
                 Console.WriteLine("1. Add Customer");
                 Console.WriteLine("2. View Customer);
@@ -38,7 +39,8 @@ namespace Znalytics.Group1.FoodOrdering
             } while (choice != 5);
         }
 
-        static void AddEmployee()
+        //adding customer details
+        static void AddCustomer()
         {
             CustomerBusinessLogic customerBusinessLogic = new customerBusinessLogic();
             Customer customer = new Customer ();

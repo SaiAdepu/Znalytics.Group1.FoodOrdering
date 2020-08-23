@@ -14,7 +14,7 @@ namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
             _customerDataAccess = new customersDataAccess();
         }
 
-        //Add
+        //Add customer
         public void Add(Customer customer)
         {
             if (customer.CustomerName != null)
@@ -32,7 +32,7 @@ namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
         {
             return _customerDataAccess.GetCustomers();
         }
-
+        //Update customers
         public void UpdateCustomer(Customer customer)
         {
             if (customer.CustomerName != null)
