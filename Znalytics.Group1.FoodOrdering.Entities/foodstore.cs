@@ -1,4 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Znalytics.Group1.FoodOrdering.Entities
+{ 
 /// <summary>
 /// Represents FoodStoreDetails
 /// </summary>
@@ -45,7 +52,7 @@ public class FoodStore
     {
         set
         {
-            //id should contain  5 digits only
+            //id of the store
             if (value != 0)
             {
                 _storeID = value;
@@ -56,7 +63,7 @@ public class FoodStore
             }
         }
               
-        }
+        
         get
         {
             return _storeID;
@@ -163,6 +170,7 @@ public class FoodStore
             return _rating;
         }
     }
+}
 }
 
 
