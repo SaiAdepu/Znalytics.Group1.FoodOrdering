@@ -5,17 +5,20 @@ namespace Znalytics.Customer.Entities
 {
     public class Customer
     {
+        //private fields
         private string _customerName;
         private string _customerId;
         private string _customerEmail;
         private string _customerPhoneNumber;
         private string _customerAddress;
-        private string _customerPassword
+        private string _customerPassword;
 
+        //properties and validations
         public string CustomerName
         {
             set
             {
+                //validating customername
                 if (value.Length <= 30)
                 {
                     _customerName = value;
@@ -32,6 +35,7 @@ namespace Znalytics.Customer.Entities
         }
         public string CustomerId
         {
+            //validating customerid
             set
             {
                 if (value.Length <= 13)
@@ -50,6 +54,7 @@ namespace Znalytics.Customer.Entities
         }
         public string CustomerEmail
         {
+            //validating customerEmail
             set
             {
                 bool isSpaceFound = false;
@@ -76,6 +81,7 @@ namespace Znalytics.Customer.Entities
         }
         public string CustomerPhoneNumber
         {
+            //validating customerphonenumber
             set
             {
                 if (value.Length == 10)
@@ -106,6 +112,7 @@ namespace Znalytics.Customer.Entities
         }
         public string CustomerPassword
         {
+            //validating customerpassword
             set
             {
                 if (value.Length <= 10)
@@ -124,6 +131,7 @@ namespace Znalytics.Customer.Entities
         }
     }
 
+    //constructor to initialize customer details
     public Customer(string customerName,string customerID,string customerEmail,string customerPhoneNumber,string customerAddress,string customerPassword)
     {
 
