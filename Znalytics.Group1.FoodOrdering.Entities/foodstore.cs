@@ -10,7 +10,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
 /// </summary>
   public class FoodStore
 {   //private fields
-    private string _storeID;
+        private string _storeID;
     private string _storeName;
     private string _location;
     private string _phone;
