@@ -1,10 +1,8 @@
 ﻿using System;
 using Znalytics.Group1.FoodOrdering.Entities;
 
-class Employeev
+class Employee
 {
-   
-
     static void Main()
     {
         Employee f = new Employee();

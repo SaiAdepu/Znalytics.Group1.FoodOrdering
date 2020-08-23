@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Znalytics.Grp1.FoodOrdering.Businesslayer
 {
-    class EmployeeBusinessLayer
+    class Employee
     {
+        
     }
 }
