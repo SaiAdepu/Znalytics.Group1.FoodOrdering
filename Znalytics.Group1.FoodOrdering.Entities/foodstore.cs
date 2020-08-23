@@ -1,18 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Znalytics.Group1.FoodOrdering.Entities
+{ 
 /// <summary>
 /// Represents FoodStoreDetails
 /// </summary>
-public class FoodStoreDetails
+  public class FoodStore
 {   //private fields
-    private int _storeID;
+        private string _storeID;
     private string _storeName;
     private string _location;
-    private int _phone;
+    private string _phone;
     private string _email;
     private int _rating;
-    
+
     /// <summary>
-    /// Constructor that initializes details of FoodStoreDetails
+    /// Constructor that initializes details of FoodStore
     /// </summary>
     /// <param name="storeID">Represents id of the store</param>
     /// <param name="storeName">Represents name of the store</param>
@@ -21,55 +27,26 @@ public class FoodStoreDetails
     /// <param name="email">Represents email of the store</param>
     /// <param name="rating">Represents id of the store</param>
 
-    public FoodStoreDetails(int storeID, string storeName, string location, int phone, string email, int rating)
-    {
-        //_storeID=storeID;
-        //_storeName = storeName;
-        //_location=location;
-        //_phone = phone;
-        //_email=email;
-        //_rating=rating;
-
-        StoreID = storeID;
-        StoreName = storeName;
-        Location = location;
-        Phone = phone;
-        Email = email;
-        Rating = rating;
-    }
-    /// <summary>
-    /// Parameterless constructor
-    /// </summary>
-    public FoodStoreDetails()
-    {
-        //not initializing
-    }
-    /// <summary>
-    /// 
-    /// Static constructor
-    /// </summary>
-    static FoodStoreDetails()
-    {
-
-    }
-    ///<sumary>
+         
+     ///<sumary>
     /// Represents id of the store
     /// </sumary>
-    public int StoreID
+    public string StoreID
     {
         set
         {
-            //id should contain  5 digits only
-            bool b = false;
-            if (storeID > int.MaxValue)
-            {
-                b = true;
-            }
-            if (b == false)
+            //id of the store should be 5 digits 
+            if (value.Length== 5)
             {
                 _storeID = value;
             }
+            else
+            {
+                throw new Exception("invalid id");
+            }
         }
+              
+        
         get
         {
             return _storeID;
@@ -140,9 +117,9 @@ public class FoodStoreDetails
         set
         {
             bool isSpaceFound = false;
-            for(int i=0;i<value.Length;i++)
+            for (int i = 0; i < value.Length; i++)
             {
-                if(value[i]==' ')
+                if (value[i] == ' ')
                 {
                     isSpaceFound = true;
                 }
@@ -151,6 +128,10 @@ public class FoodStoreDetails
             {
                 _email = value;
             }
+            else
+                {
+                    throw new Exception("enter valid email");
+                }
         }
     }
 
@@ -161,17 +142,31 @@ public class FoodStoreDetails
     {
         set
         {
-            //rating should be less than or equal to 5 only
-            if (value <= 5)
-            {
-                _rating = value;
-            }
+        //rating should be between 0 to 5 only
+        if (value>=0 && value<=5)
+        {
+            _rating = value;
+        }
+        else
+        { 
+            throw new Exception("rating must be between 0 and 5");
+        }
         }
         get
         {
             return _rating;
         }
     }
+  public FoodStore(string storeID, string storeName, string location, string phone, string email, int rating)
+        {
+            this.StoreID = storeID;
+            this.StoreName = storeName;
+            this.Location = location;
+            this.Phone = phone;
+            this.Email = email;
+            this.Rating = rating;
+        }
+}
 }
 
 

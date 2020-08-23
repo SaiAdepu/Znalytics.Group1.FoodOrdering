@@ -42,17 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="EmployeeloginDataLayer.cs" />
+    <Compile Include="EmployeelDetail.cs" />
     <Compile Include="foodiddetails.cs" />
     <Compile Include="OredersDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoreFoodItemsDataAccessLayer.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Znalytics.Group1.FoodOrdering.Entities\Znalytics.Group1.FoodOrdering.Entities.csproj">
-      <Project>{b61a8cd2-af22-44d0-acf3-7af6780d1b5e}</Project>
-      <Name>Znalytics.Group1.FoodOrdering.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
