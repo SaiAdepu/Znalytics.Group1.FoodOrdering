@@ -46,6 +46,7 @@
     <Compile Include="foodiddetails.cs" />
     <Compile Include="OredersDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoreDetails.cs" />
     <Compile Include="StoreFoodItems.cs" />
   </ItemGroup>
   <ItemGroup>

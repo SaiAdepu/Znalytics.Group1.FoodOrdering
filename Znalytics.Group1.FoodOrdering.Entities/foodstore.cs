@@ -2,7 +2,7 @@
 /// <summary>
 /// Represents FoodStoreDetails
 /// </summary>
-public class FoodStoreDetails
+public class FoodStore
 {   //private fields
     private int _storeID;
     private string _storeName;
@@ -12,7 +12,7 @@ public class FoodStoreDetails
     private int _rating;
 
     /// <summary>
-    /// Constructor that initializes details of FoodStoreDetails
+    /// Constructor that initializes details of FoodStore
     /// </summary>
     /// <param name="storeID">Represents id of the store</param>
     /// <param name="storeName">Represents name of the store</param>
@@ -21,7 +21,7 @@ public class FoodStoreDetails
     /// <param name="email">Represents email of the store</param>
     /// <param name="rating">Represents id of the store</param>
 
-    public FoodStoreDetails(int storeID, string storeName, string location, int phone, string email, int rating)
+    public FoodStore(int storeID, string storeName, string location, int phone, string email, int rating)
     { 
         //_storeID=storeID;
         //_storeName = storeName;
