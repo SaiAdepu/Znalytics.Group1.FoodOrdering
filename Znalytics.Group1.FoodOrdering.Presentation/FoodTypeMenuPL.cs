@@ -5,9 +5,10 @@ using Znalytics.Grp1.FoodOrdering.Businesslayer;
 
 namespace Znalytics.Group1.FoodOrdering.PresentationLayer
 {
+    //Menu of Food
     class FoodTypeMenu
     {
-
+        //Displays type of Food Menu
         public void DisplayMenu()
         {
             int choice=0;
@@ -28,9 +29,10 @@ namespace Znalytics.Group1.FoodOrdering.PresentationLayer
             } while (choice!=6);
             
         }
+        //Dispalys Stored Food items
         public void FoodItemDisplay()
         {
-            AddFoodItem afi = new AddFoodItem();
+            AddFoodItemBL afi = new AddFoodItemBL();
             List<FoodItem> listFoodItems = new List<FoodItem>();
             listFoodItems = afi.GetFoodItemBusinessLayer();
             Console.WriteLine("**************************************************************************************");

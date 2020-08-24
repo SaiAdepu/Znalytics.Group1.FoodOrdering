@@ -43,11 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CooldrinksMenu.cs" />
-    <Compile Include="employeePrentation.cs" />
-    <Compile Include="FoodTypeMenu.cs" />
+    <Compile Include="CooldrinksMenuPL.cs" />
+    <Compile Include="employeelogindetails.cs" />
+    <Compile Include="FoodTypeMenuPL.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="foodstore.cs" />
+    <Compile Include="programfoodstoredetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
