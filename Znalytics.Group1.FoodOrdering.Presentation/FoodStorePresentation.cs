@@ -54,7 +54,7 @@ namespace Znalytics.Group1.FoodOrdering
             Console.Write("Enter Email: ");
             foodstore.Email = Console.ReadLine();
             Console.Write("Enter Rating: ");
-            foodstore.Rating= Console.ReadLine();
+            foodstore.Rating = Console.ReadLine();
 
             foodstoreBusinessLayer.Add(foodstore);
             Console.WriteLine("FoodStore Added Successfully.\n");
