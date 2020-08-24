@@ -2,7 +2,7 @@
 /// <summary>
 /// Represents Orders;
 /// </summary>
-public class Oredrs
+public class Orders
 {
     private int _Orderid;
     private int _OrderDate;

@@ -1,16 +1,17 @@
-﻿
+﻿namespace OrdersDetails
+{ 
 
 class OnlineFoodOrderSystem
 {
 
-    static void Main();
+    static void Main()
     {
-        OrederDetails od = new OrederDetails();
+        OredersDetails od = new OrdersDetails();
 
         System.Console.WriteLine("enter the Orderid");
         System.Console.WriteLine(od.Orderid);
 
-        System.Console.WriteLine("enter OrederDate");
+        System.Console.WriteLine("enter OrderDate");
         System.Console.WriteLine("The Date Only is " + DateTime.Now);
 
         System.Console.WriteLine("enter the Userid");
@@ -27,16 +28,6 @@ class OnlineFoodOrderSystem
         od.Foodid = (System.Console.ReadLine());
         System.Console.WriteLine(od.Foodid);
 
-        System.Console.WriteLine("enter the Price");
-        System.Console.WriteLine(od.Price);
-
-        System.Console.WriteLine("enter the qty");
-        od.qty = (System.Console.ReadLine());
-        System.Console.WriteLine(od.qty);
-
-        System.Console.WriteLine("enter the Totalamount");
-        od.Totalamount = (System.Console.ReadLine());
-        System.Console.WriteLine(od.Totalamount);
 
         System.Console.ReadKey();
 
@@ -44,3 +35,4 @@ class OnlineFoodOrderSystem
 
     }
 }
+
