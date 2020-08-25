@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Znalytics.Grp1.FoodOrdering.DataAccessLayer;
+using Znalytics.Group1.FoodOrdering.Entities;
 
 namespace Znalytics.Grp1.FoodOrdering.Businesslayer
 {
-    class Employee
+     public class EmployeeBusinessLayer  
     {
-        
-    }
-}
+        Employee _;
+
+       

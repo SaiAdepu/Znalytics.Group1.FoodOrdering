@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Znalytics.Group1.FoodOrdering.PresentationLayer
 {
-    class employeelogindetails
+    class EmployeeDetails
     {
         static void Main()
         {
-            Employeelogin f = new Employeelogin();
+           EmployeeDetails f = new  EmployeeDetails();
 
             System.Console.WriteLine("enter the employeelogin details");
 
@@ -32,17 +32,13 @@ namespace Znalytics.Group1.FoodOrdering.PresentationLayer
             f.Password = (System.Console.ReadLine());
             System.Console.WriteLine(f.Password);
 
-            System.Console.WriteLine("enter the ConfirmPassword");
-            f.ConfirmPassword = (System.Console.ReadLine());
-            System.Console.WriteLine(f.ConfirmPassword); ;
+            
 
             System.Console.WriteLine("enter the MobileNumber");
             f.MobileNumber = (System.Convert.ToInt64(System.Console.ReadLine()));
             System.Console.WriteLine(f.MobileNumber);
 
-            System.Console.WriteLine("enter the Food storeid ");
-            f.FoodStoreID = (System.Console.ReadLine());
-            System.Console.WriteLine(f.FoodStoreID);
+          
         }
     }
 }
