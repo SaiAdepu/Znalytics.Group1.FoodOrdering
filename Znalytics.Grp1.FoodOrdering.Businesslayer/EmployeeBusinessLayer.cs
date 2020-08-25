@@ -13,5 +13,13 @@ namespace Znalytics.Grp1.FoodOrdering.Businesslayer
         {
             _employeeDataAccess = new EmployeeDataAccess();
         }
+        public void Email(Employee e){
+            if(e.Contains("@") && !e.Contains(" ")){
+                EmployeDataAccess dl=new EmployeDataAccess();
+                dl.Add(e);
+            }
+        }
+    }
+}
 
         

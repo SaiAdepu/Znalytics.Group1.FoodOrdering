@@ -6,19 +6,21 @@ namespace Znaltyics.Grp1.FoodOrdering.DataAccessLayer
     public class EmployeDataAccess
     {
 
-        private List<Employee> employee;
+        private List<Employee> _employee;
 
-        public EmployeeDataAccess()
+        static EmployeeDataAccess()
         {
-            employee = new List<Employee>();
+            _employee = new List<Employee>();
         }
+        new Employee()
+
         /// <summary>
         /// adding employee
         /// </summary>
         /// <param name="f"></param>
-        public void Add(Employee a)
+        public void Add(Employee f)
         {
-            employee.Add(a);
+            _employee.Add(f);
         }
     }
 }

@@ -24,7 +24,7 @@ class Employee
         Console.WriteLine("enter the Name:" + f.LastName);
 
         Console.WriteLine("enter the Password:");
-        f.Password = (Console.ReadLine( ));
+        Password = (Console.ReadLine( ));
         Console.WriteLine("");
  
 
