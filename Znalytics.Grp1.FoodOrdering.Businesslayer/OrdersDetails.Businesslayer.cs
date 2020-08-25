@@ -53,7 +53,7 @@ namespace OrdersDetails;
             OrdersDetails.Userid = Console.ReadLine();
 
             System.Console.Writeline("Enter Storeid: ");
-            foodstore.Phone = Console.ReadLine();
+            OrdersDetails.Storeid = Console.ReadLine();
 
             System.Console.Writeline("Enter Employeeid: ");
             OrdersDetails.Employeeid = Console.ReadLine();
