@@ -26,6 +26,7 @@ namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
                 throw new Exception("Store Name can't be null");
             }
         }
+        }
 
         //GetAll 
         public List<FoodStore> GetFoodStores()
