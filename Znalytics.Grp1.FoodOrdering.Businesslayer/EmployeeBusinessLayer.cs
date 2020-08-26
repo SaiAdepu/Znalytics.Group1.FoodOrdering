@@ -5,8 +5,21 @@ using Znalytics.Group1.FoodOrdering.Entities;
 
 namespace Znalytics.Grp1.FoodOrdering.Businesslayer
 {
-     public class EmployeeBusinessLayer  
+     public class EmployeeBusinessLogic
     {
-        Employee _;
+        EmployeesDataAccess _employeesDataAccess;
+        
+        public EmployeeBusinessLogic()
+        {
+            _employeeDataAccess = new EmployeeDataAccess();
+        }
+        public void Email(Employee e){
+            if(e.Contains("@") && !e.Contains(" ")){
+                EmployeDataAccess dl=new EmployeDataAccess();
+                dl.Add(e);
+            }
+        }
+    }
+}
 
-       
+        
