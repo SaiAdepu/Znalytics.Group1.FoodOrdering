@@ -97,7 +97,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             //Phone number should contain 10 digits only
             if (value.Length == 10)
             {
-                _phone = value;
+                    _phone = value;
             }
             else
             {
