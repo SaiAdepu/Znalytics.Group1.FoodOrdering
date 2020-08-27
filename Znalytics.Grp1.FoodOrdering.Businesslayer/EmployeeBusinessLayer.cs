@@ -1,13 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Znalytics.Grp1.FoodOrdering.DataAccessLayer;
+using Znalytics.Group1.FoodOrdering.Entities;
 
 namespace Znalytics.Grp1.FoodOrdering.Businesslayer
 {
-    class Employee
+     public class EmployeeBusinessLogic
     {
+        EmployeesDataAccess _employeesDataAccess;
         
+        public EmployeeBusinessLogic()
+        {
+            _employeeDataAccess = new EmployeeDataAccess();
+        }
+        public void Email(Employee e){
+            if(e.Contains("@") && !e.Contains(" ")){
+                EmployeDataAccess dl=new EmployeDataAccess();
+                dl.Add(e);
+            }
+        }
     }
 }
+
+        

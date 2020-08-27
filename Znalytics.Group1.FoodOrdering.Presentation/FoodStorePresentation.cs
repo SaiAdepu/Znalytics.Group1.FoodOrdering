@@ -57,7 +57,7 @@ namespace Znalytics.Group1.FoodOrdering
             foodstore.Rating = Console.ReadLine();
 
             foodstoreBusinessLayer.Add(foodstore);
-            Console.WriteLine("FoodStore Added Successfully.\n");
+            Console.WriteLine("FoodStore Added Successfully  \n ");
         }
 
         static void Viewfoodstores()

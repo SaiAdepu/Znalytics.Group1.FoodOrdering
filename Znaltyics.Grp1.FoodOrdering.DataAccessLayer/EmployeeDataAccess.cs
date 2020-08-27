@@ -3,21 +3,24 @@ using System.Collections.Generic;
 
 namespace Znaltyics.Grp1.FoodOrdering.DataAccessLayer
 {
-    public class EmployeeDetail
+    public class EmployeDataAccess
     {
-        private List<EmployeeDetail> employee;
 
-        public EmployeeDetail()
+        private List<Employee> _employee;
+
+        static EmployeeDataAccess()
         {
-            employee = new List<EmployeeDetail>();
+            _employee = new List<Employee>();
         }
+        new Employee()
+
         /// <summary>
         /// adding employee
         /// </summary>
         /// <param name="f"></param>
-        public void Add(EmployeeDetail a)
+        public void Add(Employee f)
         {
-            employee.Add(a);
+            _employee.Add(f);
         }
     }
 }
