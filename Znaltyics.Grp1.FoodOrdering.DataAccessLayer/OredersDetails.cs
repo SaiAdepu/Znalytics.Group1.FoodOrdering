@@ -1,8 +1,7 @@
 ﻿namespace OrdersDetails
 { 
-
 class OnlineFoodOrderSystem
-{
+   {
 
     static void Main()
     {
@@ -12,6 +11,7 @@ class OnlineFoodOrderSystem
         System.Console.WriteLine(od.Orderid);
 
         System.Console.WriteLine("enter OrderDate");
+        DateTime dt = DateTime.Now;
         DateTime dt = System.Convert.ToDateTime(System.Console.ReadLine());
 
         System.Console.WriteLine("enter the Userid");
