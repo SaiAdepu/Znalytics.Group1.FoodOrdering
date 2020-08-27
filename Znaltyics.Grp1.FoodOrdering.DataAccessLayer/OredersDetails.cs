@@ -12,7 +12,7 @@ class OnlineFoodOrderSystem
         System.Console.WriteLine(od.Orderid);
 
         System.Console.WriteLine("enter OrderDate");
-        System.Console.WriteLine("The Date Only is " + DateTime.Now);
+        DateTime dt = System.Convert.ToDateTime(System.Console.ReadLine());
 
         System.Console.WriteLine("enter the Userid");
         System.Console.WriteLine(od.Userid);
