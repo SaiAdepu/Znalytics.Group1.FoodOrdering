@@ -1,7 +1,8 @@
 ﻿
 using System;
+using System.Text.RegularExpressions;
 
-namespace Znalytics.Customer.Entities
+namespace Znalytics.Group1.FoodOrdering.Entities
 {
     public class Customer
     {
@@ -13,19 +14,30 @@ namespace Znalytics.Customer.Entities
         private string _customerAddress;
         private string _customerPassword;
 
+        public Customer(string customerName, string customerID, string customerEmail, string customerPhoneNumber, string customerAddress, string customerPassword)
+        {
+
+            this.CustomerName = CustomerName;
+            this.CustomerId = CustomerId;
+            this.CustomerEmail = CustomerEmail;
+            this.CustomerPhoneNumber = CustomerPhoneNumber;
+            this.CustomerAddress = CustomerAddress;
+            this.CustomerPassword = CustomerPassword;
+        }
+
         //properties and validations
         public string CustomerName
         {
             set
             {
                 //validating customername
-                if (value.Length <= 30)
+                if (Regex= "^[a-zA-Z\s]+$".IsMatch(value))
                 {
                     _customerName = value;
                 }
                 else
                 {
-                    throw new Exception("customername must be less than 31 characters");
+                    throw new Exception("customername must contain alphabets and space");
                 }
             }
             get
@@ -38,13 +50,13 @@ namespace Znalytics.Customer.Entities
             //validating customerid
             set
             {
-                if (value.Length <= 13)
+                if (value.Length > 0 && value.Length < 10)
                 {
-                    _customer = value;
+                    _customerId = value;
                 }
                 else
                 {
-                    throw new Exception("customerid must be less than 14 characters");
+                    throw new Exception("customerid must be less than 10 characters");
                 }
             }
             get
@@ -57,21 +69,13 @@ namespace Znalytics.Customer.Entities
             //validating customerEmail
             set
             {
-                bool isSpaceFound = false;
-                for (int i = 0; i < value.Length; i++)
-                {
-                    if (value[i] == ' ')
-                    {
-                        isSpaceFound = true;
-                    }
-                }
-                if (isSpaceFound == false)
+                if(Regex= "^([a - zA - Z0 - 9_\-\.] +)@((\[[0 - 9]{ 1,3}\.[0 - 9]{ 1,3}\.[0 - 9]{ 1,3}\.)| (([a - zA - Z0 - 9\-] +\.)+))([a - zA - Z]{ 2,4}|[0 - 9]{ 1,3})(\]?)$".IsMatch(value)
                 {
                     _customerEmail = value;
                 }
                 else
                 {
-                    throw new Exception("Enter valid email");
+                    throw new Exception("email should not contain spaces and @ symbol is must");
                 }
             }
             get
@@ -84,13 +88,13 @@ namespace Znalytics.Customer.Entities
             //validating customerphonenumber
             set
             {
-                if (value.Length == 10)
+                if(Regex= "^((\+)?(\d{2}[-]))?(\d{10}){1}?$".IsMatch(value))
                 {
                     _customerPhoneNumber = value;
                 }
                 else
                 {
-                    throw new Exception("Enter valid phone number");
+                    throw new Exception("phonenumber must be 10 digits");
                 }
             }
             get
@@ -103,7 +107,10 @@ namespace Znalytics.Customer.Entities
         {
             set
             {
-                _customerAddress = value;
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _customerAddress = value;
+                }
             }
             get
             {
@@ -115,13 +122,13 @@ namespace Znalytics.Customer.Entities
             //validating customerpassword
             set
             {
-                if (value.Length <= 10)
+                if (Regex= "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$".IsMatch(value))
                 {
                     _customerName = value;
                 }
                 else
                 {
-                    throw new Exception("password length must be less than 11");
+                    throw new Exception("password length must be between 4 and 8. must include at least one upper case letter, one lower case letter, and one numeric digit.");
                 }
             }
             get
@@ -130,17 +137,6 @@ namespace Znalytics.Customer.Entities
             }
         }
     }
-
-    //constructor to initialize customer details
-    public Customer(string customerName,string customerID,string customerEmail,string customerPhoneNumber,string customerAddress,string customerPassword)
-    {
-
-        this.CustomerName = CustomerName;
-        this.CustomerId = CustomerId;
-        this.CustomerEmail = CustomerEmail;
-        this.CustomerPhoneNumber = CustomerPhoneNumber; 
-        this.CustomerAddress= CustomerAddress;
-        this.CustomerPassword = CustomerPassword;
-    }
+    
 }
 }
