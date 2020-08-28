@@ -1,9 +1,12 @@
-﻿
+﻿// Done by Spandana
 using System;
 using System.Text.RegularExpressions;
 
 namespace Znalytics.Group1.FoodOrdering.Entities
 {
+    /// <summary>
+    /// Represents CustomerDetails
+    /// </summary>
     public class Customer
     {
         //private fields
@@ -14,8 +17,15 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         private string _customerAddress;
         private string _customerPassword;
 
+        /// Constructor that initializes details of customer
         public Customer(string customerName, string customerID, string customerEmail, string customerPhoneNumber, string customerAddress, string customerPassword)
         {
+            /// <param name="customerName">Represents name of the customer</param>
+            /// <param name="customerID">Represents Id of the customer</param>
+            /// <param name="customerEmail">Represents Email of the customer</param>
+            /// <param name="customerPhoneNumber">Represents phone number of the customer</param>
+            /// <param name="customerAddress">Represents address of the customer</param>
+            /// <param name="customerPassword">Represents password of the customer</param>
 
             this.CustomerName = CustomerName;
             this.CustomerId = CustomerId;
@@ -30,7 +40,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         {
             set
             {
-                //validating customername
+                //validating customername whether it contains alphabets and spaces only.
                 if (Regex= "^[a-zA-Z\s]+$".IsMatch(value))
                 {
                     _customerName = value;
@@ -47,10 +57,10 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         }
         public string CustomerId
         {
-            //validating customerid
+            //validating customerid whether it has minimum 1 character and maximum 10 characters.
             set
             {
-                if (value.Length > 0 && value.Length < 10)
+                if (value.Length > 0 && value.Length <= 10)
                 {
                     _customerId = value;
                 }
@@ -66,7 +76,10 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         }
         public string CustomerEmail
         {
-            //validating customerEmail
+            //validating customerEmail:
+            //1.no spaces
+            //2.@ symbol is must and allowed only once
+            //3. ends with .com,.in etc..
             set
             {
                 if(Regex= "^([a - zA - Z0 - 9_\-\.] +)@((\[[0 - 9]{ 1,3}\.[0 - 9]{ 1,3}\.[0 - 9]{ 1,3}\.)| (([a - zA - Z0 - 9\-] +\.)+))([a - zA - Z]{ 2,4}|[0 - 9]{ 1,3})(\]?)$".IsMatch(value)
@@ -85,7 +98,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         }
         public string CustomerPhoneNumber
         {
-            //validating customerphonenumber
+            //validating customerphonenumber whether it has 10 digits or not.
             set
             {
                 if(Regex= "^((\+)?(\d{2}[-]))?(\d{10}){1}?$".IsMatch(value))
@@ -105,6 +118,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         }
         public string CustomerAddress
         {
+            //validating customerAddress. It should not be null or empty.
             set
             {
                 if (!string.IsNullOrEmpty(value))
@@ -120,6 +134,10 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         public string CustomerPassword
         {
             //validating customerpassword
+            //password length must be between 4 and 8.and must include 
+            //atleast one upper case letter.
+            //atleast  one lower case letter.
+            //atleast one numeric digit.
             set
             {
                 if (Regex= "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$".IsMatch(value))
@@ -139,4 +157,4 @@ namespace Znalytics.Group1.FoodOrdering.Entities
     }
     
 }
-}
+
