@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FoodOrdering.Entities;
-namespace FoodOrdering.BusinessLogicLayer
+namespace FoodOrdering.BusinessLayer
 {
     
     public interface ICustomerBusinessLayer
