@@ -10,7 +10,7 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
     public interface IFoodStoreDataAccess
     {
         //Adding the Foodstore
-        public void Add(FoodStore foodstore)
+         void AddFoodStore(IFoodStoreDataAccess foodstore)
        
         //Viewing the Foodstore
 
@@ -20,9 +20,17 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
         }
 
         //Updating the Foodstore
-        public void UpdateFoodStore(FoodStore foodstore)
-        
-         
-           
+         void UpdateStoreID(FoodStore foodstore)
+         void UpdateStoreName(FoodStore foodstore)
+         void UpdateLocation(FoodStore foodstore)
+         void UpdatePhone(FoodStore foodstore)
+         void UpdateEmail(FoodStore foodstore)
+         void UpdateRating(FoodStore foodstore)
+
+
+
+
+
+
         }
 }
