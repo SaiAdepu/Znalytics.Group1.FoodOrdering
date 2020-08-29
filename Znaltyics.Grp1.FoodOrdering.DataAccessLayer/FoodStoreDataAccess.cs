@@ -4,8 +4,8 @@ using Znalytics.Group1.FoodOrdering.Entities;
 
 namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
 {
-  public class FoodStoreDataAccess
-   {
+   public class FoodStoreDataAccess:IFoodStoreDataAccess
+   { 
      //private fields
      private static List<FoodStore> _foodstore;
      //constructor
@@ -18,7 +18,6 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
      new FoodStore(){ StoreID="10103",StoreName="Bombay House",Location="Hyderabad",Phone="9999944444",Email="house123@gmail.com",Rating="3"}
    };
    }
-   //Adding Foodstore Details
    public void Add(FoodStore foodstore)
     {
       _foodstore.Add(foodstore);
@@ -36,10 +35,10 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
     return _foodstores;
    }
    }
-  //Update Foodstore
+  //Updation of the  Foodstore
   public void UpdateFoodStore(FoodStore foodstore)
   {
-    //Geting matching foodstore based on StoreID
+    //Geting the matching foodstore based on StoreID
    foodstore fs = _foodstores.Find(temp => temp.StoreID == foodstore.StoreID);
    if (fs != null)
     {
