@@ -16,6 +16,8 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         private string _customerPhoneNumber;
         private string _customerAddress;
         private string _customerPassword;
+        Customer customer = new Customer();
+        public Customer() { }
 
         /// Constructor that initializes details of customer
         public Customer(string customerName, string customerID, string customerEmail, string customerPhoneNumber, string customerAddress, string customerPassword)
