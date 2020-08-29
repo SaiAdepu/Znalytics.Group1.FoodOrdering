@@ -1,11 +1,10 @@
-﻿ng System;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Znaltyics.Grp1.FoodOrdering.EmployeeModule.DataAccessLayer;
-using Znalytics.Group1.FoodOrdering.EmployeeModule.Entities;
+﻿using  System;
+using FoodOrdering.DataAccessLayer;
+using FoodOrdering.Entities;
 
-namespace Znalytics.Grp1.FoodOrdering.EmployeeModule.Businesslayer
+namespace FoodOrdering.BusinessLayer
 {
-    public class EmployeeBusinessLayer: IEmployeeBusinessLayer ///Interface
+    public class EmployeeBusinessLayer//:IEmployeeBusinessLayer ///Interface
     {
         /// <summary>
         /// create a referaance variable of EmployeeBusinessLayer class
@@ -16,64 +15,73 @@ namespace Znalytics.Grp1.FoodOrdering.EmployeeModule.Businesslayer
         {
             _employeeDataAccess = new EmployeeDataAccess();
         }
-    }
-    
-    public string  AddEmployees(Employee employees)
 
-    {
-         /// if the EmployeeID is exits its shows already exists
-        if (_employeeDataAccess.IsEmployeeIDExist(employees.EmployeeID))
+        public void AddEmployees(Employee employees)
         {
+            if (employees.FirstName.Length >= 4 && employees.FirstName.Length <= 20)
+            {
 
-            return "employeeid Already taken by other user please try  a different one";
-       }
-        /// if the emailid is exits its shows already exists
-        if (_employeeDataAccess.IsEmailExist(employees.Email))
+                if (employees.LastName.Length >= 4 && employees.LastName.Length <= 20)
+                {
+                    if (employees.Email.Length >= 6 && employees.Email.Length <= 40)
+                    {
+                        if (employees.Password.Length >= 6 && employees.Password.Length <= 15)
+                        {
+                            if (employees.MobileNumber.Length < 9 && employees.MobileNumber.Length > 11)
+                            {
+                            }
+                            else
+                            {
+                                throw new Exception("entern minimum 4 characters please try again")
+
+                                }
+                        }
+
+                        else
+                        {
+                            throw new Exception("entern minimum 4 characters please try again")
+                            }
+                        }
+                 else
+                        {
+                            throw new Exception("entern minimum 6 characters please try again")
+                    }
+                    }
+                    else
+                    {
+                        throw new Exception("entern minimum 6 letters please try again")
+                      }
+                    }
+                    else
+                    {
+                        throw new Exception("entern minimum 10 letters please try again")
+                     }
+                    }
+
+                         
+        ///update the empoyee id
+        public bool UpdateEmployees(int EmployeeID)
         {
-
-            return "Email Address already exists";
+            try
+            {
+                return _employeeDataAccess.UpdateEmployees(EmployeeID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        ///Delete the employeeID
+        public void DeleteEmployees(int deleteEmployeeID)
+        {
+            try
+            {
+                return _employeeDataAccess.DeleteEmployees(deleteEmployeeID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        try
-
-        {
-
-            return _employeeDataAccess.AddEmployees(employees);
-
-        }
-
-        catch (Exception ex)
-
-        {
-
-            throw ex;
-
-        }
-
-    }
-    ///update the empoyee id
-    public bool UpdateEmployees(int EmployeeID)
-    {
-        try
-        {
-            return _employeeDataAccess.UpdateEmployees(EmployeeID);
-        }
-        catch(Exception ex)
-        {
-            throw ex;
-        }
-        }
-    ///Delete the employeeID
-    public void DeleteEmployees(int  deleteEmployeeID)
-    {
-        try
-        {
-            return _employeeDataAccess.DeleteEmployees(deleteEmployeeID);
-        }
-        catch (Exception ex)
-        {
-            throw ex;
-        }
-    }
-
-        
+    }    
