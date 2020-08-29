@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Znalytics.Grp1.FoodOrdering.DataAccessLayer;
-using Znalytics.Group1.FoodOrdering.Entities;
+//using FoodOrdering.DataAccessLayer;
+using FoodOrdering.Entities;
 
-namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
+namespace FoodOrdering.BusinessLayer
 {
     public class CustomerBusinessLayer:ICustomerBusinessLayer
     {
@@ -17,7 +17,7 @@ namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
         //Add customer
         public void AddCustomer(Customer customer)
         {
-            if (!string.IsNullOrEmpty(value))
+            if (!string.IsNullOrEmpty())
             {
                 _customerDataAccess.Add(customer);
             }

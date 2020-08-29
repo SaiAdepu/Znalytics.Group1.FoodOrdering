@@ -16,8 +16,8 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
         {
             _customers = new List<Customer>()
             {
-                new Customer(){ CustomerName="scott",CustomerID = "101",CustomerEmail="Scott@gmail.com",CustomerPhoneNumber="7330968633",CustomerAddress="HYd",CustomerPassword="1234" },
-                new Customer(){CustomerName="Allen",CustomerID = "102",CustomerEmail="Allen@gmail.com",CustomerPhoneNumber="7330968630",CustomerAddress="WARANGAL",CustomerPassword="12345"  }
+                new Customer(){ CustomerName="scott",CustomerId = "101",CustomerEmail="Scott@gmail.com",CustomerPhoneNumber="7330968633",CustomerAddress="HYd",CustomerPassword="1234" },
+                new Customer(){CustomerName="Allen",CustomerId = "102",CustomerEmail="Allen@gmail.com",CustomerPhoneNumber="7330968630",CustomerAddress="WARANGAL",CustomerPassword="12345"  }
             };
         }
 
