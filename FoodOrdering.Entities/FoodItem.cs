@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Znalytics.Group1.FoodOrdering.Entities
 {
+    /// <summary>
+    /// Stores the data of One Food Item
+    /// </summary>
     public class FoodItem
     {
+        public static int foodIdCount = 4;
         private int _foodId;
         private string _foodType;
         private string _foodName;
@@ -32,6 +32,9 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         {
             set
             {
+                if (value.Equals(""))
+                    throw new Exception("****** Invalid Food Type ******");
+                else
                 _foodType = value;
             }
             get
@@ -43,11 +46,11 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         {
             set
             {
-                if (value!="")
-                    _foodName = value;
+               
+                if (value.Equals(""))
+                    throw new Exception("****** Invalid Food Name ******"); 
                 else
-                    throw new Exception("Invalid Food Name");
-
+                    _foodName = value;
 
             }
             get
@@ -59,12 +62,10 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         {
             set
             {
-                if (value != 0)
+                if (value >= 0)
                     _price = value;
                 else
-                    throw new Exception("Invalid price");
-
-
+                    throw new Exception("****** Invalid price ******");
             }
             get
             {
@@ -75,11 +76,10 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         {
             set
             {
-                if (value != 0)
+                if (value >= 0)
                     _quantity = value;
                 else
-                    throw new Exception("Invalid Quantity");
-
+                    throw new Exception("****** Invalid Quantity ******");
             }
             get
             {

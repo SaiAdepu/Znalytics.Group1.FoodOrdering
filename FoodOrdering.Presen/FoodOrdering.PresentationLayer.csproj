@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BF1388F2-3525-4B31-968F-F2528B8132A4}</ProjectGuid>
+    <ProjectGuid>{70DBD380-B96E-40B3-9166-EC77C2C3AC60}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Znalytics.Group1.FoodOrdering.Presentation</RootNamespace>
-    <AssemblyName>Znalytics.Group1.FoodOrdering.Presentation</AssemblyName>
+    <RootNamespace>FoodOrdering.Presen</RootNamespace>
+    <AssemblyName>FoodOrdering.Presen</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,23 +44,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CooldrinksMenuPL.cs" />
-    <Compile Include="employeelogindetails.cs" />
+    <Compile Include="CustomerPresentation.cs" />
+    <Compile Include="employeePrentation.cs" />
+    <Compile Include="FoodStorePresentation.cs" />
     <Compile Include="FoodTypeMenuPL.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="programfoodstoredetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Znalytics.Group1.FoodOrdering.Entities\Znalytics.Group1.FoodOrdering.Entities.csproj">
-      <Project>{b61a8cd2-af22-44d0-acf3-7af6780d1b5e}</Project>
-      <Name>Znalytics.Group1.FoodOrdering.Entities</Name>
+    <ProjectReference Include="..\FoodOrdering.BusinessLayer\FoodOrdering.BusinessLayer.csproj">
+      <Project>{c499e3e6-a840-4596-9458-0a67cb261c6d}</Project>
+      <Name>FoodOrdering.BusinessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Znalytics.Grp1.FoodOrdering.Businesslayer\Znalytics.Grp1.FoodOrdering.Businesslayer.csproj">
-      <Project>{c983a413-9454-451d-8de0-cbe2d4d01669}</Project>
-      <Name>Znalytics.Grp1.FoodOrdering.Businesslayer</Name>
+    <ProjectReference Include="..\FoodOrdering.Entities\FoodOrdering.Entities.csproj">
+      <Project>{6e7c02f8-eda9-4cb7-a35c-86b5548aa07f}</Project>
+      <Name>FoodOrdering.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
