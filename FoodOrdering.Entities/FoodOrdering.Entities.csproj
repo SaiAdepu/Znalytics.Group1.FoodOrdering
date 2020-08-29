@@ -45,6 +45,7 @@
     <Compile Include="Employee.cs" />
     <Compile Include="FoodItem.cs" />
     <Compile Include="foodstore.cs" />
+    <Compile Include="ItemComparer.cs" />
     <Compile Include="Orders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

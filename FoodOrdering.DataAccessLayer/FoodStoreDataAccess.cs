@@ -23,23 +23,23 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
       _foodstore.Add(foodstore);
     }
    //Removing  foodstore Details
-   public void Remove(foodstore foodstore)
+   public void Remove(FoodStore foodstore)
    {
-     _foodstore.Remove(item => foodstore.StoreID == item.StoreID)
+            _foodstore.Remove(item => FoodStore.StoreID == item.StoreID);
    }
    //Geting all Foodstore Details
    public void ViewFoodStore(FoodStore foodstore)
    {
-   List<FoodStore> GetFoodStores()
+   List<FoodStore> GetFoodStore()
    {
-    return _foodstores;
+    return _foodstore;
    }
    }
   //Updation of the  Foodstore
   public void UpdateFoodStore(FoodStore foodstore)
   {
     //Geting the matching foodstore based on StoreID
-   foodstore fs = _foodstores.Find(temp => temp.StoreID == foodstore.StoreID);
+   foodstore fs = _foodstore.Find(temp => temp.StoreID == foodstore.StoreID);
    if (fs != null)
     {
      fs.StoreName = foodstore.StoreName;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Znalytics.Group1.FoodOrdering.Entities
+namespace FoodOrdering.Entities;
 {
     /// <summary>
     /// Stores the data of One Food Item

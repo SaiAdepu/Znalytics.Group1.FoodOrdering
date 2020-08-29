@@ -1,25 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Znalytics.Grp1.FoodOrdering.DataAccessLayer;
-using Znalytics.Group1.FoodOrdering.Entities;
+using FoodOrdering.DataAccessLayer;
+using FoodOrdering.Entities;
 
-namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
+namespace FoodOrdering.BusinessLayer
 {
     public class CustomerBusinessLayer:ICustomerBusinessLayer
     {
-        private ICustomerDataAcces _customerDataAccess = null;
+        private ICustomerDataAccess _customerDataAccess ;
         public CustomerBusinessLayer()
         {
-            _customerDataAccess = new customersDataAccess();
+            _customerDataAccess = new CustomerDataAccess();
         }
 
         //Add customer
         public void AddCustomer(Customer customer)
         {
-            if (!string.IsNullOrEmpty(value))
+            
+            if(customer.CustomerName!=null)
             {
-                _customerDataAccess.Add(customer);
+                _customerDataAccess.AddCustomer(customer);
             }
             else
             {
@@ -65,7 +66,7 @@ namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
         }
         public void UpdateCustomerPassword(Customer customer)
         {
-            if (customer.CustomerPasssword!= null)
+            if (customer.CustomerPassword != null)
             {
                 _customerDataAccess.UpdateCustomerPassword(customer);
             }
