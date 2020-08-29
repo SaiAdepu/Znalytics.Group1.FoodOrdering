@@ -35,7 +35,7 @@ namespace FoodOrdering.PresentationLayer
                 switch (choice)
                 {
                     case 1: AddCustomer(); break;
-                    case 2: ViewCustomer(); break;
+                    case 2: Viewcustomers(); break;
                     case 3: UpdateCustomerName(); break;
                     case 4: UpdateCustomerEmail(); break;
                     case 5: UpdateCustomerPhoneNumber(); break;
@@ -66,14 +66,14 @@ namespace FoodOrdering.PresentationLayer
             Console.Write("Enter CustomerPassword: ");
             customer.CustomerPassword = Console.ReadLine();
 
-            customerBusinessLayer.Add(customer);
+            customerBusinessLayer.AddCustomer(customer);
             Console.WriteLine("Customer Added Successfully.\n");
         }
 
         static void Viewcustomers()
         {
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
-            List<Customer> custs = customerBusinessLayer.GetCustomer();
+            List<Customer> custs = customerBusinessLayer.GetCustomers();
 
             foreach (Customer cust in custs)
             {
