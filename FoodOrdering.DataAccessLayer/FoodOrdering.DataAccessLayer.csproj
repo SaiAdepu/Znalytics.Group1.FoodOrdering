@@ -50,10 +50,6 @@
     <Compile Include="StoreFoodItemsDataAccessLayer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FoodOrdering.BusinessLayer\FoodOrdering.BusinessLayer.csproj">
-      <Project>{c499e3e6-a840-4596-9458-0a67cb261c6d}</Project>
-      <Name>FoodOrdering.BusinessLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FoodOrdering.Entities\FoodOrdering.Entities.csproj">
       <Project>{6e7c02f8-eda9-4cb7-a35c-86b5548aa07f}</Project>
       <Name>FoodOrdering.Entities</Name>

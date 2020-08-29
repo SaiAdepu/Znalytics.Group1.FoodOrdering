@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Znalytics.Grp1.FoodOrdering.DataAccessLayer;
-using Znalytics.Group1.FoodOrdering.Entities;
-namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
+using FoodOrdering.DataAccessLayer;
+using FoodOrdering.Entities;
+namespace FoodOrdering.BusinessLayer
 {
     public class FoodStoreBusinessLayer
     {
@@ -18,7 +18,7 @@ namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
         {
             if (foodstore.StoreName != null)
             {
-                _foodstores.DataAccess.Add(foodstore);
+                _foodstore.DataAccess.Add(foodstore);
             }
             else
             {

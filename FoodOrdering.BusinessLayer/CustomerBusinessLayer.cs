@@ -65,7 +65,7 @@ namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
         }
         public void UpdateCustomerPassword(Customer customer)
         {
-            if (customer.CustomerPasssword!= null)
+            if (customer.CustomerPassword!= null)
             {
                 _customerDataAccess.UpdateCustomerPassword(customer);
             }

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Znalytics.Grp1.FoodOrdering.BusinessLayer;
-using Znalytics.Group1.FoodOrdering.Entities;
+using FoodOrdering.BusinessLayer;
+//using FoodOrdering.Entities;
 
 namespace Znalytics.Group1.FoodOrdering
 {
-    class Program
+    class FoodStorePresentation
     {
         static void Main()
         {
