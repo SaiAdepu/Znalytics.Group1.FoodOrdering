@@ -41,10 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddFoodItemBL.cs" />
+    <Compile Include="AddFoodItemBusinessLayer.cs" />
     <Compile Include="CustomerBusinessLayer.cs" />
     <Compile Include="EmployeeBusinessLayer.cs" />
     <Compile Include="FoodStoreBusinessLayer.cs" />
+    <Compile Include="IAddFoodItemBusinessLayer.cs" />
     <Compile Include="OrdersDetails.Businesslayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
