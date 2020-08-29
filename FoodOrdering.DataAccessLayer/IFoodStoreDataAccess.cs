@@ -26,11 +26,5 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
          void UpdatePhone(FoodStore foodstore)
          void UpdateEmail(FoodStore foodstore)
          void UpdateRating(FoodStore foodstore)
-
-
-
-
-
-
         }
 }
