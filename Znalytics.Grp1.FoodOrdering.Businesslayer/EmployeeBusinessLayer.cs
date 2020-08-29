@@ -11,21 +11,23 @@ namespace Znalytics.Grp1.FoodOrdering.EmployeeModule.Businesslayer
         /// create a referaance variable of EmployeeBusinessLayer class
         /// </summary>
         EmployeeDataAccess _employeeDataAccess;
-
+        /// constructor
         public EmployeeBusinessLayer()
         {
             _employeeDataAccess = new EmployeeDataAccess();
         }
     }
+    
     public string  AddEmployees(Employee employees)
 
     {
+         /// if the EmployeeID is exits its shows already exists
         if (_employeeDataAccess.IsEmployeeIDExist(employees.EmployeeID))
         {
 
             return "employeeid Already taken by other user please try  a different one";
        }
-
+        /// if the emailid is exits its shows already exists
         if (_employeeDataAccess.IsEmailExist(employees.Email))
         {
 
@@ -49,6 +51,7 @@ namespace Znalytics.Grp1.FoodOrdering.EmployeeModule.Businesslayer
         }
 
     }
+    ///update the empoyee id
     public bool UpdateEmployees(int EmployeeID)
     {
         try
@@ -60,6 +63,7 @@ namespace Znalytics.Grp1.FoodOrdering.EmployeeModule.Businesslayer
             throw ex;
         }
         }
+    ///Delete the employeeID
     public void DeleteEmployees(int  deleteEmployeeID)
     {
         try

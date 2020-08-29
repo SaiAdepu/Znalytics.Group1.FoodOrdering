@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 /// project of Foodordering ...Employeelogin module(PAVAN KUMAR) 
 /// </summary>
 
-namespace Znalytics.Group1.FoodOrdering.Entities
+namespace Znalytics.Group1.FoodOrdering.EmployeeModule.Entities
 {
     /// <summary>
     /// Represents Food Delivery Employeelogin
@@ -25,9 +25,9 @@ namespace Znalytics.Group1.FoodOrdering.Entities
 
 
         /// <summary>
-        /// Gets or sets the <b>EmployeId</b> enter only numbers
+        /// Gets or sets the EmployeId  enter only numbers or else its throw exception
         /// </summary>
-        /// <value>The <b>EmployeId</b></value>
+        /// EmployeId
         public int EmployeeID
         {
             set
@@ -47,7 +47,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             }
         }
         /// <summary>
-        /// Gets or sets the <b>Email</b>(enter emailid its consists of minimum 7 Chracters,
+        /// Gets or sets the <b>Email</b>(enter emailid its consists of  Chracters ,
         /// @ symbol is must,NO spaces
         /// </summary>
         public string Email
@@ -61,7 +61,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
                 }
                 else
                 {
-                    throw new Exception("enter emailid its consists of minimum 7 Chracters, @ symbol is must,NO spaces,");
+                    throw new Exception("enter emailid its consists of Chracters, @ symbol is must,NO spaces,");
                 }
             }
             get
@@ -74,7 +74,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         /// <summary>
         ///************** EmployeeName details***********///
         /// </summary>
-        ///            Gets or sets the <b>FirstName</b> enter     first name its consists only characters
+        ///   Gets or sets the <b>FirstName</b> enter first name its consists only characters
         public string FirstName
         {
             set
@@ -116,13 +116,14 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         }
         ///    ****password details***** ///
         /// <summary>
-        ///  Gets or sets the <b>Password</b> enter     first name its consists only characters 
+        ///  Gets or sets the <b>Password</b> enter password its consists atleast one captal letters characters  minimum 6 characters
         /// </summary>
         public string Password
         {
             set
             {
-                if (new Regex ("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$".IsMatch(value))
+          if (new Regex (@ "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$".IsMatch(value)== true)
+                
                 {
                     _password = value;
                 }
