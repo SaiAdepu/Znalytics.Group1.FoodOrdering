@@ -73,7 +73,7 @@ namespace Znalytics.Group1.FoodOrdering
             }
         }
 
-        static void UpdateCustomer()
+        static void UpdateCustomerName()
         {
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
             Customer customer = new Customer();
@@ -82,8 +82,56 @@ namespace Znalytics.Group1.FoodOrdering
             Console.Write("Enter New CustomerName: ");
             customer.CustomerName = Console.ReadLine();
 
-            customerBusinessLayer.UpdateCustomer(customer);
-            Console.WriteLine("Customer Updated successfully.\n");
+            customerBusinessLayer.UpdateCustomerName(customer);
+            Console.WriteLine("CustomerName Updated successfully.\n");
+        }
+        static void UpdateCustomerEmail()
+        {
+            CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
+            Customer customer = new Customer();
+            Console.Write("Enter Existing CustomerID: ");
+            customer.CustomerID = Console.ReadLine();
+            Console.Write("Enter New CustomerEmail: ");
+            customer.CustomerEmail = Console.ReadLine();
+
+            customerBusinessLayer.UpdateCustomerEmail(customer);
+            Console.WriteLine("CustomerEmail Updated successfully.\n");
+        }
+        static void UpdateCustomerPhoneNumber()
+        {
+            CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
+            Customer customer = new Customer();
+            Console.Write("Enter Existing CustomerID: ");
+            customer.CustomerID = Console.ReadLine();
+            Console.Write("Enter New CustomerPhoneNumber: ");
+            customer.CustomerPhoneNumber = Console.ReadLine();
+
+            customerBusinessLayer.UpdateCustomerPhoneNumber(customer);
+            Console.WriteLine("CustomerPhoneNumber Updated successfully.\n");
+        }
+        static void UpdateCustomerAddress()
+        {
+            CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
+            Customer customer = new Customer();
+            Console.Write("Enter Existing CustomerID: ");
+            customer.CustomerID = Console.ReadLine();
+            Console.Write("Enter New CustomerAddress: ");
+            customer.CustomerAddress = Console.ReadLine();
+
+            customerBusinessLayer.UpdateCustomerAddress(customer);
+            Console.WriteLine("CustomerAddress Updated successfully.\n");
+        }
+        static void UpdateCustomerPassword()
+        {
+            CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
+            Customer customer = new Customer();
+            Console.Write("Enter Existing CustomerID: ");
+            customer.CustomerID = Console.ReadLine();
+            Console.Write("Enter New CustomerPassword: ");
+            customer.CustomerPassword = Console.ReadLine();
+
+            customerBusinessLayer.UpdateCustomerPassword(customer);
+            Console.WriteLine("CustomerPassword Updated successfully.\n");
         }
     }
 }
