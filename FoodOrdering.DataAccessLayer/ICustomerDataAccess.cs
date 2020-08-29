@@ -9,10 +9,10 @@ namespace FoodOrdering.DataAccessLayer
 	public interface ICustomerDataAccess
 	{
 		void AddCustomer(ICustomerDataAccess customer);
-		public List<Customer> GetCustomers()
-		{
-			
-		}
+		public List<Customer> GetCustomers();
+		
+		
+		
 		void UpdateCustomerName(Customer customer);
 		void UpdateCustomerEmail(Customer customer);
 		void UpdateCustomerPhoneNumber(Customer customer);
