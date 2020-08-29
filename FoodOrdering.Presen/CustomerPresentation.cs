@@ -41,7 +41,7 @@ namespace FoodOrdering.PresentationLayer
                     case 5: UpdateCustomerPhoneNumber(); break;
                     case 6: UpdateCustomerAddress(); break;
                     case 7: UpdateCustomerPassword(); break;
-                    case 8: DeleteCustomer();break; 
+                    //case 8: DeleteCustomer();break; 
            
                 }
             } while (choice != 9);
@@ -86,7 +86,7 @@ namespace FoodOrdering.PresentationLayer
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
             Customer customer = new Customer();
             Console.Write("Enter Existing CustomerID: ");
-            customer.CustomerID = Console.ReadLine();
+            customer.CustomerId = Console.ReadLine();
             Console.Write("Enter New CustomerName: ");
             customer.CustomerName = Console.ReadLine();
 
@@ -98,7 +98,7 @@ namespace FoodOrdering.PresentationLayer
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
             Customer customer = new Customer();
             Console.Write("Enter Existing CustomerID: ");
-            customer.CustomerID = Console.ReadLine();
+            customer.CustomerId = Console.ReadLine();
             Console.Write("Enter New CustomerEmail: ");
             customer.CustomerEmail = Console.ReadLine();
 
@@ -110,7 +110,7 @@ namespace FoodOrdering.PresentationLayer
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
             Customer customer = new Customer();
             Console.Write("Enter Existing CustomerID: ");
-            customer.CustomerID = Console.ReadLine();
+            customer.CustomerId = Console.ReadLine();
             Console.Write("Enter New CustomerPhoneNumber: ");
             customer.CustomerPhoneNumber = Console.ReadLine();
 
@@ -122,7 +122,7 @@ namespace FoodOrdering.PresentationLayer
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
             Customer customer = new Customer();
             Console.Write("Enter Existing CustomerID: ");
-            customer.CustomerID = Console.ReadLine();
+            customer.CustomerId = Console.ReadLine();
             Console.Write("Enter New CustomerAddress: ");
             customer.CustomerAddress = Console.ReadLine();
 
@@ -134,7 +134,7 @@ namespace FoodOrdering.PresentationLayer
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
             Customer customer = new Customer();
             Console.Write("Enter Existing CustomerID: ");
-            customer.CustomerID = Console.ReadLine();
+            customer.CustomerId = Console.ReadLine();
             Console.Write("Enter New CustomerPassword: ");
             customer.CustomerPassword = Console.ReadLine();
 

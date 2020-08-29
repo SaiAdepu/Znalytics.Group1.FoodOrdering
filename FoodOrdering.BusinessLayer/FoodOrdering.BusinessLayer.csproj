@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddFoodItemBusinessLayer.cs" />
+    <Compile Include="ICustomerBusinessLayer.cs" />
     <Compile Include="CustomerBusinessLayer.cs" />
     <Compile Include="EmployeeBusinessLayer.cs" />
     <Compile Include="FoodStoreBusinessLayer.cs" />
