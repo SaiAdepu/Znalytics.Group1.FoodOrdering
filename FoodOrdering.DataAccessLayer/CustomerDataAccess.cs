@@ -1,23 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using Znalytics.Group1.FoodOrdering.Entities;
+using FoodOrdering.Entities;
 
-namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
+namespace FoodOrdering.DataAccessLayer
 {
-    public class CustomerDataAccess:ICustomerDataAccess
+    public class CustomerDataAccess : ICustomerDataAccess
     {
         //private fields
         //stores the list of customers
-        //private static List<Customer> _customers;
-        List<Customer> customer = new List<Customer>();
+        private static List<Customer> _customers
+        {
+            set;
+            get;
+        }
+
+        //List<Customer> customer = new List<Customer>();
 
         //constructor
         static CustomerDataAccess()
         {
             _customers = new List<Customer>()
             {
-                new Customer(){ CustomerName="scott",CustomerID = "101",CustomerEmail="Scott@gmail.com",CustomerPhoneNumber="7330968633",CustomerAddress="HYd",CustomerPassword="1234" },
-                new Customer(){CustomerName="Allen",CustomerID = "102",CustomerEmail="Allen@gmail.com",CustomerPhoneNumber="7330968630",CustomerAddress="WARANGAL",CustomerPassword="12345"  }
+                new Customer(){ CustomerName="scott",CustomerId = "101",CustomerEmail="Scott@gmail.com",CustomerPhoneNumber="7330968633",CustomerAddress="HYd",CustomerPassword="1234" },
+                new Customer(){CustomerName="Allen",CustomerId = "102",CustomerEmail="Allen@gmail.com",CustomerPhoneNumber="7330968630",CustomerAddress="WARANGAL",CustomerPassword="12345"  }
             };
         }
 
@@ -28,9 +33,10 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
         }
 
         //Get all customers
-        public void ViewCustomer(Customer customer)
-            List<Customer> GetCustomers()
-        {
+        public void Viewcustomers(Customer customer);
+        
+        List<Customer> GetCustomers()
+        { 
             return _customers;
         }
 
@@ -38,7 +44,7 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
         public void UpdateCustomerName(Customer customer)
         {
             //Get matching customer based on CustomerID
-            Customer cust = _customers.Find(temp => temp.CustomerID == customer.CustomerID);
+            Customer cust = _customers.Find(temp => temp.CustomerId == customer.CustomerId);
             if (cust != null)
             {
                 cust.CustomerName = customer.CustomerName;
@@ -47,7 +53,7 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
         public void UpdateCustomerEmail(Customer customer)
         {
             //Get matching customer based on CustomerID
-            Customer cust = _customers.Find(temp => temp.CustomerID == customer.CustomerID);
+            Customer cust = _customers.Find(temp => temp.CustomerId == customer.CustomerId);
             if (cust != null)
             {
                 cust.CustomerEmail = customer.CustomerEmail;
@@ -56,7 +62,7 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
         public void UpdateCustomerPhoneNumber(Customer customer)
         {
             //Get matching customer based on CustomerID
-            Customer cust = _customers.Find(temp => temp.CustomerID == customer.CustomerID);
+            Customer cust = _customers.Find(temp => temp.CustomerId == customer.CustomerId);
             if (cust != null)
             {
                 cust.CustomerPhoneNumber = customer.CustomerPhoneNumber;
@@ -65,7 +71,7 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
         public void UpdateCustomerAddress(Customer customer)
         {
             //Get matching customer based on CustomerID
-            Customer cust = _customers.Find(temp => temp.CustomerID == customer.CustomerID);
+            Customer cust = _customers.Find(temp => temp.CustomerId == customer.CustomerId);
             if (cust != null)
             {
                 cust.CustomerAddress = customer.CustomerAddress;
@@ -74,7 +80,7 @@ namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
         public void UpdateCustomerPassword(Customer customer)
         {
             //Get matching customer based on CustomerID
-            Customer cust = _customers.Find(temp => temp.CustomerID == customer.CustomerID);
+            Customer cust = _customers.Find(temp => temp.CustomerId == customer.CustomerId);
             if (cust != null)
             {
                 cust.CustomerPassword = customer.CustomerPassword;
