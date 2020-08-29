@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+
 /// <summary>
 /// project of Foodordering ...Employeelogin module(PAVAN KUMAR) 
 /// </summary>
 
-namespace Znalytics.Group1.FoodOrdering.Entities
+namespace Znalytics.Group1.FoodOrdering.EmployeeModule.Entities
 {
     /// <summary>
     /// Represents Food Delivery Employeelogin
@@ -12,19 +14,20 @@ namespace Znalytics.Group1.FoodOrdering.Entities
 
     {
         /// <summary>
-        /// private fields
+        /// Represents private fields
         /// </summary>
         private int _employeeID;
         private string _email;
         private string _firstName;
         private string _lastName;
         private string _password;
-        private long _mobileNumber;
+        private string _mobileNumber;
 
 
         /// <summary>
-        /// employeeID details
+        /// Gets or sets the EmployeId  enter only numbers or else its throw exception
         /// </summary>
+        /// EmployeId
         public int EmployeeID
         {
             set
@@ -35,7 +38,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
                 }
                 else
                 {
-                    throw new Exception("entered invalid data");
+                    throw new Exception("Employeeid Consits only number and try again");
                 }
             }
             get
@@ -44,20 +47,21 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             }
         }
         /// <summary>
-        /// Email details
+        /// Gets or sets the <b>Email</b>(enter emailid its consists of  Chracters ,
+        /// @ symbol is must,NO spaces
         /// </summary>
         public string Email
         {
             set
             {
-                if (value.Length >= 10 && value.Length <= 30)
+                if (new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").IsMatch(value) == true)
                 {
 
                     _email = value;
                 }
                 else
                 {
-                    throw new Exception("entered invalid data");
+                    throw new Exception("enter emailid its consists of Chracters, @ symbol is must,NO spaces,");
                 }
             }
             get
@@ -65,31 +69,32 @@ namespace Znalytics.Group1.FoodOrdering.Entities
                 return _email;
             }
         }
+    }
 
         /// <summary>
         ///************** EmployeeName details***********///
         /// </summary>
-        ///                  first name
+        ///   Gets or sets the <b>FirstName</b> enter first name its consists only characters
         public string FirstName
         {
             set
             {
-                if (value.Length >= 4 && value.Length <= 20)
+                if (value.Length>= 4 && value.Length <= 20)
                 {
                     _firstName = value;
                 }
                 else
                 {
-                    throw new Exception("entered invalid data");
+                    throw new Exception("entern minimum 4 characters please try again");
                 }
             }
             get
             {
-                return _firstName;
+                return _firstName;//returing the First name
             }
         }
         /// <summary>
-        /// lastname 
+        ///  Gets or sets the <b>LastName</b> enter  Last name its consists only characters
         /// </summary>
         public string LastName
         {
@@ -101,7 +106,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
                 }
                 else
                 {
-                    throw new Exception("entered invalid data");
+                    throw new Exception("entern minimum 4 characters please try again");
                 }
             }
             get
@@ -111,19 +116,20 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         }
         ///    ****password details***** ///
         /// <summary>
-        /// Password 
+        ///  Gets or sets the <b>Password</b> enter password its consists atleast one captal letters characters  minimum 6 characters
         /// </summary>
         public string Password
         {
             set
             {
-                if (value.Length >= 8 && value.Length <= 30)
+          if (new Regex (@ "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$".IsMatch(value)== true)
+                
                 {
                     _password = value;
                 }
                 else
                 {
-                    throw new Exception("entered invalid data");
+                    throw new Exception("enter Minimum 6 characters and One Capital Letters must ");
                 }
             }
 
@@ -133,21 +139,24 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             }
         }
         /// <summary>
-        /// Mobilenumber details
+        ///  Gets or sets the <b>Mobile Number</b> enter MObilenumber its consists only Numbers
         /// </summary>
         public long MobileNumber
         {
-            set
-            {
-                if (value < 9)
-                {
-                    _mobileNumber = value;
-                }
-            }
+    set
+    {
+        if (new Regex(@"(\+[0-9]{2}|\+[0-9]{2}\(0\)|\(\+[0-9]{2}\)\(0\)|00[0-9]{2}|0)([0-9]{9}|[0-9\-\s]{9,18})$").IsMatch(value) == true)
+        {
+            _mobileNumber = value;
+        }
+        else
+        {
+            throw new Exception("enter Minimum 10 numbers no spaces ,no symbols");
+        }
+    }
             get
             {
                 return _mobileNumber;
             }
         }
-    }
-}
+ }

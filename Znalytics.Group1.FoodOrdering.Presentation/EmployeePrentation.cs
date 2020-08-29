@@ -12,8 +12,7 @@ namespace Znalytics.Group1.FoodOrdering.PresentationLayer
             EmployeeBusinessLogic _employeeBusinessLogic = new EmployeeBusinessLogic();
             Employee f = new Employee();
 
-
-            System.Console.WriteLine("enter the employeelogin details");
+            System.Console.WriteLine("enter the employee details");
 
             Console.WriteLine("enter the employeeID");
             f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));
