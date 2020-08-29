@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Znaltyics.Grp1.FoodOrdering.DataAccessLayer")]
+[assembly: AssemblyTitle("FoodOrdering.Presen")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Znaltyics.Grp1.FoodOrdering.DataAccessLayer")]
+[assembly: AssemblyProduct("FoodOrdering.Presen")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("55ae538c-23f5-4a80-9340-ce43ee457e89")]
+[assembly: Guid("70dbd380-b96e-40b3-9166-ec77c2c3ac60")]
 
 // Version information for an assembly consists of the following four values:
 //

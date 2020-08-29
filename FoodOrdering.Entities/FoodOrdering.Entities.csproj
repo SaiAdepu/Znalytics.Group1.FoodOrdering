@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C983A413-9454-451D-8DE0-CBE2D4D01669}</ProjectGuid>
+    <ProjectGuid>{6E7C02F8-EDA9-4CB7-A35C-86B5548AA07F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Znalytics.Grp1.FoodOrdering.Businesslayer</RootNamespace>
-    <AssemblyName>Znalytics.Grp1.FoodOrdering.Businesslayer</AssemblyName>
+    <RootNamespace>FoodOrdering.Entities</RootNamespace>
+    <AssemblyName>FoodOrdering.Entities</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,19 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddFoodItem.cs" />
-    <Compile Include="EmployeeBusinessLayer.cs" />
+    <Compile Include="customer.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="FoodItem.cs" />
+    <Compile Include="foodstore.cs" />
+    <Compile Include="Orders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Znaltyics.Grp1.FoodOrdering.DataAccessLayer\Znaltyics.Grp1.FoodOrdering.DataAccessLayer.csproj">
-      <Project>{55ae538c-23f5-4a80-9340-ce43ee457e89}</Project>
-      <Name>Znaltyics.Grp1.FoodOrdering.DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Znalytics.Group1.FoodOrdering.Entities\Znalytics.Group1.FoodOrdering.Entities.csproj">
-      <Project>{b61a8cd2-af22-44d0-acf3-7af6780d1b5e}</Project>
-      <Name>Znalytics.Group1.FoodOrdering.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
