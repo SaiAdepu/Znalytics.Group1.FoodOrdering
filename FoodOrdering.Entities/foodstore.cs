@@ -12,33 +12,30 @@ namespace FoodOrdering.Entities
     /// This Class Represents FoodStoreDetails
     /// </summary>
     public class FoodStore
-    { 
+    {
         //private fields
         private string _storeID;
         private string _storeName;
         private string _location;
         private string _phone;
         private string _email;
-        private string _rating;
 
         public FoodStore()
         {
         }
-        public FoodStore(string storeID, string storeName, string location, string phone, string email, int rating)
+        public FoodStore(string storeID, string storeName, string location, string phone, string email  )
         // Constructor that initializes details of FoodStore
         // <param name="storeID">Represents id of the store</param>
         // <param name="storeName">Represents name of the store</param>
         // <param name="location">Represents location of the store</param>
         // <param name="phone">Represents phone number of the store</param>
         // <param name="email">Represents email of the store</param>
-        // <param name="rating">Represents id of the store</param>
         {
             _storeID = StoreID;
             _storeName = StoreName;
             _location = Location;
             _phone = Phone;
             _email = Email;
-            _rating = Rating;
 
         }
         ///<summary> 
@@ -140,7 +137,7 @@ namespace FoodOrdering.Entities
                 // searching for @
                 bool AtFound = Email.Contains("@");
                 if (!spaceFound && AtFound && (Email.EndsWith(".com")))
-         {
+                {
                     _email = value;
                 }
                 else
@@ -153,31 +150,21 @@ namespace FoodOrdering.Entities
                 return _email;
             }
         }
-
-        /// <summary>
-        /// Rating represents the rating of the FoodStore
-        /// </summary>
-        public string Rating
-        {
-            set
-            {
-                //rating of the foodstore should be between 0 to 5 only
-                if (value.Length > 0 && value.Length <= 5)
-                {
-                    _rating = value;
-                }
-                else
-                {
-                    throw new Exception("rating must be between 0 and 5");
-                }
-            }
-            get
-            {
-                return _rating;
-            }
-        }
     }
 }
+
+               
+                
+                
+           
+                
+            
+            
+            
+            
+        
+    
+
         
         
 
