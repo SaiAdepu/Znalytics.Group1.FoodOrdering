@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using FoodOrdering.Entities;
 using FoodOrdering.BusinessLayer;
-using Znalytics.Group1.FoodOrdering.Entities;
-//using FoodOrdering.Entities;
 
-namespace Znalytics.Group1.FoodOrdering
+
+namespace FoodOrdering.PresentationLayer
 {
-    class FoodStorePresentation
+    class FoodStoreDetails
     {
         static void Main()
         {
@@ -14,39 +14,47 @@ namespace Znalytics.Group1.FoodOrdering
             Console.ReadKey();
         }
 
-       static void FoodStorePresentation()
+        static void FoodStorePresentation()
         {
             int choice = 0;
             do
             {
-                Console.WriteLine("Food Store MENU");
+                //displays foodstore menu
+                Console.WriteLine("FOODSTORE MENU");
                 Console.WriteLine("1. Add FoodStore");
                 Console.WriteLine("2. View FoodStore");
-                Console.WriteLine("3. Update FoodStore");
-                Console.WriteLine("4. Delete FoodStore");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("3. Update StoreID");
+                Console.WriteLine("4. Update StoreName");
+                Console.WriteLine("5. Update Location");
+                Console.WriteLine("6. Update Phone");
+                Console.WriteLine("7. Update Email");
+                Console.WriteLine("8. Delete FoodStore");
+                Console.WriteLine("9. Exit");
                 Console.Write("Enter choice: ");
                 choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
                 {
                     case 1: AddFoodStore(); break;
-                    case 2: Viewfoodstores(); break;
-                    case 3: UpdateFoodStore(); break;
-                    //case 4: DeleteFoodStore(); break;
+                    case 2: UpdateStoreName(); break;
+                    case 3: UpdateLocation(); break;
+                    case 4: UpdatePhone(); break;
+                    case 5: UpdateEmail(); break;
+                        //case 6: DeleteFoodStore();break; 
 
                 }
-            } while (choice != 5);
+            } while (choice != 8);
         }
 
+        //adding customer details
         static void AddFoodStore()
         {
-            FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLogic();
+            FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
             FoodStore foodstore = new FoodStore();
 
             Console.Write("Enter StoreID: ");
             foodstore.StoreID = Console.ReadLine();
-            Console.Write("Enter  StoreName: ");
+            Console.Write("Enter StoreName: ");
             foodstore.StoreName = Console.ReadLine();
             Console.Write("Enter Location: ");
             foodstore.Location = Console.ReadLine();
@@ -57,34 +65,71 @@ namespace Znalytics.Group1.FoodOrdering
             Console.Write("Enter Rating: ");
             foodstore.Rating = Console.ReadLine();
 
-            foodstoreBusinessLayer.Add(foodstore);
-            Console.WriteLine("FoodStore Added Successfully  \n ");
+            foodstoreBusinessLayer.AddFoodStore(foodstore);
+            Console.WriteLine("FoodStore Added Successfully.\n");
         }
 
-        static void Viewfoodstores()
+        static void Viewfoodstore()
         {
             FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
-            List<foodstore> fs = foodstoreBusinessLayer.GetFoodStore();
+            List<FoodStore> fs = foodstoreBusinessLayer.GetFoodStores();
 
-            foreach (foodstore fs in fs)
+            foreach (FoodStore foodstore in fs)
             {
-                Console.WriteLine(fs.StoreID + ", " + fs.StoreName + "," + fs.Location + "," +fs.Phone + "," + fs.Email + "," +fs.Rating+",");
+                Console.WriteLine(foodstore.StoreID + ", " + foodstore.StoreName + "," + foodstore.Location + "," + foodstore.Phone + "," + foodstore.Email + "," + foodstore.Rating);
             }
         }
-        /// <summary>
-        /// this method represents updation of foodstore
-        /// </summary>
-        static void UpdateFoodStore()
+
+        static void UpdateStoreName()
         {
             FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
-            FoodStore fs = new FoodStore();
+            FoodStore foodstore = new FoodStore();
             Console.Write("Enter Existing StoreID: ");
             foodstore.StoreID = Console.ReadLine();
-            Console.Write("Enter New StoreName: ");
+            Console.Write("Enter New CustomerName: ");
             foodstore.StoreName = Console.ReadLine();
-           
-            foodstoreBusinessLayer.UpdateFoodStore(foodstore);
-            Console.WriteLine("FoodStore Updated successfully.\n");
+
+            foodstoreBusinessLayer.UpdateStoreName(foodstore);
+            Console.WriteLine("StoreName Updated successfully.\n");
         }
+        static void UpdateLocation()
+        {
+            FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
+            FoodStore foodstore = new FoodStore();
+            Console.Write("Enter Existing StoreID: ");
+            foodstore.StoreID = Console.ReadLine();
+            Console.Write("Enter New Location: ");
+            foodstore.Location = Console.ReadLine();
+
+            foodstoreBusinessLayer.UpdateLocation(foodstore);
+            Console.WriteLine("Location Updated successfully.\n");
+        }
+        static void UpdatePhone()
+        {
+            FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
+            FoodStore foodstore = new FoodStore();
+            Console.Write("Enter Existing StoreID: ");
+            foodstore.StoreID = Console.ReadLine();
+            Console.Write("Enter New Phone: ");
+            foodstore.Phone = Console.ReadLine();
+
+            foodstoreBusinessLayer.UpdatePhone(foodstore);
+            Console.WriteLine("Phone Updated successfully.\n");
+        }
+        static void UpdateEmail()
+        {
+            FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
+            FoodStore foodstore = new FoodStore();
+            Console.Write("Enter Existing CustomerID: ");
+            foodstore.StoreID = Console.ReadLine();
+            Console.Write("Enter New CustomerAddress: ");
+            foodstore.Email = Console.ReadLine();
+
+            foodstoreBusinessLayer.UpdateEmail(foodstore);
+            Console.WriteLine("Email Updated successfully.\n");
+        }
+
+
+
     }
 }
