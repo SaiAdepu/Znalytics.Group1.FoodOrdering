@@ -1,12 +1,15 @@
-﻿using System;
+﻿//created by Aishwarya
+//Entities
+//Module-FoodStore
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Znalytics.Group1.FoodOrdering.Entities
+namespace FoodOrdering.Entities
 {
     /// <summary>
-    /// Represents FoodStoreDetails
+    /// This Class Represents FoodStoreDetails
     /// </summary>
     public class FoodStore
     {
@@ -18,6 +21,9 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         private string _email;
         private string _rating;
 
+        public FoodStore()
+        {
+        }
         public FoodStore(string storeID, string storeName, string location, string phone, string email, int rating)
         // Constructor that initializes details of FoodStore
         // <param name="storeID">Represents id of the store</param>
@@ -27,22 +33,22 @@ namespace Znalytics.Group1.FoodOrdering.Entities
         // <param name="email">Represents email of the store</param>
         // <param name="rating">Represents id of the store</param>
         {
-            this.StoreID = storeID;
-            this.StoreName = storeName;
-            this.Location = location;
-            this.Phone = phone;
-            this.Email = email;
-            this.Rating = Rating;
+            _storeID = StoreID;
+            _storeName = StoreName;
+            _location = Location;
+            _phone = Phone;
+            _email = Email;
+            _rating = Rating;
 
         }
-        ///<sumary>
-        // StoreID Represents the ID of the FoodStore
-        /// </sumary>
+        ///<summary> 
+        /// StoreID Represents the ID of the FoodStore
+        ///</summary>
         public string StoreID
         {
             set
             {
-                //id of the store should be 5 digits 
+                //id of the store should contain 5 digits 
                 if (value.Length == 5)
                 {
                     _storeID = value;
@@ -58,7 +64,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             }
         }
         /// <summary>
-        // StoreName Represents the Name of the FoodStore
+        /// StoreName Represents the Name of the FoodStore
         /// </summary>
         public string StoreName
         {
@@ -75,9 +81,9 @@ namespace Znalytics.Group1.FoodOrdering.Entities
                 return _storeName;
             }
         }
-        ///<sumary>
-        //Location Represents Location of the foodstore
-        ///</sumary>
+        ///<summary>
+        /// Location Represents Location of the foodstore
+        ///</summary>
         public string Location
         {
             set

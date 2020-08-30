@@ -47,6 +47,7 @@
     <Compile Include="EmployeeBusinessLayer.cs" />
     <Compile Include="FoodStoreBusinessLayer.cs" />
     <Compile Include="IAddFoodItemBusinessLayer.cs" />
+    <Compile Include="IFoodStoreBusinessLayer.cs" />
     <Compile Include="OrdersDetails.Businesslayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

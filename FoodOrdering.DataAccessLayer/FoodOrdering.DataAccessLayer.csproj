@@ -46,6 +46,7 @@
     <Compile Include="foodiddetails.cs" />
     <Compile Include="FoodStoreDataAccess.cs" />
     <Compile Include="ICustomerDataAccess.cs" />
+    <Compile Include="IFoodStoreDataAccess.cs" />
     <Compile Include="IStoreFoodItemsDataAccessLayer.cs" />
     <Compile Include="OredersDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

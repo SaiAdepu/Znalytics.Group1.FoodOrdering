@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FoodOrdering.BusinessLayer;
+using Znalytics.Group1.FoodOrdering.Entities;
 //using FoodOrdering.Entities;
 
 namespace Znalytics.Group1.FoodOrdering
@@ -13,7 +14,7 @@ namespace Znalytics.Group1.FoodOrdering
             Console.ReadKey();
         }
 
-        static void FoodStorePresentation()
+       static void FoodStorePresentation()
         {
             int choice = 0;
             do
@@ -30,9 +31,9 @@ namespace Znalytics.Group1.FoodOrdering
                 switch (choice)
                 {
                     case 1: AddFoodStore(); break;
-                    case 2: ViewFoodStore(); break;
+                    case 2: Viewfoodstores(); break;
                     case 3: UpdateFoodStore(); break;
-                    case 4: DeleteFoodStore(); break;
+                    //case 4: DeleteFoodStore(); break;
 
                 }
             } while (choice != 5);
@@ -40,7 +41,7 @@ namespace Znalytics.Group1.FoodOrdering
 
         static void AddFoodStore()
         {
-            FoodStoreBusinessLogic foodstoreBusinessLogic = new FoodStoreBusinessLogic();
+            FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLogic();
             FoodStore foodstore = new FoodStore();
 
             Console.Write("Enter StoreID: ");
@@ -70,7 +71,9 @@ namespace Znalytics.Group1.FoodOrdering
                 Console.WriteLine(fs.StoreID + ", " + fs.StoreName + "," + fs.Location + "," +fs.Phone + "," + fs.Email + "," +fs.Rating+",");
             }
         }
-
+        /// <summary>
+        /// this method represents updation of foodstore
+        /// </summary>
         static void UpdateFoodStore()
         {
             FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
