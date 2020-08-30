@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using FoodOrdering.DataAccessLayer;
 using FoodOrdering.Entities;
+using Znalytics.Group1.FoodOrdering.Entities;
+
 namespace FoodOrdering.BusinessLayer
 {
     public class FoodStoreBusinessLayer
@@ -10,7 +12,7 @@ namespace FoodOrdering.BusinessLayer
 
         public FoodStoreBusinessLayer()
         {
-            _foodstoreDataAccess = new foodstoresDataAccess();
+            _foodstoreDataAccess = new FoodStoreDataAccess();
         }
 
         //Add
@@ -18,27 +20,58 @@ namespace FoodOrdering.BusinessLayer
         {
             if (foodstore.StoreName != null)
             {
-                _foodstore.DataAccess.Add(foodstore);
+                _foodstoreDataAccess.Add(foodstore);
             }
             else
             {
                 throw new Exception("Store Name can't be null");
             }
         }
-        }
 
-        //GetAll 
-        public List<FoodStore> GetFoodStores()
+        public List<FoodStore> GetFoodStore()
         {
-            return _foodstoreDataAccess.GetFoodStores();
-        }
-
-        public void UpdateFoodStore(FoodStore foodstore)
-        {
-            if (foodstore.StoreName != null)
-            {
-                _foodstoreDataAccess.UpdateFoodStore(foodstore);
-            }
+            throw new NotImplementedException();
         }
     }
+
+    //GetAll 
+    public List<FoodStore> GetFoodStore()
+    {
+        return _foodstoreDataAccess.GetFoodStores();
+    }
+
+    public void UpdateStoreName(FoodStore foodstore)
+    {
+        if (foodstore.StoreName != null)
+        {
+            _foodstoreDataAccess.UpdateStoreName(foodstore);
+        }
+    }
+
+    public void UpdateLocation(FoodStore foodstore)
+
+    {
+        if (foodstore.Location != null)
+        {
+            _foodstoreDataAccess.UpdateLocation(foodstore);
+
+        }
+    }
+    public void UpdatePhone(FoodStore foodstore)
+    {
+        if(foodstore.Phone!=null)
+        {
+            _foodstoreDataAccess.updatePhone(foodstore);
+        }
+    }
+    public void UpdateEmail(FoodStore foodstore)
+    {
+        if(foodstore.Email!=null)
+        {
+            _foodstoreDataAccess.updateEmail(foodstore);
+        }
+    }
+
 }
+
+

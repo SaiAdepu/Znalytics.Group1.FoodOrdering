@@ -8,10 +8,10 @@ namespace FoodOrdering.BusinessLayer
 {
     public class CustomerBusinessLayer:ICustomerBusinessLayer
     {
-        private ICustomerDataAccess _customerDataAccess ;
+        private ICustomerDataAccess _customerDataAccess=null;
         public CustomerBusinessLayer()
         {
-            _customerDataAccess = new CustomerDataAccess();
+           CustomerDataAccess _customerDataAccess = new CustomerDataAccess();
         }
 
         //Add customer
@@ -20,7 +20,7 @@ namespace FoodOrdering.BusinessLayer
             
             if(customer.CustomerName!=null)
             {
-                _customerDataAccess.AddCustomer(customer);
+                _customerDataAccess.AddCustomer((ICustomerDataAccess)customer);
             }
             else
             {
@@ -70,6 +70,11 @@ namespace FoodOrdering.BusinessLayer
             {
                 _customerDataAccess.UpdateCustomerPassword(customer);
             }
+        }
+
+        void ICustomerBusinessLayer.ViewCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
         }
     }
 }
