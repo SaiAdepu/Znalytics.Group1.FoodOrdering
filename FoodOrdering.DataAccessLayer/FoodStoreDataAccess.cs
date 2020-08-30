@@ -9,7 +9,7 @@ using FoodOrdering.Entities;
 namespace FoodOrdering.DataAccessLayer
 {
     //
-    public class FoodStoreDataAccess : IFoodStoreDataAccess
+    public class FoodStoreDataAccess 
     {
         //private fields
 
@@ -18,12 +18,13 @@ namespace FoodOrdering.DataAccessLayer
             set;
             get;
         }
+        List<FoodStore> foodstore = new List<FoodStore>();
         //constructor
         static FoodStoreDataAccess()
         {
             _foodstore = new List<FoodStore>()
    {
-     new FoodStore(){ StoreID="10101",StoreName="Barista",Location="Hyderabad",Phone="9999900000",Email="Barista1@gmail.com",Rating=  4 },
+     new FoodStore(){ StoreID="10101",StoreName="Barista",Location="Hyderabad",Phone="9999900000",Email="Barista1@gmail.com",Rating=  "4" },
      new FoodStore(){ StoreID="10102",StoreName="Coffee Cup",Location="Warangal",Phone="9999955555",Email="coffeecup12@gmail.com",Rating="5"},
      new FoodStore(){ StoreID="10103",StoreName="Bombay House",Location="Hyderabad",Phone="9999944444",Email="house123@gmail.com",Rating="3"}
    };
@@ -35,13 +36,12 @@ namespace FoodOrdering.DataAccessLayer
         }
 
         //Geting all Foodstore Details
-        public void ViewFoodStore(FoodStore foodstore)
+
+        List<FoodStore> GetFoodStore()
         {
-            List<FoodStore> GetFoodStore()
-            {
-                return _foodstore;
-            }
+            return _foodstore;
         }
+        
         //updating StoreName
         public void UpdateStoreName(FoodStore foodstore)
         {

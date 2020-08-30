@@ -2,76 +2,78 @@
 using System.Collections.Generic;
 using FoodOrdering.DataAccessLayer;
 using FoodOrdering.Entities;
-using Znalytics.Group1.FoodOrdering.Entities;
 
 namespace FoodOrdering.BusinessLayer
 {
-    public class FoodStoreBusinessLayer
+    public class FoodStoreBusinessLayer : IFoodStoreBusinessLayer
     {
-        FoodStoreDataAccess _foodstoreDataAccess;
-
+        private IFoodStoreDataAccess _foodstoreDataAccess = null;
         public FoodStoreBusinessLayer()
         {
-            _foodstoreDataAccess = new FoodStoreDataAccess();
+            FoodStoreDataAccess _foodstoreDataAccess = new FoodStoreDataAccess();
         }
 
         //Add
-        public void Add(FoodStore foodstore)
+        public void AddFoodStore(FoodStore foodstore)
         {
             if (foodstore.StoreName != null)
             {
-                _foodstoreDataAccess.Add(foodstore);
+                _foodstoreDataAccess.AddFoodStore((IFoodStoreDataAccess)foodstore);
             }
             else
             {
-                throw new Exception("Store Name can't be null");
+                throw new Exception("Store Name can't be null or empty");
             }
         }
 
-        public List<FoodStore> GetFoodStore()
+        //GetAll 
+        public List<FoodStore> GetFoodStores()
+        {
+            return _foodstoreDataAccess.GetFoodStore();
+
+        }
+
+        public void UpdateStoreName(FoodStore foodstore)
+        {
+            if (foodstore.StoreName != null)
+            {
+                _foodstoreDataAccess.UpdateStoreName(foodstore);
+            }
+        }
+
+        public void UpdateLocation(FoodStore foodstore)
+
+        {
+            if (foodstore.Location != null)
+            {
+                _foodstoreDataAccess.UpdateLocation(foodstore);
+
+            }
+        }
+        public void UpdatePhone(FoodStore foodstore)
+        {
+            if (foodstore.Phone != null)
+            {
+                _foodstoreDataAccess.UpdatePhone(foodstore);
+            }
+        }
+        public void UpdateEmail(FoodStore foodstore)
+        {
+            if (foodstore.Email != null)
+            {
+                _foodstoreDataAccess.UpdateEmail(foodstore);
+            }
+        }
+        void IFoodStoreBusinessLayer.ViewFoodStore(FoodStore foodstore)
         {
             throw new NotImplementedException();
         }
     }
-
-    //GetAll 
-    public List<FoodStore> GetFoodStore()
-    {
-        return _foodstoreDataAccess.GetFoodStores();
-    }
-
-    public void UpdateStoreName(FoodStore foodstore)
-    {
-        if (foodstore.StoreName != null)
-        {
-            _foodstoreDataAccess.UpdateStoreName(foodstore);
-        }
-    }
-
-    public void UpdateLocation(FoodStore foodstore)
-
-    {
-        if (foodstore.Location != null)
-        {
-            _foodstoreDataAccess.UpdateLocation(foodstore);
-
-        }
-    }
-    public void UpdatePhone(FoodStore foodstore)
-    {
-        if(foodstore.Phone!=null)
-        {
-            _foodstoreDataAccess.updatePhone(foodstore);
-        }
-    }
-    public void UpdateEmail(FoodStore foodstore)
-    {
-        if(foodstore.Email!=null)
-        {
-            _foodstoreDataAccess.updateEmail(foodstore);
-        }
-    }
-
 }
+
+
+
+
+    
 
 

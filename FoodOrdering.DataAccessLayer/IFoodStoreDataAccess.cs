@@ -9,14 +9,12 @@ namespace FoodOrdering.DataAccessLayer
 	public interface IFoodStoreDataAccess
 	{
 		void AddFoodStore(IFoodStoreDataAccess foodstore);
-		public List<FoodStore> GetFoodStore()
-		{
+		public List<FoodStore> GetFoodStore();
 
-		}
 		void UpdateStoreID(FoodStore foodstore);
 
 		void UpdateStoreName(FoodStore foodstore);
-		void UpdateEmail(FoodStore foodstore );
+		void UpdateEmail(FoodStore foodstore);
 		void UpdatePhone(FoodStore foodstore);
 		void UpdateLocation(FoodStore foodstore);
 		void UpdateRating(FoodStore foodstore);
