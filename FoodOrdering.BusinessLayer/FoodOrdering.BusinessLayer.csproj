@@ -45,11 +45,13 @@
     <Compile Include="ICustomerBusinessLayer.cs" />
     <Compile Include="CustomerBusinessLayer.cs" />
     <Compile Include="EmployeeBusinessLayer.cs" />
+    <Compile Include="EmployeesBusinessLayer.cs" />
     <Compile Include="FoodStoreBusinessLayer.cs" />
     <Compile Include="IAddFoodItemBusinessLayer.cs" />
     <Compile Include="IFoodStoreBusinessLayer.cs" />
     <Compile Include="OrdersDetails.Businesslayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_employeeDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FoodOrdering.DataAccessLayer\FoodOrdering.DataAccessLayer.csproj">

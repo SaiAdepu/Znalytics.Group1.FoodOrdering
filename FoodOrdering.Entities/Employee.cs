@@ -1,18 +1,18 @@
-﻿using System;
+﻿ using System;
 using System.Text.RegularExpressions;
 
 /// <summary>
 /// project of Foodordering ...Employeelogin module(PAVAN KUMAR) 
 /// </summary>
 
-namespace Znalytics.Group1.FoodOrdering.EmployeeModule.Entities
+namespace FoodOrdering.Entities
 {
     /// <summary>
     /// Represents Food Delivery Employeelogin
     /// </summary>
     public class Employee
-
     {
+        public static int EmployeeIDCount = 0;
         /// <summary>
         /// Represents private fields
         /// </summary>
@@ -22,6 +22,9 @@ namespace Znalytics.Group1.FoodOrdering.EmployeeModule.Entities
         private string _lastName;
         private string _password;
         private string _mobileNumber;
+
+        public static int EmployeIDCount= 0;
+
 
 
         /// <summary>
@@ -69,7 +72,8 @@ namespace Znalytics.Group1.FoodOrdering.EmployeeModule.Entities
                 return _email;
             }
         }
-    }
+       
+   
 
         /// <summary>
         ///************** EmployeeName details***********///
@@ -122,7 +126,7 @@ namespace Znalytics.Group1.FoodOrdering.EmployeeModule.Entities
         {
             set
             {
-          if (new Regex (@ "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$".IsMatch(value)== true)
+          if (new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$").IsMatch(value)== true)
                 
                 {
                     _password = value;
@@ -141,7 +145,7 @@ namespace Znalytics.Group1.FoodOrdering.EmployeeModule.Entities
         /// <summary>
         ///  Gets or sets the <b>Mobile Number</b> enter MObilenumber its consists only Numbers
         /// </summary>
-        public long MobileNumber
+        public string MobileNumber
         {
     set
     {
@@ -159,4 +163,6 @@ namespace Znalytics.Group1.FoodOrdering.EmployeeModule.Entities
                 return _mobileNumber;
             }
         }
- }
+ 
+}
+}
