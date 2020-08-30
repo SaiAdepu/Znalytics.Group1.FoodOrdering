@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace FoodOrdering.DataAccessLayer
 {
-    public class EmployeeDataAccess// : IDataAccessLayer
+    public class EmployeeDataAccess//: IDataAccessLayer
     {
         //store the list of the Employee details
 
