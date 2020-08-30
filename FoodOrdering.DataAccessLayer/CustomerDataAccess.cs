@@ -4,7 +4,7 @@ using FoodOrdering.Entities;
 
 namespace FoodOrdering.DataAccessLayer
 {
-    public class CustomerDataAccess : ICustomerDataAccess
+    public class CustomerDataAccess 
     {
         //private fields
         //stores the list of customers
@@ -14,7 +14,7 @@ namespace FoodOrdering.DataAccessLayer
             get;
         }
 
-        //List<Customer> customer = new List<Customer>();
+        List<Customer> customer = new List<Customer>();
 
         //constructor
         static CustomerDataAccess()
@@ -33,7 +33,7 @@ namespace FoodOrdering.DataAccessLayer
         }
 
         //Get all customers
-        public void Viewcustomers(Customer customer);
+        //public void Viewcustomers(Customer customer);
         
         List<Customer> GetCustomers()
         { 
