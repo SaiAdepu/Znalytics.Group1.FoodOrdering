@@ -1,10 +1,12 @@
+
 ﻿using  System;
+using System.Collections.Generic;
 using FoodOrdering.DataAccessLayer;
 using FoodOrdering.Entities;
 
 namespace FoodOrdering.BusinessLayer
 {
-    public class EmployeeBusinessLayer//:IEmployeeBusinessLayer ///Interface
+    public class EmployeeBusinessLayer // : IEmployeeBusinessLayer ///Interface
     {
         /// <summary>
         /// create a referaance variable of EmployeeBusinessLayer class
@@ -27,40 +29,41 @@ namespace FoodOrdering.BusinessLayer
                     {
                         if (employees.Password.Length >= 6 && employees.Password.Length <= 15)
                         {
-                            if (employees.MobileNumber.Length < 9 && employees.MobileNumber.Length > 11)
+                            if (employees.MobileNumber != null)
                             {
                             }
                             else
                             {
-                                throw new Exception("entern minimum 4 characters please try again")
-
-                                }
-                        }
-
-                        else
-                        {
-                            throw new Exception("entern minimum 4 characters please try again")
+                                throw new Exception("entern mobile number minimum 10 letters please try again");
                             }
                         }
-                 else
+                        else
                         {
-                            throw new Exception("entern minimum 6 characters please try again")
-                    }
-                    }
-                    else
-                    {
-                        throw new Exception("entern minimum 6 letters please try again")
-                      }
-                    }
-                    else
-                    {
-                        throw new Exception("entern minimum 10 letters please try again")
-                     }
+                            throw new Exception("enter password must be minimum 6 characters please try again");
+                        }
                     }
 
-                         
+                    else
+                    {
+                        throw new Exception("entern email must be minimum 6 characters please try again");
+                    }
+                }
+                else
+                {
+                    throw new Exception("enter Last name must be minimum 6 characters please try again");
+                }
+            }
+            else
+            {
+                throw new Exception("enter First name minimum 6 letters please try again");
+            }
+        }
+
+
+
+
         ///update the empoyee id
-        public bool UpdateEmployees(int EmployeeID)
+        public int UpdateEmployees(int EmployeeID)
         {
             try
             {
@@ -72,16 +75,18 @@ namespace FoodOrdering.BusinessLayer
             }
         }
         ///Delete the employeeID
-        public void DeleteEmployees(int deleteEmployeeID)
+        public void DeleteEmployees(int DeleteEmployeeID)
         {
             try
             {
-                return _employeeDataAccess.DeleteEmployees(deleteEmployeeID);
+              //  return _employeeDataAccess//.DeleteEmployees(DeleteEmployeeID);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+        
 
-    }    
+    }
+}

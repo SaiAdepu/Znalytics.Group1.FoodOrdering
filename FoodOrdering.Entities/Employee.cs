@@ -126,7 +126,7 @@ namespace FoodOrdering.Entities
         {
             set
             {
-          if (new Regex (@ "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$").IsMatch(value)== true)
+          if (new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$").IsMatch(value)== true)
                 
                 {
                     _password = value;

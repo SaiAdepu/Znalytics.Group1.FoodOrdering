@@ -50,6 +50,7 @@
     <Compile Include="IAddFoodItemBusinessLayer.cs" />
     <Compile Include="OrdersDetails.Businesslayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_employeeDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FoodOrdering.DataAccessLayer\FoodOrdering.DataAccessLayer.csproj">

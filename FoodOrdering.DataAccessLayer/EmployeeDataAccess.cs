@@ -1,9 +1,10 @@
 ﻿using FoodOrdering.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace FoodOrdering.DataAccessLayer
 {
-    public class EmployeeDataAccess //: //IDataAccessLayer
+    public class EmployeeDataAccess// : IDataAccessLayer
     {
         //store the list of the Employee details
 
@@ -18,55 +19,66 @@ namespace FoodOrdering.DataAccessLayer
             _employees = new List<Employee>()
 
             {
-        new Employee(){ EmployeeID  ="1001", Email ="Shiva@gamil.com",FirstName ="shiva",LastName ="kumar",Password ="9876",MobileNumber ="9876543217"}
-        new Employee (){ EmployeeID = "1002", Email = "abcde@gamil.com",FirstName = "oppooo",LastName = "loto",Password = "1234",MobileNumber = "8976543217"}
-        new Employee (){ EmployeeID = "1003", Email = "ghjk@gamil.com",FirstName = "vivotry",LastName = "lava",Password = "6543,MobileNumber = "7576543217"} 
+        new Employee(){ EmployeeID  = 1, Email ="Shiva@gamil.com",FirstName ="shiva",LastName ="kumar",Password ="9876",MobileNumber ="9876543217"},
+        new Employee (){ EmployeeID = 2, Email = "abcde@gamil.com",FirstName = "oppooo",LastName = "loto",Password = "1234",MobileNumber = "8976543217"},
+        new Employee (){ EmployeeID = 3, Email = "ghjk@gamil.com",FirstName = "vivotry",LastName = "lava",Password = "6543",MobileNumber = "7576543217"},
 
     };
 
             /// Adding employee  from the list////////
 
-            public void AddEmployees(Employee employee)
+            void AddEmployees(Employee employee)
             {
-         //Address Employee Details to List//////////
+                //Address Employee Details to List//////////
                 _employees.Add(employee);
-                ListofEmployee();
+                // ListofEmployee();
             }
 
 
             /// Deleting Employee from the List//////////
-            public void DeleteEmployees(Employee employee)
+            void DeleteEmployees(Employee employee)
             {
-                _employees.RemoveAll(temp => temp.EmployeeID == employee.EmployeeID && temp.FirstName == firstname.FirstName)
-                   LIstofEmployee();
-            } 
+                _employees.RemoveAll(temp => temp.EmployeeID == employee.EmployeeID && temp.FirstName == employee.FirstName);
+                //  LIstofEmployee();
+            }
 
-         ////   //Get all Employee Details from the list/////
-            public List<Employee> GetEmployees()
+            ////   //Get all Employee Details from the list/////
+            List<Employee> GetEmployees()
             {
                 return _employees;
             }
 
-        //////   // update the employeedetails  based on the employeeid and Name///
-            public void UpdateEmployees(Employee employee)
+            //////   // update the employeedetails  based on the employeeid and Name///
+            void UpdateEmployees(Employee employee)
             {
-               var id =_employees.Find(temp=>temp.EmployeeID == employee.EmployeeID && temp.Email == FirstName == firstname.FirstName)
-           }
-            try
-            {
-                if (id != null)
+                var id = _employees.Find(temp => temp.EmployeeID == employee.EmployeeID && temp.FirstName == employee.FirstName);
+
+                try
                 {
-                    id.Employee = _employees.Employee;
-                    LIstofEmployee();
-                }
-                else
-                {
-                    throw new EmployeeException("Entered values employeeId and Name is Invalid");
-                }
+                    if (id != null)
+                    {
+                        for (int i = 0; i < _employees.Count; i++) {
+                            if (_employees[i] == id) {
+                                _employees[i] = employee;
+                            }
+                        }
+                    }
+                    else
+                    {
+                       // throw new EmployeeException("Entered values employeeId and Name is Invalid");
+                    }
 
                 }
-            catch
-            {
-                throw
+                catch
+                {
+                    // throw
+                }
             }
-            }
+        }
+
+        public int UpdateEmployees(int employeeID)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

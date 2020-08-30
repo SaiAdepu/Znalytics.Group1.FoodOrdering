@@ -22,21 +22,21 @@ namespace FoodOrdering.PresentationLayer
             do
             {
                 //displays employee menu
-                Console.WriteLine("Employee MENU");
+                Console.WriteLine("Employee Detail");
                 Console.WriteLine("1. Add Employee");
-                Console.WriteLine("2. View Employee");
-                Console.WriteLine("3. Update Employee");
-                Console.WriteLine("4. Delete Employee");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("2. Update Employee");
+                Console.WriteLine("3. Delete Employee");
+                Console.WriteLine("4. Exit");
                 Console.Write("Enter choice: ");
                 choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
                 {
-                    case 1:  AddEmployee(); break;
-                   // case 2:
-                   // case 3:  UpdateEmployee(); break;
-                  //  case 4:DeleteEmployee"(); break;
+                    case 1: AddEmployee(); break;
+
+                    case 2: UpdateEmployee(); break;
+                   // case 3: DeleteEmployee(); break;
+                   // case 4: Exit(); break;
 
                 }
             } while (choice != 5);
@@ -45,7 +45,7 @@ namespace FoodOrdering.PresentationLayer
         static void AddEmployee()
         {
             EmployeeBusinessLayer _employeeBusinessLogic = new EmployeeBusinessLayer();
-   ///////creating objects for employee ///////////////////
+            ///////creating objects for employee ///////////////////
             Employee f = new Employee();
 
             Console.WriteLine("WEL COME TO Znalytics FOOD ORDERING EMPLOYEE LOGIN PAGE");
@@ -54,8 +54,8 @@ namespace FoodOrdering.PresentationLayer
 
             f.EmployeeID = ++Employee.EmployeeIDCount;
 
- //reading employee emailid enter the value from the key board//////
-        Console.WriteLine("enter the email");
+            //reading employee emailid enter the value from the key board//////
+            Console.WriteLine("enter the email");
             f.Email = (System.Console.ReadLine());
             System.Console.WriteLine(f.Email);
 
@@ -85,7 +85,35 @@ namespace FoodOrdering.PresentationLayer
             _employeeBusinessLogic.AddEmployees(f);
             Console.WriteLine("employee Added Successfully  \n ");
 
-
         }
+        static void UpdateEmployee()
+        {
+            EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+            Employee f = new Employee();
+            Console.Write("Enter Existing EmployeeID: ");
+            f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));
+
+
+           // EmployeeBusinessLayer.UpdateEmployees(f);
+            //Console.WriteLine("CustomerName Updated successfully.\n");
+        }
+
     }
-}
+
+   // static void DeleteEmployee()
+   // {
+     ///   EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+     ///   Employee f = new Employee();
+      ///  Console.Write("Enter Existing EmployeeID: ");
+      // f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));
+    }
+
+     ///   static void Exit()
+      ///  {
+     //       EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+      //      Employee f = new Employee();
+   //         Console.Write("Enter Existing EmployeeID: ");
+     //       f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));K
+    //    }
+   // }
+
