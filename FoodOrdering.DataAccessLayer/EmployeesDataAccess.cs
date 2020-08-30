@@ -8,20 +8,28 @@ using System.Threading.Tasks;
 
 namespace FoodOrdering.DataAccessLayer
 {
-    public interface IDataAccessLayer
+    public interface IEmployeeDataAccessLayer
     {
-        ///ADDING EMPLOYEE DETAILS//////
+                                         ///ADDING EMPLOYEE DETAILS//////
        
      void AddEmployees(Employee employees);
 
-        ///updateing the employee details/////
+                                   ///updateing the employee details/////
        
-        List<Employee> GetEmployee();
+      public  List<Employee> GetEmployee();
 
-        Employee GetEmployees(int employeeID);
+       public  Employee GetEmployeeByID(int employeeID);
+
+        public List<Employee> GetEmployeeByName(string employeeName);
+
+        void DeleteEmployees(Employee employee);
+        List<Employee> GetEmployees();
+
+        void UpdateEmployees(Employee employee);
+       
 
 
-      //// List<Employee> GetEmployees();
+
 
 
     }

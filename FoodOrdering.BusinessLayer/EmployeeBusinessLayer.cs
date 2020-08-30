@@ -17,13 +17,16 @@ namespace FoodOrdering.BusinessLayer
         {
             _employeeDataAccess = new EmployeeDataAccess();
         }
-
+        /// <summary>
+        /// add EMPLOYEES
+        /// </summary>
+        /// <param name="employees"></param>
         public void AddEmployees(Employee employees)
         {
-            if (employees.FirstName.Length >= 4 && employees.FirstName.Length <= 20)
-            {
+            if (employees.FirstName!= null )
 
-                if (employees.LastName.Length >= 4 && employees.LastName.Length <= 20)
+            { 
+                if (employees.LastName!=null)
                 {
                     if (employees.Email.Length >= 6 && employees.Email.Length <= 40)
                     {
