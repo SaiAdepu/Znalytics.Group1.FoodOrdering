@@ -12,7 +12,7 @@ namespace FoodOrdering.Entities
     /// This Class Represents FoodStoreDetails
     /// </summary>
     public class FoodStore
-    {
+    { 
         //private fields
         private string _storeID;
         private string _storeName;
