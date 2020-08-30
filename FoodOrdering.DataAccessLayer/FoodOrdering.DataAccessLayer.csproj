@@ -10,6 +10,7 @@
     <RootNamespace>FoodOrdering.DataAccessLayer</RootNamespace>
     <AssemblyName>FoodOrdering.DataAccessLayer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -43,8 +44,11 @@
   <ItemGroup>
     <Compile Include="CustomerDataAccess.cs" />
     <Compile Include="EmployeeDataAccess.cs" />
+    <Compile Include="EmployeesDataAccess.cs" />
     <Compile Include="foodiddetails.cs" />
     <Compile Include="FoodStoreDataAccess.cs" />
+    <Compile Include="ICustomerDataAccess.cs" />
+    <Compile Include="IFoodStoreDataAccess.cs" />
     <Compile Include="IStoreFoodItemsDataAccessLayer.cs" />
     <Compile Include="OredersDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

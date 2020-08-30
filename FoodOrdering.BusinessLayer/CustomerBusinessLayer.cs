@@ -1,33 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Znalytics.Grp1.FoodOrdering.DataAccessLayer;
-using Znalytics.Group1.FoodOrdering.Entities;
+using FoodOrdering.DataAccessLayer;
+using FoodOrdering.Entities;
 
-namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
+namespace FoodOrdering.BusinessLayer
 {
-    public class CustomerBusinessLayer : ICustomerBusinessLayer
+    public class CustomerBusinessLayer:ICustomerBusinessLayer
     {
-        private ICustomerDataAcces _customerDataAccess = null;
+        private ICustomerDataAccess _customerDataAccess=null;
         public CustomerBusinessLayer()
         {
-            _customerDataAccess = new customersDataAccess();
+           CustomerDataAccess _customerDataAccess = new CustomerDataAccess();
         }
 
         //Add customer
         public void AddCustomer(Customer customer)
         {
-            if (!string.IsNullOrEmpty(value))
+            
+            if(customer.CustomerName!=null)
             {
-                _customerDataAccess.Add(customer);
+                _customerDataAccess.AddCustomer((ICustomerDataAccess)customer);
             }
             else
             {
                 throw new Exception("Customer Name can't be null or empty");
             }
         }
-
-
+       
+        
 
         //GetAll Customers
         public List<Customer> GetCustomers()
@@ -65,10 +66,15 @@ namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
         }
         public void UpdateCustomerPassword(Customer customer)
         {
-            if (customer.CustomerPasssword != null)
+            if (customer.CustomerPassword != null)
             {
                 _customerDataAccess.UpdateCustomerPassword(customer);
             }
+        }
+
+        void ICustomerBusinessLayer.ViewCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
         }
     }
 }

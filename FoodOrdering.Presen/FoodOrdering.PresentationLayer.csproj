@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="CooldrinksMenuPresentationLayer.cs" />
     <Compile Include="CustomerPresentation.cs" />
-    <Compile Include="employeePrentation.cs" />
+    <Compile Include="EmployeePrentation.cs" />
     <Compile Include="FoodStorePresentation.cs" />
     <Compile Include="FoodTypeMenuPresentationLayer.cs" />
     <Compile Include="IcecreamPresentationLayer.cs" />

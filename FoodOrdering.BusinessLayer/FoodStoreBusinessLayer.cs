@@ -1,44 +1,79 @@
 ﻿using System;
 using System.Collections.Generic;
-using Znalytics.Grp1.FoodOrdering.DataAccessLayer;
-using Znalytics.Group1.FoodOrdering.Entities;
-namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
-{
-    public class FoodStoreBusinessLayer
-    {
-        FoodStoreDataAccess _foodstoreDataAccess;
+using FoodOrdering.DataAccessLayer;
+using FoodOrdering.Entities;
 
+namespace FoodOrdering.BusinessLayer
+{
+    public class FoodStoreBusinessLayer : IFoodStoreBusinessLayer
+    {
+        private IFoodStoreDataAccess _foodstoreDataAccess = null;
         public FoodStoreBusinessLayer()
         {
-            _foodstoreDataAccess = new foodstoresDataAccess();
+            FoodStoreDataAccess _foodstoreDataAccess = new FoodStoreDataAccess();
         }
 
         //Add
-        public void Add(FoodStore foodstore)
+        public void AddFoodStore(FoodStore foodstore)
         {
             if (foodstore.StoreName != null)
             {
-                _foodstores.DataAccess.Add(foodstore);
+                _foodstoreDataAccess.AddFoodStore((IFoodStoreDataAccess)foodstore);
             }
             else
             {
-                throw new Exception("Store Name can't be null");
+                throw new Exception("Store Name can't be null or empty");
             }
         }
-    }
 
-    //GetAll 
-    public List<FoodStore> GetFoodStores()
-    {
-        return _foodstoreDataAccess.GetFoodStores();
-    }
-
-    public void UpdateFoodStore(FoodStore foodstore)
-    {
-        if (foodstore.StoreName != null)
+        //GetAll 
+        public List<FoodStore> GetFoodStores()
         {
-            _foodstoreDataAccess.UpdateFoodStore(foodstore);
+            return _foodstoreDataAccess.GetFoodStore();
+
+        }
+
+        public void UpdateStoreName(FoodStore foodstore)
+        {
+            if (foodstore.StoreName != null)
+            {
+                _foodstoreDataAccess.UpdateStoreName(foodstore);
+            }
+        }
+
+        public void UpdateLocation(FoodStore foodstore)
+
+        {
+            if (foodstore.Location != null)
+            {
+                _foodstoreDataAccess.UpdateLocation(foodstore);
+
+            }
+        }
+        public void UpdatePhone(FoodStore foodstore)
+        {
+            if (foodstore.Phone != null)
+            {
+                _foodstoreDataAccess.UpdatePhone(foodstore);
+            }
+        }
+        public void UpdateEmail(FoodStore foodstore)
+        {
+            if (foodstore.Email != null)
+            {
+                _foodstoreDataAccess.UpdateEmail(foodstore);
+            }
+        }
+        void IFoodStoreBusinessLayer.ViewFoodStore(FoodStore foodstore)
+        {
+            throw new NotImplementedException();
         }
     }
 }
-}
+
+
+
+
+    
+
+

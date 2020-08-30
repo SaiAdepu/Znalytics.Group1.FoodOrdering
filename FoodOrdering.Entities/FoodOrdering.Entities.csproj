@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="customer.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeException.cs" />
     <Compile Include="FoodItem.cs" />
-    <Compile Include="foodstore.cs" />
+    <Compile Include="FoodStore.cs" />
+    <Compile Include="FoodStoreException.cs" />
     <Compile Include="ItemComparer.cs" />
     <Compile Include="Orders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
