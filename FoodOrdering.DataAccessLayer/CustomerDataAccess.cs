@@ -4,7 +4,7 @@ using Znalytics.Group1.FoodOrdering.Entities;
 
 namespace Znalytics.Grp1.FoodOrdering.DataAccessLayer
 {
-    public class CustomerDataAccess:ICustomerDataAccess
+    public class CustomerDataAccess : ICustomerDataAccess
     {
         //private fields
         //stores the list of customers

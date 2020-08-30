@@ -12,7 +12,7 @@ namespace FoodOrdering.BusinessLayer
         void AddFood(FoodItem fi);
         bool validateFoodName(FoodItem fi);
         void RemoveFoodItem(FoodItem fi);
-        void UpdateFoofItem(FoodItem fi);
+        void UpdateFoodItem(FoodItem fi);
         List<FoodItem> GetFoodItemBusinessLayer();
     }
 }

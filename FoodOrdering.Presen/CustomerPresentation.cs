@@ -33,8 +33,8 @@ namespace Znalytics.Group1.FoodOrdering
                     case 1: AddCustomer(); break;
                     case 2: ViewCustomer(); break;
                     case 3: UpdateCustomer(); break;
-                    case 4: DeleteCustomer();break;
-           
+                    case 4: DeleteCustomer(); break;
+
                 }
             } while (choice != 5);
         }
@@ -43,7 +43,7 @@ namespace Znalytics.Group1.FoodOrdering
         static void AddCustomer()
         {
             CustomerBusinessLogic customerBusinessLogic = new customerBusinessLogic();
-            Customer customer = new Customer ();
+            Customer customer = new Customer();
 
             Console.Write("Enter CustomerName: ");
             customer.CustomerName = Console.ReadLine();
@@ -69,7 +69,7 @@ namespace Znalytics.Group1.FoodOrdering
 
             foreach (Customer cust in custs)
             {
-                Console.WriteLine(cust.CustomerName + ", " + cust.CustomerId + "," + cust.CustomerEmail + "," +cust.CustomerPhoneNumber + "," +cust.CustomerAddress + "," + cust.CustomerPassword);
+                Console.WriteLine(cust.CustomerName + ", " + cust.CustomerId + "," + cust.CustomerEmail + "," + cust.CustomerPhoneNumber + "," + cust.CustomerAddress + "," + cust.CustomerPassword);
             }
         }
 

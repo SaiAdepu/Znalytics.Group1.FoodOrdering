@@ -25,20 +25,20 @@ namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
                 throw new Exception("Store Name can't be null");
             }
         }
-        }
+    }
 
-        //GetAll 
-        public List<FoodStore> GetFoodStores()
-        {
-            return _foodstoreDataAccess.GetFoodStores();
-        }
+    //GetAll 
+    public List<FoodStore> GetFoodStores()
+    {
+        return _foodstoreDataAccess.GetFoodStores();
+    }
 
-        public void UpdateFoodStore(FoodStore foodstore)
+    public void UpdateFoodStore(FoodStore foodstore)
+    {
+        if (foodstore.StoreName != null)
         {
-            if (foodstore.StoreName != null)
-            {
-                _foodstoreDataAccess.UpdateFoodStore(foodstore);
-            }
+            _foodstoreDataAccess.UpdateFoodStore(foodstore);
         }
     }
+}
 }

@@ -37,16 +37,16 @@ namespace Znaltyics.Grp1.FoodOrdering.EmployeeModule.DataAccessLayer
             {
                 _employees.RemoveAll(temp => temp.EmployeeID == employee.EmployeeID && temp.Email == email.Email)
                    LIstofEmployee();
-            } 
+            }
             //Get all Employee Details from the list/////
             public List<Employee> GetEmployee()
             {
                 return _employees;
             }
-           // update the employeedetails  based on the employeeid and email///
+            // update the employeedetails  based on the employeeid and email///
             public void UpdateEmployee(Employee employee)
             {
-               var id =_employees.Find(temp=>temp.EmployeeID == employee.EmployeeID && temp.Email == email.Email)
+                var id = _employees.Find(temp => temp.EmployeeID == employee.EmployeeID && temp.Email == email.Email)
            }
             try
             {
@@ -60,9 +60,9 @@ namespace Znaltyics.Grp1.FoodOrdering.EmployeeModule.DataAccessLayer
                     throw new EmployeeException("Entered values employeeId and Emails is Invalid");
                 }
 
-                }
+            }
             catch
             {
                 throw
             }
-            }
+        }

@@ -6,7 +6,7 @@ using Znalytics.Group1.FoodOrdering.Entities;
 
 namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
 {
-    public class CustomerBusinessLayer:ICustomerBusinessLayer
+    public class CustomerBusinessLayer : ICustomerBusinessLayer
     {
         private ICustomerDataAcces _customerDataAccess = null;
         public CustomerBusinessLayer()
@@ -26,8 +26,8 @@ namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
                 throw new Exception("Customer Name can't be null or empty");
             }
         }
-       
-        
+
+
 
         //GetAll Customers
         public List<Customer> GetCustomers()
@@ -65,7 +65,7 @@ namespace Znalytics.Grp1.FoodOrdering.BusinessLayer
         }
         public void UpdateCustomerPassword(Customer customer)
         {
-            if (customer.CustomerPasssword!= null)
+            if (customer.CustomerPasssword != null)
             {
                 _customerDataAccess.UpdateCustomerPassword(customer);
             }

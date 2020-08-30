@@ -71,69 +71,69 @@ namespace Znalytics.Group1.FoodOrdering.EmployeeModule.Entities
         }
     }
 
-        /// <summary>
-        ///************** EmployeeName details***********///
-        /// </summary>
-        ///   Gets or sets the <b>FirstName</b> enter first name its consists only characters
-        public string FirstName
+    /// <summary>
+    ///************** EmployeeName details***********///
+    /// </summary>
+    ///   Gets or sets the <b>FirstName</b> enter first name its consists only characters
+    public string FirstName
+    {
+        set
         {
-            set
+            if (value.Length >= 4 && value.Length <= 20)
             {
-                if (value.Length>= 4 && value.Length <= 20)
-                {
-                    _firstName = value;
-                }
-                else
-                {
-                    throw new Exception("entern minimum 4 characters please try again");
-                }
+                _firstName = value;
             }
-            get
+            else
             {
-                return _firstName;//returing the First name
+                throw new Exception("entern minimum 4 characters please try again");
             }
         }
-        /// <summary>
-        ///  Gets or sets the <b>LastName</b> enter  Last name its consists only characters
-        /// </summary>
-        public string LastName
+        get
         {
-            set
+            return _firstName;//returing the First name
+        }
+    }
+    /// <summary>
+    ///  Gets or sets the <b>LastName</b> enter  Last name its consists only characters
+    /// </summary>
+    public string LastName
+    {
+        set
+        {
+            if (value.Length >= 4 && value.Length <= 20)
             {
-                if (value.Length >= 4 && value.Length <= 20)
-                {
-                    _lastName = value;
-                }
-                else
-                {
-                    throw new Exception("entern minimum 4 characters please try again");
-                }
+                _lastName = value;
             }
-            get
+            else
             {
-                return _lastName;
+                throw new Exception("entern minimum 4 characters please try again");
             }
         }
-        ///    ****password details***** ///
-        /// <summary>
-        ///  Gets or sets the <b>Password</b> enter password its consists atleast one captal letters characters  minimum 6 characters
-        /// </summary>
-        public string Password
+        get
         {
-            set
-            {
-          if (new Regex (@ "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$".IsMatch(value)== true)
-                
-                {
-                    _password = value;
-                }
-                else
-                {
-                    throw new Exception("enter Minimum 6 characters and One Capital Letters must ");
-                }
-            }
+            return _lastName;
+        }
+    }
+    ///    ****password details***** ///
+    /// <summary>
+    ///  Gets or sets the <b>Password</b> enter password its consists atleast one captal letters characters  minimum 6 characters
+    /// </summary>
+    public string Password
+    {
+        set
+        {
+            if (new Regex(@ "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$".IsMatch(value) == true)
 
-            get
+            {
+                _password = value;
+        }
+                else
+                {
+            throw new Exception("enter Minimum 6 characters and One Capital Letters must ");
+        }
+    }
+
+    get
             {
                 return _password;
             }
@@ -142,7 +142,7 @@ namespace Znalytics.Group1.FoodOrdering.EmployeeModule.Entities
         ///  Gets or sets the <b>Mobile Number</b> enter MObilenumber its consists only Numbers
         /// </summary>
         public long MobileNumber
-        {
+{
     set
     {
         if (new Regex(@"(\+[0-9]{2}|\+[0-9]{2}\(0\)|\(\+[0-9]{2}\)\(0\)|00[0-9]{2}|0)([0-9]{9}|[0-9\-\s]{9,18})$").IsMatch(value) == true)
@@ -154,9 +154,9 @@ namespace Znalytics.Group1.FoodOrdering.EmployeeModule.Entities
             throw new Exception("enter Minimum 10 numbers no spaces ,no symbols");
         }
     }
-            get
-            {
-                return _mobileNumber;
-            }
-        }
+    get
+    {
+        return _mobileNumber;
+    }
+}
  }

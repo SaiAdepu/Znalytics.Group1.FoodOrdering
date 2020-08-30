@@ -67,7 +67,7 @@ namespace Znalytics.Group1.FoodOrdering
 
             foreach (foodstore fs in fs)
             {
-                Console.WriteLine(fs.StoreID + ", " + fs.StoreName + "," + fs.Location + "," +fs.Phone + "," + fs.Email + "," +fs.Rating+",");
+                Console.WriteLine(fs.StoreID + ", " + fs.StoreName + "," + fs.Location + "," + fs.Phone + "," + fs.Email + "," + fs.Rating + ",");
             }
         }
 
@@ -79,7 +79,7 @@ namespace Znalytics.Group1.FoodOrdering
             foodstore.StoreID = Console.ReadLine();
             Console.Write("Enter New StoreName: ");
             foodstore.StoreName = Console.ReadLine();
-           
+
             foodstoreBusinessLayer.UpdateFoodStore(foodstore);
             Console.WriteLine("FoodStore Updated successfully.\n");
         }

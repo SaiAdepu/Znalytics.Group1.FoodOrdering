@@ -33,7 +33,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             set
             {
                 //validating customername
-                if (Regex= "^[a-zA-Z\s]+$".IsMatch(value))
+                if (Regex = "^[a-zA-Z\s]+$".IsMatch(value))
                 {
                     _customerName = value;
                 }
@@ -71,7 +71,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             //validating customerEmail
             set
             {
-                if(Regex= "^([a - zA - Z0 - 9_\-\.] +)@((\[[0 - 9]{ 1,3}\.[0 - 9]{ 1,3}\.[0 - 9]{ 1,3}\.)| (([a - zA - Z0 - 9\-] +\.)+))([a - zA - Z]{ 2,4}|[0 - 9]{ 1,3})(\]?)$".IsMatch(value)
+                if (Regex = "^([a - zA - Z0 - 9_\-\.] +)@((\[[0 - 9]{ 1,3}\.[0 - 9]{ 1,3}\.[0 - 9]{ 1,3}\.)| (([a - zA - Z0 - 9\-] +\.)+))([a - zA - Z]{ 2,4}|[0 - 9]{ 1,3})(\]?)$".IsMatch(value)
                 {
                     _customerEmail = value;
                 }
@@ -90,7 +90,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             //validating customerphonenumber
             set
             {
-                if(Regex= "^((\+)?(\d{2}[-]))?(\d{10}){1}?$".IsMatch(value))
+                if (Regex = "^((\+)?(\d{2}[-]))?(\d{10}){1}?$".IsMatch(value))
                 {
                     _customerPhoneNumber = value;
                 }
@@ -124,7 +124,7 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             //validating customerpassword
             set
             {
-                if (Regex= "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$".IsMatch(value))
+                if (Regex = "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$".IsMatch(value))
                 {
                     _customerName = value;
                 }
@@ -139,6 +139,6 @@ namespace Znalytics.Group1.FoodOrdering.Entities
             }
         }
     }
-    
+
 }
 }
