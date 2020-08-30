@@ -11,7 +11,7 @@ namespace FoodOrdering.BusinessLayer
         private ICustomerDataAccess _customerDataAccess=null;
         public CustomerBusinessLayer()
         {
-            _customerDataAccess = new CustomerDataAccess();
+           CustomerDataAccess _customerDataAccess = new CustomerDataAccess();
         }
 
         //Add customer
