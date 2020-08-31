@@ -1,13 +1,16 @@
 ﻿using System;
 
-namespace FoodOrdering.Entities;
+namespace FoodOrdering.Entities
 {
     /// <summary>
     /// Stores the data of One Food Item
     /// </summary>
     public class FoodItem
     {
-        public static int foodIdCount = 4;
+        public static int CoolDrinkIdCount = 1;
+        public static int IcreamIdCount = 101;
+        public static int VegIdCount = 201;
+        public static int NonVegIdCount = 301;
         private int _foodId;
         private string _foodType;
         private string _foodName;
@@ -18,10 +21,10 @@ namespace FoodOrdering.Entities;
         {
             set
             {
-                if (value != 0)
+                if (value >= 1)
                     _foodId = value;
                 else
-                    throw new Exception("Invalid Id");
+                    throw new Exception("\n****** Invalid Id ******\n");
             }
             get
             {
@@ -33,7 +36,7 @@ namespace FoodOrdering.Entities;
             set
             {
                 if (value.Equals(""))
-                    throw new Exception("****** Invalid Food Type ******");
+                    throw new Exception("\n****** Invalid Food Type ******\n");
                 else
                 _foodType = value;
             }
@@ -48,7 +51,7 @@ namespace FoodOrdering.Entities;
             {
                
                 if (value.Equals(""))
-                    throw new Exception("****** Invalid Food Name ******"); 
+                    throw new Exception("\n****** Invalid Food Name ******\n"); 
                 else
                     _foodName = value;
 
@@ -65,7 +68,7 @@ namespace FoodOrdering.Entities;
                 if (value >= 0)
                     _price = value;
                 else
-                    throw new Exception("****** Invalid price ******");
+                    throw new Exception("\n****** Invalid price ******\n");
             }
             get
             {
@@ -76,10 +79,10 @@ namespace FoodOrdering.Entities;
         {
             set
             {
-                if (value >= 0)
+                if (value >= 1)
                     _quantity = value;
                 else
-                    throw new Exception("****** Invalid Quantity ******");
+                    throw new Exception("\n****** Invalid Quantity ******\n");
             }
             get
             {

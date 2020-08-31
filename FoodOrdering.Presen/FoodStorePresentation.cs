@@ -62,8 +62,6 @@ namespace FoodOrdering.PresentationLayer
             foodstore.Phone = Console.ReadLine();
             Console.Write("Enter Email: ");
             foodstore.Email = Console.ReadLine();
-            Console.Write("Enter Rating: ");
-            foodstore.Rating = Console.ReadLine();
 
             foodstoreBusinessLayer.AddFoodStore(foodstore);
             Console.WriteLine("FoodStore Added Successfully.\n");
@@ -76,7 +74,7 @@ namespace FoodOrdering.PresentationLayer
 
             foreach (FoodStore foodstore in fs)
             {
-                Console.WriteLine(foodstore.StoreID + ", " + foodstore.StoreName + "," + foodstore.Location + "," + foodstore.Phone + "," + foodstore.Email + "," + foodstore.Rating);
+                Console.WriteLine(foodstore.StoreID + ", " + foodstore.StoreName + "," + foodstore.Location + "," + foodstore.Phone + "," + foodstore.Email + "," );
             }
         }
 

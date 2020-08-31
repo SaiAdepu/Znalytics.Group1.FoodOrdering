@@ -24,25 +24,25 @@ namespace FoodOrdering.BusinessLayer
 
             if (validateFoodName(fi))
             {
-                if (fi.Price > 0)
+                if (fi.Price >=1)
                 {
-                    if (fi.Quantity > 0)
+                    if (fi.Quantity >=1)
                     {
                         sfi.AddFoodItem(fi);
                     }
                     else
                     {
-                        throw new System.Exception("Invalid quantity");
+                        throw new System.Exception("\n****** Invalid quantity ******\n");
                     }
                 }
                 else
                 {
-                    throw new System.Exception("Invalid price");
+                    throw new System.Exception("\n****** Invalid price ******\n");
                 }
             }
             else
             {
-                throw new System.Exception("Food Name Already present");
+                throw new System.Exception("\n****** Food Name Already present ******\n");
             }
 
 
@@ -58,7 +58,7 @@ namespace FoodOrdering.BusinessLayer
             List<FoodItem> f = GetFoodItemBusinessLayer();
             foreach (var item in f)
             {
-                if (item.FoodName.Equals(fi.FoodName))
+                if (item.FoodName.ToLower().Equals(fi.FoodName.ToLower()))
                 {
                     result = false;
                     break;
@@ -89,26 +89,30 @@ namespace FoodOrdering.BusinessLayer
         /// updates the Food Item based on Id and Quantity
         /// </summary>
         /// <param name="fi"></param>
-        public void UpdateFoofItem(FoodItem fi)
+        public void UpdateFoodItem(FoodItem fi)
         {
 
             try
             {
 
                 StoreFoodItemsDataAccessLayer sfi = new StoreFoodItemsDataAccessLayer();
-                if (fi.FoodId != 0 && fi.Quantity > 0)
+                if (fi.FoodId >=1)
                 {
+                    if(fi.Quantity>=1)
                     sfi.UpdateFoofItem(fi);
+                    else
+                        throw new Exception("****** Invalid Food Quantity ******");
                 }
                 else
                 {
-                    throw new Exception("****** Invalid Food Id and Quantity ******");
+                    throw new Exception("****** Invalid Food Id ******");
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine(e.Message + "   " + e.InnerException.Message + "    " + e.StackTrace);
+                throw;
             }
+            
 
         }
 
