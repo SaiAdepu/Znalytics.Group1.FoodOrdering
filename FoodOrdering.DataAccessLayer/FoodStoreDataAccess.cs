@@ -8,16 +8,18 @@ using FoodOrdering.Entities;
 
 namespace FoodOrdering.DataAccessLayer
 {
-    //
-    public class FoodStoreDataAccess 
+    /// <summary>
+    /// Represents DataAccessLayer of the FoodStore Details
+    /// </summary>
+        public class FoodStoreDataAccess 
     {
         //private fields
-
         private static List<FoodStore> _foodstore
         {
             set;
             get;
         }
+        //Adding the FoodStore Details
         List<FoodStore> foodstore = new List<FoodStore>();
         //constructor
         static FoodStoreDataAccess()
@@ -84,8 +86,7 @@ namespace FoodOrdering.DataAccessLayer
 
         }
         
-        
-            
+             
             }
         }
 

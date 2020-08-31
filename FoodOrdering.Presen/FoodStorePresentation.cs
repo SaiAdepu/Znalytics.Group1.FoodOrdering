@@ -3,23 +3,28 @@ using System.Collections.Generic;
 using FoodOrdering.Entities;
 using FoodOrdering.BusinessLayer;
 
-
+/// <summary>
+/// Represents Login Information Of The FoodStore Details
+/// </summary>
 namespace FoodOrdering.PresentationLayer
 {
     class FoodStoreDetails
     {
+        //Execution Starts From The Main Method
         static void Main()
         {
             FoodStorePresentation();
             Console.ReadKey();
         }
-
+        //static method shares the same copy of method and its data
         static void FoodStorePresentation()
         {
             int choice = 0;
+            //do while loop verifies the condition after execution of statements inside the loop
             do
             {
                 //displays foodstore menu
+                //display shown based on the option selected 
                 Console.WriteLine("FOODSTORE MENU");
                 Console.WriteLine("1. Add FoodStore");
                 Console.WriteLine("2. View FoodStore");
@@ -32,7 +37,7 @@ namespace FoodOrdering.PresentationLayer
                 Console.WriteLine("9. Exit");
                 Console.Write("Enter choice: ");
                 choice = int.Parse(Console.ReadLine());
-
+                //switch statement is a control mechanism which executes one case after another till the break statement appears.
                 switch (choice)
                 {
                     case 1: AddFoodStore(); break;
@@ -43,7 +48,7 @@ namespace FoodOrdering.PresentationLayer
                         //case 6: DeleteFoodStore();break; 
 
                 }
-            } while (choice != 8);
+            } while (choice != 8);//if none of the above methods
         }
 
         //adding customer details
@@ -53,7 +58,7 @@ namespace FoodOrdering.PresentationLayer
             FoodStore foodstore = new FoodStore();
             try
             {
-
+                //reading the storeid manually
                 Console.Write("Enter StoreID: ");
                 foodstore.StoreID = Console.ReadLine();
             }
@@ -63,7 +68,7 @@ namespace FoodOrdering.PresentationLayer
             }
             try
             {
-
+                //reading the storename manually
                 Console.Write("Enter StoreName: ");
                 foodstore.StoreName = Console.ReadLine();
             }
@@ -72,7 +77,7 @@ namespace FoodOrdering.PresentationLayer
                 Console.WriteLine(ex.Message);
             }
             try
-            {
+            {  //reading the location manually
                 Console.Write("Enter Location: ");
                 foodstore.Location = Console.ReadLine();
             }
@@ -81,7 +86,7 @@ namespace FoodOrdering.PresentationLayer
                 Console.WriteLine(ex.Message);
             }
             try
-            {
+            {   //reading the phone manually
                 Console.Write("Enter Phone: ");
                 foodstore.Phone = Console.ReadLine();
             }
@@ -90,7 +95,7 @@ namespace FoodOrdering.PresentationLayer
                 Console.WriteLine(ex.Message);
             }
             try
-            {
+            {  //reading the email manually
                 Console.Write("Enter Email: ");
                 foodstore.Email = Console.ReadLine();
             }
@@ -113,7 +118,7 @@ namespace FoodOrdering.PresentationLayer
                 Console.WriteLine(foodstore.StoreID + ", " + foodstore.StoreName + "," + foodstore.Location + "," + foodstore.Phone + "," + foodstore.Email + "," );
             }
         }
-
+        //updating storename
         static void UpdateStoreName()
         {
             FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
@@ -126,6 +131,7 @@ namespace FoodOrdering.PresentationLayer
             foodstoreBusinessLayer.UpdateStoreName(foodstore);
             Console.WriteLine("StoreName Updated successfully.\n");
         }
+        //updating Location
         static void UpdateLocation()
         {
             FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
@@ -138,6 +144,7 @@ namespace FoodOrdering.PresentationLayer
             foodstoreBusinessLayer.UpdateLocation(foodstore);
             Console.WriteLine("Location Updated successfully.\n");
         }
+        //updating phone
         static void UpdatePhone()
         {
             FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
@@ -150,6 +157,7 @@ namespace FoodOrdering.PresentationLayer
             foodstoreBusinessLayer.UpdatePhone(foodstore);
             Console.WriteLine("Phone Updated successfully.\n");
         }
+        //updating email
         static void UpdateEmail()
         {
             FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
