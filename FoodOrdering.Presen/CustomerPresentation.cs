@@ -6,17 +6,22 @@ using FoodOrdering.Entities;
 
 namespace FoodOrdering.PresentationLayer
 {
-    class Program
+    /// <summary>
+    /// represents customer presentation
+    /// </summary>
+    class CustomerPL
     {
+        //Execution starts from main method
         static void Main()
         {
             CustomerPresentation();
             Console.ReadKey();
         }
-
+        //static method is nothing but all instances of a class share the same copy of method and its data
         static void CustomerPresentation()
         {
             int choice = 0;
+            //do while loop verifies the condition after execution of statements inside the loop
             do
             {
                 //displays customer menu
@@ -32,7 +37,7 @@ namespace FoodOrdering.PresentationLayer
                 Console.WriteLine("9. Exit");
                 Console.Write("Enter choice: ");
                 choice = int.Parse(Console.ReadLine());
-
+                //switch statement executes one case after the other till break statement appears
                 switch (choice)
                 {
                     case 1: AddCustomer(); break;
@@ -111,7 +116,7 @@ namespace FoodOrdering.PresentationLayer
             customerBusinessLayer.AddCustomer(customer);
             Console.WriteLine("Customer Added Successfully.\n");
         }
-
+        //method to view existing customers
         static void Viewcustomers()
         {
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
@@ -122,7 +127,7 @@ namespace FoodOrdering.PresentationLayer
                 Console.WriteLine(cust.CustomerName + ", " + cust.CustomerId + "," + cust.CustomerEmail + "," +cust.CustomerPhoneNumber + "," +cust.CustomerAddress + "," + cust.CustomerPassword);
             }
         }
-
+        //method to update name of the customer
         static void UpdateCustomerName()
         {
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
@@ -135,6 +140,7 @@ namespace FoodOrdering.PresentationLayer
             customerBusinessLayer.UpdateCustomerName(customer);
             Console.WriteLine("CustomerName Updated successfully.\n");
         }
+        //method to update email of the customer
         static void UpdateCustomerEmail()
         {
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
@@ -147,6 +153,7 @@ namespace FoodOrdering.PresentationLayer
             customerBusinessLayer.UpdateCustomerEmail(customer);
             Console.WriteLine("CustomerEmail Updated successfully.\n");
         }
+        //method to update phone number of the  customer
         static void UpdateCustomerPhoneNumber()
         {
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
@@ -159,6 +166,7 @@ namespace FoodOrdering.PresentationLayer
             customerBusinessLayer.UpdateCustomerPhoneNumber(customer);
             Console.WriteLine("CustomerPhoneNumber Updated successfully.\n");
         }
+        //method to update Address of the customer
         static void UpdateCustomerAddress()
         {
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
@@ -171,6 +179,7 @@ namespace FoodOrdering.PresentationLayer
             customerBusinessLayer.UpdateCustomerAddress(customer);
             Console.WriteLine("CustomerAddress Updated successfully.\n");
         }
+        //method to update password of the customer
         static void UpdateCustomerPassword()
         {
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
@@ -183,6 +192,7 @@ namespace FoodOrdering.PresentationLayer
             customerBusinessLayer.UpdateCustomerPassword(customer);
             Console.WriteLine("CustomerPassword Updated successfully.\n");
         }
+        //method to delete the customer
         static void DeleteCustomer()
         {
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();

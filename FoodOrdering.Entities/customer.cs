@@ -1,9 +1,12 @@
-﻿
+﻿///Done by spandana///
 using System;
 using System.Text.RegularExpressions;
 
 namespace FoodOrdering.Entities
 {
+    /// <summary>
+    /// class represents customer details
+    /// </summary>
     public class Customer
     {
         //private fields
@@ -15,7 +18,7 @@ namespace FoodOrdering.Entities
         private string _customerPassword;
         Customer customer = new Customer();
         public Customer() { }
-
+        //creating and initializing the constructor
         public Customer(string customerName, string customerID, string customerEmail, string customerPhoneNumber, string customerAddress, string customerPassword)
         {
 
@@ -110,6 +113,7 @@ namespace FoodOrdering.Entities
         }
         public string CustomerAddress
         {
+            //validating customer address
             set
             {
                 if (!string.IsNullOrEmpty(value))
