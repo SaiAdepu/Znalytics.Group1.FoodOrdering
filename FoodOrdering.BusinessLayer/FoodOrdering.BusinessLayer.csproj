@@ -44,7 +44,7 @@
     <Compile Include="AddFoodItemBusinessLayer.cs" />
     <Compile Include="CustomerBusinessLayer.cs" />
     <Compile Include="EmployeeBusinessLayer.cs" />
-    <Compile Include="EmployeesBusinessLayer.cs" />
+    <Compile Include="IEmployeesBusinessLayer.cs" />
     <Compile Include="FoodStoreBusinessLayer.cs" />
     <Compile Include="IAddFoodItemBusinessLayer.cs" />
     <Compile Include="IFoodStoreBusinessLayer.cs" />

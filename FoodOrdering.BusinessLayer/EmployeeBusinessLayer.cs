@@ -6,7 +6,7 @@ using FoodOrdering.Entities;
 
 namespace FoodOrdering.BusinessLayer
 {
-    public class EmployeeBusinessLayer // : IEmployeeBusinessLayer ///Interface
+    public class EmployeeBusinessLayer : IEmployeeBusinessLayer ///Interface
     {
         /// <summary>
         /// create a referaance variable of EmployeeBusinessLayer class
@@ -18,7 +18,7 @@ namespace FoodOrdering.BusinessLayer
             _employeeDataAccess = new EmployeeDataAccess();
         }
         /// <summary>
-        /// add EMPLOYEES
+        /// add EMPLOYEES( validations of name,email,password,mobile number)
         /// </summary>
         /// <param name="employees"></param>
         public void AddEmployees(Employee employees)

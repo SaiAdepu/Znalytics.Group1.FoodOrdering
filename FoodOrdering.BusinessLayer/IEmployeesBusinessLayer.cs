@@ -15,10 +15,10 @@ namespace FoodOrdering.BusinessLayer
         ///Adding employee details
         void AddEmployees(Employee employees);
 
-        List<Employee> GetEmployee();
+        List<Employee> GetEmployees();
 
-        Employee GetEmployees(int employeeID);
-        List<Employee> GetEmployee(string employeeName);
+        Employee GetEmployeeByEmployeeID(int employeeID);
+        List<Employee> GetEmployeeByEmployeeName(string employeeName);
         /// <summary>
         /// updating  employeee details
         /// </summary>

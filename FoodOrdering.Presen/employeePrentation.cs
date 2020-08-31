@@ -21,7 +21,7 @@ namespace FoodOrdering.PresentationLayer
             int choice = 0;
             do
             {
-                //displays employee menu
+                //displays employee details
                 Console.WriteLine("Employee Detail");
                 Console.WriteLine("1. Add Employee");
                 Console.WriteLine("2. Update Employee");
@@ -52,7 +52,10 @@ namespace FoodOrdering.PresentationLayer
             Console.WriteLine("enter the employeelogin details");
 
 
-            f.EmployeeID = ++Employee.EmployeeIDCount;
+            //f.EmployeeID = ++Employee.EmployeeIDCount;
+            Console.WriteLine("enter the EmployeeId");
+            f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));
+            System.Console.WriteLine(f.EmployeeID);
 
             //reading employee emailid enter the value from the key board//////
             Console.WriteLine("enter the email");
@@ -92,7 +95,6 @@ namespace FoodOrdering.PresentationLayer
             Employee f = new Employee();
             Console.Write("Enter Existing EmployeeID: ");
             f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));
-
 
            // EmployeeBusinessLayer.UpdateEmployees(f);
             //Console.WriteLine("CustomerName Updated successfully.\n");

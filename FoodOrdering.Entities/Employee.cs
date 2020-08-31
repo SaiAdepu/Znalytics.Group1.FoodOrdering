@@ -12,7 +12,7 @@ namespace FoodOrdering.Entities
     /// </summary>
     public class Employee
     {
-        public static int EmployeeIDCount = 0;
+     //   public static int EmployeeIDCount = 0;
         /// <summary>
         /// Represents private fields
         /// </summary>
@@ -33,9 +33,9 @@ namespace FoodOrdering.Entities
         /// EmployeId
         public int EmployeeID
         {
-            set
+            set  //set Accessor
             {
-                if (value != 0)
+                if (value != 0) ///if statement and else statement
                 {
                     _employeeID = value;
                 }
@@ -44,7 +44,7 @@ namespace FoodOrdering.Entities
                     throw new Exception("Employeeid Consits only number and try again");
                 }
             }
-            get
+            get //Get Accessor
             {
                 return _employeeID;
             }
@@ -55,7 +55,7 @@ namespace FoodOrdering.Entities
         /// </summary>
         public string Email
         {
-            set
+            set  //set Accessor
             {
                 if (new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").IsMatch(value) == true)
                 {
@@ -67,7 +67,7 @@ namespace FoodOrdering.Entities
                     throw new Exception("enter emailid its consists of Chracters, @ symbol is must,NO spaces,");
                 }
             }
-            get
+            get //Get Accessor
             {
                 return _email;
             }
@@ -81,7 +81,7 @@ namespace FoodOrdering.Entities
         ///   Gets or sets the <b>FirstName</b> enter first name its consists only characters
         public string FirstName
         {
-            set
+            set  //set Accessor
             {
                 if (value.Length>= 4 && value.Length <= 20)
                 {
@@ -92,7 +92,7 @@ namespace FoodOrdering.Entities
                     throw new Exception("entern minimum 4 characters please try again");
                 }
             }
-            get
+            get //Get Accessor
             {
                 return _firstName;//returing the First name
             }
@@ -113,7 +113,7 @@ namespace FoodOrdering.Entities
                     throw new Exception("entern minimum 4 characters please try again");
                 }
             }
-            get
+            get //Get Accessor
             {
                 return _lastName;
             }
@@ -124,7 +124,7 @@ namespace FoodOrdering.Entities
         /// </summary>
         public string Password
         {
-            set
+            set  //set Accessor
             {
           if (new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$").IsMatch(value)== true)
                 
@@ -137,7 +137,7 @@ namespace FoodOrdering.Entities
                 }
             }
 
-            get
+            get //Get Accessor
             {
                 return _password;
             }
@@ -147,8 +147,8 @@ namespace FoodOrdering.Entities
         /// </summary>
         public string MobileNumber
         {
-    set
-    {
+            set  //set Accessor
+            {
         if (new Regex(@"(\+[0-9]{2}|\+[0-9]{2}\(0\)|\(\+[0-9]{2}\)\(0\)|00[0-9]{2}|0)([0-9]{9}|[0-9\-\s]{9,18})$").IsMatch(value) == true)
         {
             _mobileNumber = value;
@@ -158,7 +158,7 @@ namespace FoodOrdering.Entities
             throw new Exception("enter Minimum 10 numbers no spaces ,no symbols");
         }
     }
-            get
+            get //Get Accessor
             {
                 return _mobileNumber;
             }
