@@ -88,7 +88,7 @@ namespace FoodOrdering.DataAccessLayer
         }
         public void DeleteCustomer(Customer customer)
         {
-           // _customers.Remove(temp => CustomerName == customers.CustomerName);
+           // _customers.Remove(temp =>CustomerName == customer.CustomerName);
         }
     }
 }
