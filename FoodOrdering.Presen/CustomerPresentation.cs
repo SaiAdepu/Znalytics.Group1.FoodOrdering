@@ -52,19 +52,60 @@ namespace FoodOrdering.PresentationLayer
         {
             CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
             Customer customer = new Customer ();
-
-            Console.Write("Enter CustomerName: ");
-            customer.CustomerName = Console.ReadLine();
-            Console.Write("Enter CustomerId: ");
-            customer.CustomerId = Console.ReadLine();
-            Console.Write("Enter CustomerEmail: ");
-            customer.CustomerEmail = Console.ReadLine();
-            Console.Write("Enter CustomerPhoneNumber: ");
-            customer.CustomerPhoneNumber = Console.ReadLine();
-            Console.Write("Enter CustomerAddress: ");
-            customer.CustomerAddress = Console.ReadLine();
-            Console.Write("Enter CustomerPassword: ");
-            customer.CustomerPassword = Console.ReadLine();
+            try
+            {
+                Console.Write("Enter CustomerName: ");
+                customer.CustomerName = Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
+                Console.Write("Enter CustomerId: ");
+                customer.CustomerId = Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
+                Console.Write("Enter CustomerEmail: ");
+                customer.CustomerEmail = Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
+                Console.Write("Enter CustomerPhoneNumber: ");
+                customer.CustomerPhoneNumber = Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
+                Console.Write("Enter CustomerAddress: ");
+                customer.CustomerAddress = Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
+                Console.Write("Enter CustomerPassword: ");
+                customer.CustomerPassword = Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             customerBusinessLayer.AddCustomer(customer);
             Console.WriteLine("Customer Added Successfully.\n");
