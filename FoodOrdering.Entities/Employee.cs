@@ -12,7 +12,7 @@ namespace FoodOrdering.Entities
     /// </summary>
     public class Employee
     {
-     //   public static int EmployeeIDCount = 0;
+     //  public static int EmployeeIDCount = 0;
         /// <summary>
         /// Represents private fields
         /// </summary>
@@ -23,7 +23,7 @@ namespace FoodOrdering.Entities
         private string _password;
         private string _mobileNumber;
 
-        public static int EmployeIDCount= 0;
+     
 
 
 
@@ -120,8 +120,11 @@ namespace FoodOrdering.Entities
         }
         ///    ****password details***** ///
         /// <summary>
-        ///  Gets or sets the <b>Password</b> enter password its consists atleast one captal letters characters  minimum 6 characters
+        ///  Gets or sets the <b>Password</b> enter password its consists atleast one captal letters characters 
+        ///                                    minimum 6 characters to 15 characters
         /// </summary>
+   
+        
         public string Password
         {
             set  //set Accessor
@@ -144,6 +147,7 @@ namespace FoodOrdering.Entities
         }
         /// <summary>
         ///  Gets or sets the <b>Mobile Number</b> enter MObilenumber its consists only Numbers
+        ///                                   no symbols,no characters
         /// </summary>
         public string MobileNumber
         {

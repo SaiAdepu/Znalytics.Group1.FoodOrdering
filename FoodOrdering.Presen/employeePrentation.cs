@@ -24,9 +24,10 @@ namespace FoodOrdering.PresentationLayer
                 //displays employee details
                 Console.WriteLine("Employee Detail");
                 Console.WriteLine("1. Add Employee");
-                Console.WriteLine("2. Update Employee");
-                Console.WriteLine("3. Delete Employee");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("2. Update EmployeesEmail");
+                Console.WriteLine("3. Update EmployeesMobileNumber");
+                Console.WriteLine("4. Delete Employee");
+                Console.WriteLine("5. Exit");
                 Console.Write("Enter choice: ");
                 choice = int.Parse(Console.ReadLine());
 
@@ -34,12 +35,13 @@ namespace FoodOrdering.PresentationLayer
                 {
                     case 1: AddEmployee(); break;
 
-                    case 2: UpdateEmployee(); break;
-                   // case 3: DeleteEmployee(); break;
-                   // case 4: Exit(); break;
+                    case 2: UpdateEmployeesEmail(); break;
+                   //case 3: UpdateEmployeesMobileNumber(); break;
+                        // case 3: DeleteEmployee(); break;
+                        // case 4: Exit(); break;
 
                 }
-            } while (choice != 5);
+            } while (choice != 6);
         }
 
         static void AddEmployee()
@@ -52,21 +54,22 @@ namespace FoodOrdering.PresentationLayer
             Console.WriteLine("enter the employeelogin details");
 
 
-            //f.EmployeeID = ++Employee.EmployeeIDCount;
-            Console.WriteLine("enter the EmployeeId");
+           // f.EmployeeID = ++Employee.EmployeeIDCount;
+
+            Console.Write("enter the EmployeeId:");
             f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));
             System.Console.WriteLine(f.EmployeeID);
 
             //reading employee emailid enter the value from the key board//////
-            Console.WriteLine("enter the email");
-            f.Email = (System.Console.ReadLine());
+            Console.Write("enter the email:");
+            f.Email = (Console.ReadLine());
             System.Console.WriteLine(f.Email);
 
-            System.Console.WriteLine("enter the EmployeeName");
+            Console.Write("enter the EmployeeName:");
             //reading employee FirstName enter the value from the key board//////
 
-            System.Console.WriteLine("enter the FirstName");
-            f.FirstName = (System.Console.ReadLine());
+            Console.Write("enter the FirstName:");
+            f.FirstName = (Console.ReadLine());
             System.Console.WriteLine(f.FirstName);
 
             //reading employee LastName enter the value from the key board//////
@@ -89,33 +92,35 @@ namespace FoodOrdering.PresentationLayer
             Console.WriteLine("employee Added Successfully  \n ");
 
         }
-        static void UpdateEmployee()
+        static void UpdateEmployeesEmail()
         {
             EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
             Employee f = new Employee();
-            Console.Write("Enter Existing EmployeeID: ");
-            f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));
+            Console.Write("Enter Existing Email: ");
+            f.Email = (Console.ReadLine());
 
-           // EmployeeBusinessLayer.UpdateEmployees(f);
-            //Console.WriteLine("CustomerName Updated successfully.\n");
+        //    EmployeeBusinessLayer.EmployeesEmail(f);
+            Console.WriteLine("CustomerName Updated successfully.\n");
         }
 
     }
 
-   // static void DeleteEmployee()
-   // {
-     ///   EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
-     ///   Employee f = new Employee();
-      ///  Console.Write("Enter Existing EmployeeID: ");
-      // f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));
-    }
+  //  static void UpdateEmployeesMobileNumber()
+   /// {
+    //    EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+      //  Employee f = new Employee();
+      //  Console.Write("Enter Existing Mobile Number: ");
+      //  f.MobileNumber = (Console.ReadLine());
+   /// }
+}
 
-     ///   static void Exit()
-      ///  {
-     //       EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
-      //      Employee f = new Employee();
-   //         Console.Write("Enter Existing EmployeeID: ");
-     //       f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));K
-    //    }
-   // }
+
+///   static void Exit()
+///  {
+//       EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+//      Employee f = new Employee();
+//         Console.Write("Enter Existing EmployeeID: ");
+//       f.EmployeeID = (Convert.ToInt32(Console.ReadLine()));K
+//    }
+// }
 

@@ -13,10 +13,10 @@ namespace FoodOrdering.DataAccessLayer
 
         private static List<Employee> _employees;
    
-        //static Constructor created
+        ///static Constructor created
         static EmployeeDataAccess()
         {
-            //Creating object from list
+           ///Creating object from list
             _employees = new List<Employee>()
 
             {
@@ -45,11 +45,21 @@ namespace FoodOrdering.DataAccessLayer
             // LIstofEmployee
         }
 
-         ///Get all Employee Details from the list///
+        ///Get all Employee Details from the list///
         public List<Employee> GetEmployees()
         {
-            return _employees;
+            if (_employees.Count != 0)
+
+                return _employees;
+        
+        else
+            {
+                throw new Exception("      ");
+            }
         }
+       
+        
+        
         /// <summary>
         /// Get the employee based on the  EmployeeID
         /// </summary>

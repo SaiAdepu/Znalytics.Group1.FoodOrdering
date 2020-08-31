@@ -37,7 +37,7 @@ namespace FoodOrdering.BusinessLayer
                             }
                             else
                             {
-                                throw new Exception("entern mobile number minimum 10 letters please try again");
+                                throw new Exception("enter mobile number minimum 10 letters please try again");
                             }
                         }
                         else
@@ -48,7 +48,7 @@ namespace FoodOrdering.BusinessLayer
 
                     else
                     {
-                        throw new Exception("entern email must be minimum 6 characters please try again");
+                        throw new Exception("enter email must be minimum 6 characters please try again");
                     }
                 }
                 else
@@ -68,7 +68,7 @@ namespace FoodOrdering.BusinessLayer
         {
             return _employeeDataAccess.GetEmployees();
         }
-        /// Update EmployeeEmailid 
+        /// Update EmployeeEmailemail 
 
         public void UpdateEmployeesEmail(Employee employee)
         {

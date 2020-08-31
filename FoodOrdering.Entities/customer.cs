@@ -12,7 +12,7 @@ namespace FoodOrdering.Entities
         private string _customerEmail;
         private string _customerPhoneNumber;
         private string _customerAddress;
-        private string _customerPassword;
+      //  private string _customerPassword;
         Customer customer = new Customer();
         public Customer() { }
 
