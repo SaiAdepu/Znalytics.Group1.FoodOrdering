@@ -8,16 +8,21 @@ namespace FoodOrdering.DataAccessLayer
 	/// </summary>
 	public interface ICustomerDataAccess
 	{
-		void AddCustomer(ICustomerDataAccess customer);
+		//method to add customer
+		void AddCustomer(Customer customer);
+		//method to view existing customers
 		public List<Customer> GetCustomers();
-
-
-
-		void UpdateCustomerName(Customer customer);
+		//method to update customer name
+        void UpdateCustomerName(Customer customer);
+		//method to update customer email
 		void UpdateCustomerEmail(Customer customer);
+		//method to update customer phone number
 		void UpdateCustomerPhoneNumber(Customer customer);
+		//method to update customer address
 		void UpdateCustomerAddress(Customer customer);
+		//method to update customer Password
 		void UpdateCustomerPassword(Customer customer);
+		//method to delete the customer
 		void DeleteCustomer(Customer customer);
 
 	}

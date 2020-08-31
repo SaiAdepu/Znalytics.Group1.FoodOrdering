@@ -1,19 +1,17 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using FoodOrdering.Entities;
 
 namespace FoodOrdering.DataAccessLayer
 {
-    public class CustomerDataAccess
+    /// <summary>
+    /// Represents customerdataaccess class
+    /// </summary>
+    public class CustomerDataAccess:ICustomerDataAccess 
     {
         //private fields
         //stores the list of customers
-        private static List<Customer> _customers
-        {
-            set;
-            get;
-        }
+        private static List<Customer> _customers;
 
         List<Customer> customer = new List<Customer>();
 
@@ -40,7 +38,7 @@ namespace FoodOrdering.DataAccessLayer
             return _customers;
         }
 
-        //Update customer
+        //method to Update customer name
         public void UpdateCustomerName(Customer customer)
         {
             //Get matching customer based on CustomerID
@@ -50,6 +48,7 @@ namespace FoodOrdering.DataAccessLayer
                 cust.CustomerName = customer.CustomerName;
             }
         }
+        //method to update customerEmail
         public void UpdateCustomerEmail(Customer customer)
         {
             //Get matching customer based on CustomerID
@@ -59,6 +58,7 @@ namespace FoodOrdering.DataAccessLayer
                 cust.CustomerEmail = customer.CustomerEmail;
             }
         }
+        //method to update customer phonenumber
         public void UpdateCustomerPhoneNumber(Customer customer)
         {
             //Get matching customer based on CustomerID
@@ -68,6 +68,7 @@ namespace FoodOrdering.DataAccessLayer
                 cust.CustomerPhoneNumber = customer.CustomerPhoneNumber;
             }
         }
+        //method to update customer Address
         public void UpdateCustomerAddress(Customer customer)
         {
             //Get matching customer based on CustomerID
@@ -77,6 +78,7 @@ namespace FoodOrdering.DataAccessLayer
                 cust.CustomerAddress = customer.CustomerAddress;
             }
         }
+        //methid to update customer password
         public void UpdateCustomerPassword(Customer customer)
         {
             //Get matching customer based on CustomerID
@@ -86,9 +88,16 @@ namespace FoodOrdering.DataAccessLayer
                 cust.CustomerPassword = customer.CustomerPassword;
             }
         }
+        //method to delete existing customer based on customername and customerId
         public void DeleteCustomer(Customer customer)
         {
-           // _customers.Remove(temp =>CustomerName == customer.CustomerName);
+            _customers.RemoveAll(temp =>temp.CustomerName == customer.CustomerName&&temp.CustomerId==customer.CustomerId);
+            
+        }
+
+        public void AddCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
         }
     }
 }

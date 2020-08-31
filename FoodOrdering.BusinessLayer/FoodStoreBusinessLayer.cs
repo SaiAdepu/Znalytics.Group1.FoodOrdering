@@ -5,17 +5,22 @@ using FoodOrdering.Entities;
 
 namespace FoodOrdering.BusinessLayer
 {
-    public class FoodStoreBusinessLayer : IFoodStoreBusinessLayer
+    /// <summary>
+    /// Represents Business Layer of the FoodStore Details
+    /// </summary>
+    public class FoodStoreBusinessLayer : IFoodStoreBusinessLayer//Interface of the BusinessLayer
     {
-        private IFoodStoreDataAccess _foodstoreDataAccess = null;
-        public FoodStoreBusinessLayer()
+        private IFoodStoreDataAccess _foodstoreDataAccess=null;
+        public FoodStoreBusinessLayer()//constructor for business layer
         {
-            FoodStoreDataAccess _foodstoreDataAccess = new FoodStoreDataAccess();
+            FoodStoreDataAccess _foodstoreDataAccess = new FoodStoreDataAccess(); //object creation of data access layer
         }
 
-        //Add
+
+        //Adding FoodStore
         public void AddFoodStore(FoodStore foodstore)
         {
+            // validating the store name
             if (foodstore.StoreName != null)
             {
                 _foodstoreDataAccess.AddFoodStore((IFoodStoreDataAccess)foodstore);
@@ -32,7 +37,7 @@ namespace FoodOrdering.BusinessLayer
             return _foodstoreDataAccess.GetFoodStore();
 
         }
-
+        //Updating StoreName
         public void UpdateStoreName(FoodStore foodstore)
         {
             if (foodstore.StoreName != null)
@@ -40,7 +45,7 @@ namespace FoodOrdering.BusinessLayer
                 _foodstoreDataAccess.UpdateStoreName(foodstore);
             }
         }
-
+        //updating Location
         public void UpdateLocation(FoodStore foodstore)
 
         {
@@ -50,6 +55,7 @@ namespace FoodOrdering.BusinessLayer
 
             }
         }
+        //updating Phone
         public void UpdatePhone(FoodStore foodstore)
         {
             if (foodstore.Phone != null)
@@ -57,6 +63,7 @@ namespace FoodOrdering.BusinessLayer
                 _foodstoreDataAccess.UpdatePhone(foodstore);
             }
         }
+        //Updating Email
         public void UpdateEmail(FoodStore foodstore)
         {
             if (foodstore.Email != null)
