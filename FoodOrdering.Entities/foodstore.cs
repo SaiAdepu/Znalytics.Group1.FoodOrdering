@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
+//namespace is collection of classes
 namespace FoodOrdering.Entities
 {
     /// <summary>
-    /// This Class Represents FoodStoreDetails
+    /// This Class Represents Details of The FoodStore
     /// </summary>
     public class FoodStore
     {
@@ -39,6 +40,7 @@ namespace FoodOrdering.Entities
 
         }
         ///<summary> 
+        /// Property for StoreID
         /// StoreID Represents the ID of the FoodStore
         ///</summary>
         public string StoreID
@@ -61,6 +63,7 @@ namespace FoodOrdering.Entities
             }
         }
         /// <summary>
+        /// Property for StoreName
         /// StoreName Represents the Name of the FoodStore
         /// </summary>
         public string StoreName
@@ -79,7 +82,8 @@ namespace FoodOrdering.Entities
             }
         }
         ///<summary>
-        /// Location Represents Location of the foodstore
+        ///Property for Location
+        /// Location Represents the Location of the foodstore
         ///</summary>
         public string Location
         {
@@ -93,6 +97,7 @@ namespace FoodOrdering.Entities
             }
         }
         /// <summary>
+        /// Property for Phone
         /// Phone represents the Phone number of the foodstore
         /// </summary>
         public string Phone
@@ -120,6 +125,7 @@ namespace FoodOrdering.Entities
             }
         }
         /// <summary>
+        /// Propert for Email
         /// Email reprsents email of the Foodstore
         /// </summary>    
         public string Email

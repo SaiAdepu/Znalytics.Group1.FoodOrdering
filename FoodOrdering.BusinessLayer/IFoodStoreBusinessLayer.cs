@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using FoodOrdering.Entities;
 
 namespace FoodOrdering.BusinessLayer
-{
+{  /// <summary>
+/// Represents Interface For the FoodStore Details
+/// </summary>
     public interface IFoodStoreBusinessLayer
     {
 
