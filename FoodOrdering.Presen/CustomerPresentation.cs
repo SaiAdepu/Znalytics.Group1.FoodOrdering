@@ -6,8 +6,12 @@ using FoodOrdering.Entities;
 
 namespace FoodOrdering.PresentationLayer
 {
-    class Program
+    /// <summary>
+    /// represents customer presentation
+    /// </summary>
+    class CustomerPL
     {
+        //Execution starts from main method
         static void Main()
         {
             CustomerPresentation();
