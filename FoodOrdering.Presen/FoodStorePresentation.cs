@@ -51,17 +51,53 @@ namespace FoodOrdering.PresentationLayer
         {
             FoodStoreBusinessLayer foodstoreBusinessLayer = new FoodStoreBusinessLayer();
             FoodStore foodstore = new FoodStore();
+            try
+            {
 
-            Console.Write("Enter StoreID: ");
-            foodstore.StoreID = Console.ReadLine();
-            Console.Write("Enter StoreName: ");
-            foodstore.StoreName = Console.ReadLine();
-            Console.Write("Enter Location: ");
-            foodstore.Location = Console.ReadLine();
-            Console.Write("Enter Phone: ");
-            foodstore.Phone = Console.ReadLine();
-            Console.Write("Enter Email: ");
-            foodstore.Email = Console.ReadLine();
+                Console.Write("Enter StoreID: ");
+                foodstore.StoreID = Console.ReadLine();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
+
+                Console.Write("Enter StoreName: ");
+                foodstore.StoreName = Console.ReadLine();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
+                Console.Write("Enter Location: ");
+                foodstore.Location = Console.ReadLine();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
+                Console.Write("Enter Phone: ");
+                foodstore.Phone = Console.ReadLine();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
+                Console.Write("Enter Email: ");
+                foodstore.Email = Console.ReadLine();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             foodstoreBusinessLayer.AddFoodStore(foodstore);
             Console.WriteLine("FoodStore Added Successfully.\n");
