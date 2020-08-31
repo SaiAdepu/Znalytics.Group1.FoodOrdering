@@ -12,10 +12,6 @@ namespace FoodOrdering.DataAccessLayer
         //private fields
         //stores the list of customers
         private static List<Customer> _customers;
-       /* {
-            set;
-            get;
-        }*/
 
         List<Customer> customer = new List<Customer>();
 
