@@ -23,10 +23,10 @@ namespace FoodOrdering.BusinessLayer
         /// <param name="employees"></param>
         public void AddEmployees(Employee employees)
         {
-            if (employees.FirstName!= null )
+            if (employees.FirstName != null)
 
-            { 
-                if (employees.LastName!=null)
+            {
+                if (employees.LastName != null)
                 {
                     if (employees.Email.Length >= 6 && employees.Email.Length <= 40)
                     {
@@ -63,33 +63,37 @@ namespace FoodOrdering.BusinessLayer
         }
 
 
-
-
-        ///update the empoyee id
-        public int UpdateEmployees(int EmployeeID)
+        /// GetAll Employees
+        public List<Employee> GetEmployees()
         {
-            try
+            return _employeeDataAccess.GetEmployees();
+        }
+        /// Update EmployeeEmailid 
+
+        public void UpdateEmployeesEmail(Employee employee)
+        {
+            if (employee.Email != null)
             {
-                return _employeeDataAccess.UpdateEmployees(EmployeeID);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                _employeeDataAccess.UpdateEmployeesEmail(employee);
             }
         }
-        ///Delete the employeeID
-        public void DeleteEmployees(int DeleteEmployeeID)
+        /// Update Employee Mobile Number
+        public void UpdateEmployeesMobileNumber(Employee employee)
         {
-            try
+            if (employee.MobileNumber != null)
             {
-              //  return _employeeDataAccess//.DeleteEmployees(DeleteEmployeeID);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+
+                _employeeDataAccess.UpdateEmployeesMobileNumber(employee);
             }
         }
-        
-
     }
 }
+
+
+
+
+
+
+
+       
+
