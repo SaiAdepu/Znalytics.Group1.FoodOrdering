@@ -7,7 +7,7 @@ namespace FoodOrdering.DataAccessLayer
     /// <summary>
     /// Represents customerdataaccess class
     /// </summary>
-    public class CustomerDataAccess//:ICustomerDataAccess 
+    public class CustomerDataAccess:ICustomerDataAccess 
     {
         //private fields
         //stores the list of customers
@@ -97,6 +97,11 @@ namespace FoodOrdering.DataAccessLayer
         {
             _customers.RemoveAll(temp =>temp.CustomerName == customer.CustomerName&&temp.CustomerId==customer.CustomerId);
             
+        }
+
+        public void AddCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
         }
     }
 }
