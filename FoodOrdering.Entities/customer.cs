@@ -130,7 +130,7 @@ namespace FoodOrdering.Entities
                 Regex u = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$");
                 if (u.IsMatch(value))
                 {
-                    _customerName = value;
+                    _customerPassword = value;
                 }
                 else
                 {
@@ -139,7 +139,7 @@ namespace FoodOrdering.Entities
             }
             get
             {
-                return _customerName;
+                return _customerPassword;
             }
         }
     }

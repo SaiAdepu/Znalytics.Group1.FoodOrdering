@@ -5,15 +5,15 @@ using FoodOrdering.Entities;
 
 namespace FoodOrdering.DataAccessLayer
 {
-    public class CustomerDataAccess
+    public class CustomerDataAccess:ICustomerDataAccess 
     {
         //private fields
         //stores the list of customers
-        private static List<Customer> _customers
-        {
+        private static List<Customer> _customers;
+       /* {
             set;
             get;
-        }
+        }*/
 
         List<Customer> customer = new List<Customer>();
 
@@ -88,7 +88,8 @@ namespace FoodOrdering.DataAccessLayer
         }
         public void DeleteCustomer(Customer customer)
         {
-           // _customers.Remove(temp =>CustomerName == customer.CustomerName);
+            _customers.RemoveAll(temp =>temp.CustomerName == customer.CustomerName&&temp.CustomerId==customer.CustomerId);
+            
         }
     }
 }

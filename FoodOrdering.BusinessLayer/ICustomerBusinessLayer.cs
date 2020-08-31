@@ -10,7 +10,6 @@ namespace FoodOrdering.BusinessLayer
         void AddCustomer(Customer customer);
         //Viewing existing details
         void ViewCustomer(Customer customer);
-        //customer GetCustomerByCustomerId(string CustomerID);
         //Updating customer details
         void UpdateCustomerName(Customer customer);
         void UpdateCustomerEmail(Customer customer);
