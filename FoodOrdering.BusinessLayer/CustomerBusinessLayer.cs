@@ -71,7 +71,13 @@ namespace FoodOrdering.BusinessLayer
                 _customerDataAccess.UpdateCustomerPassword(customer);
             }
         }
-
+        public void DeleteCustomer(Customer customer)
+        {
+            if((customer.CustomerName!=null)&&(customer.CustomerId!=null))
+            {
+                _customerDataAccess.DeleteCustomer(customer);
+            }
+        }
         void ICustomerBusinessLayer.ViewCustomer(Customer customer)
         {
             throw new NotImplementedException();

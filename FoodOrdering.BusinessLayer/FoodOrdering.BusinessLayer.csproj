@@ -42,13 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddFoodItemBusinessLayer.cs" />
-    <Compile Include="ICustomerBusinessLayer.cs" />
     <Compile Include="CustomerBusinessLayer.cs" />
     <Compile Include="EmployeeBusinessLayer.cs" />
     <Compile Include="EmployeesBusinessLayer.cs" />
     <Compile Include="FoodStoreBusinessLayer.cs" />
     <Compile Include="IAddFoodItemBusinessLayer.cs" />
     <Compile Include="IFoodStoreBusinessLayer.cs" />
+    <Compile Include="ICustomerBusinessLayer.cs" />
     <Compile Include="OrdersDetails.Businesslayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

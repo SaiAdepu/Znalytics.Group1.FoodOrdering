@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using FoodOrdering.Entities;
 namespace FoodOrdering.BusinessLayer
 {
-    
+
     public interface ICustomerBusinessLayer
     {
         //Adding details
@@ -17,5 +17,6 @@ namespace FoodOrdering.BusinessLayer
         void UpdateCustomerPhoneNumber(Customer customer);
         void UpdateCustomerAddress(Customer customer);
         void UpdateCustomerPassword(Customer customer);
+        void DeleteCustomer(Customer customer);
     }
 }

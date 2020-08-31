@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using FoodOrdering.Entities;
 
@@ -84,6 +85,10 @@ namespace FoodOrdering.DataAccessLayer
             {
                 cust.CustomerPassword = customer.CustomerPassword;
             }
+        }
+        public void DeleteCustomer(Customer customer)
+        {
+           // _customers.Remove(temp => CustomerName == customers.CustomerName);
         }
     }
 }

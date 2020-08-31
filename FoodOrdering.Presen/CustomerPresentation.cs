@@ -41,7 +41,7 @@ namespace FoodOrdering.PresentationLayer
                     case 5: UpdateCustomerPhoneNumber(); break;
                     case 6: UpdateCustomerAddress(); break;
                     case 7: UpdateCustomerPassword(); break;
-                    //case 8: DeleteCustomer();break; 
+                    case 8: DeleteCustomer();break; 
            
                 }
             } while (choice != 9);
@@ -140,6 +140,18 @@ namespace FoodOrdering.PresentationLayer
 
             customerBusinessLayer.UpdateCustomerPassword(customer);
             Console.WriteLine("CustomerPassword Updated successfully.\n");
+        }
+        static void DeleteCustomer()
+        {
+            CustomerBusinessLayer customerBusinessLayer = new CustomerBusinessLayer();
+            Customer customer = new Customer();
+            Console.Write("Enter customerName to be deleted: ");
+            customer.CustomerName = Console.ReadLine();
+            Console.Write("Enter customerId to be deleted: ");
+            customer.CustomerId = Console.ReadLine();
+
+            customerBusinessLayer.DeleteCustomer(customer);
+            Console.WriteLine("Customer deleted successfully.\n");
         }
     }
 }
