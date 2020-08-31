@@ -12,9 +12,7 @@ namespace FoodOrdering.DataAccessLayer
         //store the list of the Employee details
 
         private static List<Employee> _employees;
-
-        // public static int EmployeID = 0;
-
+   
         //static Constructor created
         static EmployeeDataAccess()
         {
@@ -22,7 +20,7 @@ namespace FoodOrdering.DataAccessLayer
             _employees = new List<Employee>()
 
             {
-                new Employee(){ EmployeeID  = 1, Email ="Shiva@gamil.com",FirstName ="shiva",Password ="Abcuytr4",MobileNumber ="9876543217"},
+                new Employee(){ EmployeeID  = 1, Email ="Shiva@gamil.com",FirstName ="shiva",LastName = "kumar",Password ="Abcuytr4",MobileNumber ="9876543217"},
                 new Employee (){ EmployeeID = 2, Email = "abcde@gamil.com",FirstName = "oppooo",LastName = "loto",Password = "Bbodiudic8",MobileNumber = "8976543217"},
                 new Employee (){ EmployeeID = 3, Email = "ghjk@gamil.com",FirstName = "vivotry",LastName = "lava",Password = "Dmaagaga543",MobileNumber = "7576543217"},
 
@@ -30,13 +28,13 @@ namespace FoodOrdering.DataAccessLayer
         }
 
 
-        /// Adding employee  from the list////////
+        /// Adding employee  from the list///
 
         public void AddEmployee(Employee employee)
         {
-            //Address Employee Details to List//////////
+           ///Address Employee Details to List///
             _employees.Add(employee);
-            //ListOfEmployee()
+            ///ListOfEmployee
         }
 
 
@@ -44,19 +42,28 @@ namespace FoodOrdering.DataAccessLayer
         public void DeleteEmployee(Employee employee)
         {
             _employees.RemoveAll(temp => temp.EmployeeID == employee.EmployeeID && temp.FirstName == employee.FirstName);
-            //  LIstofEmployee();
+            // LIstofEmployee
         }
 
-        ////   //Get all Employee Details from the list/////
+         ///Get all Employee Details from the list///
         public List<Employee> GetEmployees()
         {
             return _employees;
         }
-
+        /// <summary>
+        /// Get the employee based on the  EmployeeID
+        /// </summary>
+        /// <param name="employeeID"></param>
+        /// <returns></returns>
         public Employee GetEmployeeByEmployeeID(int employeeID)
         {
             return _employees.FirstOrDefault(temp => temp.EmployeeID == employeeID);
         }
+        /// <summary>
+        /// Get the employee based on the  EmployeeName (
+        /// </summary>
+        /// <param name="employeeName"></param>
+        /// <returns></returns>
 
         public List<Employee> GetEmployeesByEmployeeName(string employeeName)
         {
