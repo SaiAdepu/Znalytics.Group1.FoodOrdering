@@ -20,7 +20,7 @@ namespace FoodOrdering.BusinessLayer
             
             if(customer.CustomerName!=null)
             {
-                _customerDataAccess.AddCustomer((ICustomerDataAccess)customer);
+                _customerDataAccess.AddCustomer(customer);
             }
             else
             {
