@@ -9,7 +9,7 @@ namespace FoodOrdering.DataAccessLayer
 {
     public class EmployeeDataAccess : IEmployeeDataAccessLayer
     {
-        //store the list of the Employee details
+        //store the list of the Employee details              
 
         private static List<Employee> _employees;
    
@@ -20,9 +20,9 @@ namespace FoodOrdering.DataAccessLayer
             _employees = new List<Employee>()
 
             {
-                new Employee(){ EmployeeID  = 1, Email ="Shiva@gamil.com",FirstName ="shiva",LastName = "kumar",Password ="Abcuytr4",MobileNumber ="9876543217"},
-                new Employee (){ EmployeeID = 2, Email = "abcde@gamil.com",FirstName = "oppooo",LastName = "loto",Password = "Bbodiudic8",MobileNumber = "8976543217"},
-                new Employee (){ EmployeeID = 3, Email = "ghjk@gamil.com",FirstName = "vivotry",LastName = "lava",Password = "Dmaagaga543",MobileNumber = "7576543217"},
+                new Employee(){ EmployeeID  = 1, Email ="Shiva@gmail.com",FirstName ="shiva",LastName = "kumar",Password ="Abcuytr4",MobileNumber ="9876543217"},
+                new Employee (){ EmployeeID = 2, Email = "abcde@gmail.com",FirstName = "oppooo",LastName = "loto",Password = "Bbodi5",MobileNumber = "8976543217"},
+                new Employee (){ EmployeeID = 3, Email = "ghjk@gmail.com",FirstName = "vivotry",LastName = "lava",Password = "Dmaa5",MobileNumber = "7576543217"},
 
             };
         }
@@ -54,7 +54,7 @@ namespace FoodOrdering.DataAccessLayer
         
         else
             {
-                throw new Exception("      ");
+                throw new Exception("  invalid employee details    ");
             }
         }
        
@@ -79,11 +79,30 @@ namespace FoodOrdering.DataAccessLayer
         {
             return _employees.Where(temp => temp.FirstName.Contains(employeeName) || temp.LastName.Contains(employeeName)).ToList();
         }
-
+       //// method to Update Employee name
+             public void UpdateEmployeesName(Employee employee)
+           {
+                  //Get matching customer based on employeeID
+                  Employee emp = _employees.Find(temp => temp.EmployeeID == employee.EmployeeID);
+               if (emp != null)
+                 {
+                emp.FirstName = employee.FirstName;
+                 }
+             }
+        //method to update customer password
+        public void UpdateEmployeePassword(Employee employee)
+        {
+            //Get matching customer based on CustomerID
+            Employee emp = _employees.Find(temp => temp.EmployeeID == employee.EmployeeID);
+            if (emp != null)
+            {
+                emp.Password = employee.Password;
+            }
+        }
         //////   // update the employeedetails  based on the employeeid and Name///
         public void UpdateEmployeesEmail(Employee employee)
         {
-            Employee xyz = _employees.Find(temp => temp.EmployeeID == employee.EmployeeID && temp.FirstName == employee.FirstName);
+            Employee xyz = _employees.Find(temp => temp.EmployeeID == employee.EmployeeID && temp.FirstName.ToLower().Equals( employee.FirstName));
 
             try
             {
@@ -96,7 +115,7 @@ namespace FoodOrdering.DataAccessLayer
                 }
                 else
                 {
-                    //      throw new EmployeeException("Entered values employeeId and Name is Invalid");
+                        throw new Exception("Entered values employeeId and Name is Invalid");
                 }
 
             }
@@ -108,7 +127,7 @@ namespace FoodOrdering.DataAccessLayer
 
         public void UpdateEmployeesMobileNumber(Employee employee)
         {
-            Employee d = _employees.Find(temp => temp.EmployeeID == employee.EmployeeID && temp.FirstName == employee.FirstName);
+            Employee d = _employees.Find(temp => temp.EmployeeID == employee.EmployeeID && temp.FirstName.ToLower().Equals(employee.FirstName));
 
             try
             {
@@ -130,7 +149,4 @@ namespace FoodOrdering.DataAccessLayer
         }
     }
 }
-
-
-
 

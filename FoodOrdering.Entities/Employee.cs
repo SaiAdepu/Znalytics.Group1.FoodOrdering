@@ -1,18 +1,17 @@
-﻿ using System;
+﻿using System;
 using System.Text.RegularExpressions;
-
+///
 /// <summary>
-/// project of Foodordering ...Employeelogin module(PAVAN KUMAR) 
-/// </summary>
+///               Project of Foodordering ...Employee module(PAVAN KUMAR) 
+/// </summary> // Foodordering.EmployeeModule.Entitieslayer
 
 namespace FoodOrdering.Entities
 {
     /// <summary>
-    /// Represents Food Delivery Employeelogin
-    /// </summary>
+    /// Represents Food Delivery Employee 
+    /// </summary>////Employee Class
     public class Employee
     {
-     //  public static int EmployeeIDCount = 0;
         /// <summary>
         /// Represents private fields
         /// </summary>
@@ -23,7 +22,7 @@ namespace FoodOrdering.Entities
         private string _password;
         private string _mobileNumber;
 
-     
+
 
 
 
@@ -50,8 +49,8 @@ namespace FoodOrdering.Entities
             }
         }
         /// <summary>
-        /// Gets or sets the <b>Email</b>(enter emailid its consists of  Chracters ,
-        /// @ symbol is must,NO spaces
+        /// Gets or sets the <b>Email</b>(enter emailid its consists of  Chracters , NUmbers
+        ///                                 @ symbol is must,NO spaces,.com is must to write
         /// </summary>
         public string Email
         {
@@ -64,7 +63,7 @@ namespace FoodOrdering.Entities
                 }
                 else
                 {
-                    throw new Exception("enter emailid its consists of Chracters, @ symbol is must,NO spaces,");
+                    throw new Exception("enter emailid its consists of Chracters, Numbers, @ symbol is must,NO spaces,");
                 }
             }
             get //Get Accessor
@@ -72,8 +71,8 @@ namespace FoodOrdering.Entities
                 return _email;
             }
         }
-       
-   
+
+
 
         /// <summary>
         ///************** EmployeeName details***********///
@@ -83,7 +82,7 @@ namespace FoodOrdering.Entities
         {
             set  //set Accessor
             {
-                if (value.Length>= 4 && value.Length <= 20)
+                if (value.Length >= 4 && value.Length <= 20)
                 {
                     _firstName = value;
                 }
@@ -123,14 +122,14 @@ namespace FoodOrdering.Entities
         ///  Gets or sets the <b>Password</b> enter password its consists atleast one captal letters characters 
         ///                                    minimum 6 characters to 15 characters
         /// </summary>
-   
-        
+
+
         public string Password
         {
             set  //set Accessor
             {
-          if (new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$").IsMatch(value)== true)
-                
+                if (new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$").IsMatch(value) == true)
+
                 {
                     _password = value;
                 }
@@ -153,20 +152,20 @@ namespace FoodOrdering.Entities
         {
             set  //set Accessor
             {
-        if (new Regex(@"(\+[0-9]{2}|\+[0-9]{2}\(0\)|\(\+[0-9]{2}\)\(0\)|00[0-9]{2}|0)([0-9]{9}|[0-9\-\s]{9,18})$").IsMatch(value) == true)
-        {
-            _mobileNumber = value;
-        }
-        else
-        {
-            throw new Exception("enter Minimum 10 numbers no spaces ,no symbols");
-        }
-    }
+                if (new Regex(@"^((\+)?(\d{2}[-]))?(\d{10}){1}?$").IsMatch(value) == true)
+                {
+                    _mobileNumber = value;
+                }
+                else
+                {
+                    throw new Exception("enter Minimum 10 numbers no spaces ,no symbols");
+                }
+            }
             get //Get Accessor
             {
                 return _mobileNumber;
             }
         }
- 
-}
+
+    }
 }

@@ -23,7 +23,9 @@ namespace FoodOrdering.DataAccessLayer
         List<Employee> GetEmployeesByEmployeeName(string employeeName);
 
         void DeleteEmployee(Employee employee);
-   
+        void UpdateEmployeesName(Employee employee);
+
+
         void UpdateEmployeesEmail(Employee employee);
         void UpdateEmployeesMobileNumber(Employee employee);
 

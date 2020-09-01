@@ -14,9 +14,15 @@ namespace FoodOrdering.BusinessLayer
       
 
         List<Employee> GetEmployees();
-         void UpdateEmployeesEmail(Employee employee);
+        //Updating Employee Name(method Name)
 
-       void UpdateEmployeesMobileNumber(Employee employee);
+        void UpdateEmployeesName(Employee employee);
+        //Updating Employee Email(method Name)
+
+        void UpdateEmployeesEmail(Employee employee);
+        //Updating Employee MobileNUmber(method Name)
+
+        void UpdateEmployeesMobileNumber(Employee employee);
 
        
     }
