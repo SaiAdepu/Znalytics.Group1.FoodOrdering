@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using FoodOrdering.BusinessLayer;
+using FoodOrdering.Entities;
+
 using System.Collections.Specialized;
 //using Orders Entities;
 //using OrdersPresentation;
@@ -7,7 +10,7 @@ using System.Collections.Specialized;
 /// <summary>
 /// Represents Login Information Of The Orders Details
 /// </summary>
-namespace Orders.Presentation
+namespace FoodOrdering.PresentationLayer
 {
     class Orders
     {
@@ -33,157 +36,104 @@ namespace Orders.Presentation
                 Console.WriteLine("1. Add orders");
                 Console.WriteLine("2. View orders");
                 Console.WriteLine("3. Update orderid");
-                Console.WriteLine("4. View orderDate");
-                Console.WriteLine("5. Update userid");
-                Console.WriteLine("6. Exit");
+                Console.WriteLine("4. update orderDate");
+                Console.WriteLine("5. Exit");
                 Console.Write("Enter choice: ");
                 choice = int.Parse(Console.ReadLine());
                 //switch statement is a control mechanism which executes one case after another till the break statement appears.
                 switch (choice)
                 {
                     case 1: AddOrders(); break;
-                    case 2: UpdateOrderid(); break;
-                    case 3: UpdateUserid(); break;
+                    case 2: ViewOrders(); break;
+                    case 3: UpdateOrderid();break;
+            
                 }
             } while (choice != 0);
         }
 
-        //adding Orders details
+        //adding Orders details////
         static void AddOrders()
         {
-            OrdersPresentation ordersPresentation = new OrdersPresentation();
-            Orders Orders = new Orders();
-            try
-            {
+            OrdersBusinessLayer ordersBusinessLayer = new OrdersBusinessLayer();
+            Order order = new Order();
+           
                 //reading the Orderid manually
                 Console.Write("Enter orderid: ");
-                Orders.orderid = Console.ReadLine();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            try
-            {
-                //reading the Userid manually
-                Console.Write("Enter Userid: ");
-                Orders.userid = Console.ReadLine();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            try
-            {  //reading the Storeid manually
+                order.Orderid = int.Parse(Console.ReadLine());
+         
+             //reading the Storeid manually
                 Console.Write("Enter Storeid: ");
-                Orders.storeid = Console.ReadLine();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            try
-            {   //reading the Employeeid manually
-                Console.Write("Enter Employeeid: ");
-                Orders.employeeid = Console.ReadLine();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            try
-            {  //reading the Foodid manually
-                Console.Write("Enter foodid: ");
-                Orders.foodid = Console.ReadLine();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+                order.Storeid = int.Parse(Console.ReadLine());
+            
+            //reading the quantity manually
+             
+                Console.Write("Enter quantity: ");
+                order.Quantity = int.Parse(Console.ReadLine());
 
-            OrdersPresentation.AddOrders(Orders);
+            //reading the Foodid manually
+
+            Console.Write("Enter foodid: ");
+               order.Foodid = int.Parse(Console.ReadLine());
+
+
+            //reading the CustomerId manually
+
+            Console.Write("Enter customerId: ");
+            order.Customerid = int.Parse(Console.ReadLine());
+
+            ordersBusinessLayer.AddOrders(order);
             Console.WriteLine("Orders Added Successfully.\n");
         }
 
         static void ViewOrders()
         {
-            OrdersPresentation ordersPresentation = new OrdersPresentation();
-            List<Orders> O = OrdersPresentation.GetOrders();
+            OrdersBusinessLayer ordersBusinessLayer = new OrdersBusinessLayer();
+            List<Order> Od = ordersBusinessLayer.GetOrders();
 
-            foreach (Orders Orders in O)
+            foreach (Order orders in Od)
             {
-                Console.WriteLine(Orders.orderid + ", " + Orders.userid + "," + Orders.storeid + "," + Orders.Employeeid + "," + Orders.Foodid + ",");
+                Console.WriteLine(orders.Orderid + ", " +orders.OrderDate + "," + orders.Storeid + "," + orders.Foodid + ",");
             }
         }
         //updating Orderid
         static void UpdateOrderid()
         {
-            OrdersPresentation ordersPresentation = new OrdersPresentation();
-            Orders orders = new Orders();
-            Console.Write("Enter Existing orderid: ");
-            orders.orderid = Console.ReadLine();
+            try
+            {
+                OrdersBusinessLayer OrdersBusinessLayer = new OrdersBusinessLayer();
+                Order orders = new Order();
+                Console.Write("Enter Existing orderid: ");
+                orders.Orderid = int.Parse(Console.ReadLine());
 
-            //OrdersPresentation.UpdateOrders(orders);
-            Console.WriteLine("orders Updated successfully.\n");
-        }
-
-
-        //updating Userid
-        static void UpdateUserid()
-        {
-            OrdersPresentation ordersPresentation = new OrdersPresentation();
-            Orders orders = new Orders();
-            Console.Write("Enter Existing Userid: ");
-            orders.userid = Console.ReadLine();
-            Console.Write("Enter New Userid: ");
-            orders.userid = Console.ReadLine();
-
-            //rdersPresentation.UpdateUserid(Orders);
-            Console.WriteLine("Userid Updated successfully.\n");
+                //OrdersPresentation.UpdateOrders(orders);
+                Console.WriteLine("orders Updated successfully.\n");
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         //updating storeid
         static void UpdateStoreid()
         {
-            OrdersPresentation ordersPresentation = new OrdersPresentation();
-            Orders orders = new Orders();
-            Console.Write("Enter Existing storeid: ");
-            orders.storeid = Console.ReadLine();
-            Console.Write("Enter New storeid: ");
-            orders.storeid = Console.ReadLine();
+            try
+            {
+                OrdersBusinessLayer ordersPresentation = new OrdersBusinessLayer();
+                Order orders = new Order();
+                Console.Write("Enter Existing storeid: ");
+                orders.Storeid =int.Parse( Console.ReadLine());
+                Console.Write("Enter New storeid: ");
+                orders.Storeid = int.Parse(Console.ReadLine());
 
-            //rdersPresentation.Updatestoreid(Orders);
-            Console.WriteLine("storeid Updated successfully.\n");
+                //rdersPresentation.Updatestoreid(Orders);
+                Console.WriteLine("storeid Updated successfully.\n");
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
-        //updating employeeid
-        static void Updateemployeeid()
-        {
-            OrdersPresentation ordersPresentation = new OrdersPresentation();
-            Orders orders = new Orders();
-            Console.Write("Enter Existing employeeid: ");
-            orders.employeeid = Console.ReadLine();
-            Console.Write("Enter New employeeid: ");
-            orders.employeeid = Console.ReadLine();
-
-            //rdersPresentation.Updateemployeeid(Orders);
-            Console.WriteLine("employeeid Updated successfully.\n");
-        }
-
-        //updating foodid
-        static void Updatefoodid()
-        {
-            OrdersPresentation ordersPresentation = new OrdersPresentation();
-            Orders orders = new Orders();
-            Console.Write("Enter Existing foodid: ");
-            orders.foodid = Console.ReadLine();
-            Console.Write("Enter New foodid: ");
-            orders.foodid = Console.ReadLine();
-
-            //rdersPresentation.Updatefoodid(Orders);
-            Console.WriteLine("foodid Updated successfully.\n");
-        }
-
+     
 
     }
 

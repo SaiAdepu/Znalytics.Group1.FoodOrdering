@@ -1,20 +1,18 @@
 ﻿
 using System;
-namespace Znalytics.Grp1.OnlineFoodOrderSystem
+namespace FoodOrdering.Entities
 {
-
-
     /// <summary>
     /// Represents Orders;
     /// </summary>
-    public class orders
+    public class Order
     {
-        public int orderid;
-        public string orderDate;
-        public int userid;
-        public int storeid;
-        public int employeeid;
-        public int foodid;
+        private int _orderid;
+        private string _orderDate;
+        private int _storeid;
+        private int _foodid;
+        private int _quantity;
+        private int _customerId;
 
         /// <summary>
         /// Represents Orderid;
@@ -25,18 +23,19 @@ namespace Znalytics.Grp1.OnlineFoodOrderSystem
             {
                 if (value != 0)
                 {
-                    orderid = value;
+                    _orderid = value;
                 }
                 else
                 {
-                    System.Console.WriteLine("enter valid id");
+                    throw new Exception("entered valid id");
                 }
             }
             get
             {
-                return orderid;
+                return _orderid;
             }
         }
+
         /// <summary>
         /// Represents OrderDate;
         /// </summary>
@@ -46,43 +45,21 @@ namespace Znalytics.Grp1.OnlineFoodOrderSystem
             {
                 if (value.Length <= 7)
                 {
-                    orderDate = value;
+                    _orderDate = value;
                 }
                 else
                 {
-                    System.Console.WriteLine("enter valid data");
+                    System.Console.WriteLine("entered valid data");
                 }
             }
 
             get
             {
-                return orderDate;
+                return _orderDate;
 
             }
         }
 
-        /// <summary>
-        /// represents Userid;
-        /// </summary>
-        public int Userid
-        {
-            set
-            {
-                if (value != 10)
-                {
-                    userid = value;
-                }
-                else
-                {
-                    System.Console.WriteLine("enter valid id");
-                }
-            }
-            get
-            {
-                return userid;
-            }
-
-        }
         /// <summary>
         /// represents Storeid;
         /// </summary>
@@ -92,39 +69,61 @@ namespace Znalytics.Grp1.OnlineFoodOrderSystem
             {
                 if (value != 10)
                 {
-                    storeid = value;
+                    _storeid = value;
                 }
                 else
                 {
-                    System.Console.WriteLine("enter valid id");
+                    throw new Exception("enter valid id");
                 }
             }
             get
             {
-                return storeid;
+                return _storeid;
             }
         }
 
         /// <summary>
-        /// represents Employeeid;
+        /// represents quantity;
         /// </summary>
-        public int Employeeid
+        public int Quantity
         {
             set
             {
-                if (value >= 10)
+                if (value >=1 && value <= 10)
                 {
-                    employeeid = value;
+                    _quantity = value;
                 }
                 else
                 {
-                    System.Console.WriteLine("enter valid data");
+                    throw new Exception("Quantity must be in between 1 and 10 only");
                 }
             }
             get
             {
-                return employeeid;
+                return _quantity;
             }
+        }
+        /// <summary>
+        /// represents Customerid;
+        /// </summary>
+        public int Customerid
+        {
+            set
+            {
+                if (value != 10)
+                {
+                    _customerId = value;
+                }
+                else
+                {
+                    throw new Exception("entered valid id");
+                }
+            }
+            get
+            {
+                return _customerId;
+            }
+
         }
 
         /// <summary>
@@ -136,16 +135,16 @@ namespace Znalytics.Grp1.OnlineFoodOrderSystem
             {
                 if (value >= 10)
                 {
-                    foodid = value;
+                    _foodid = value;
                 }
                 else
                 {
-                    System.Console.WriteLine("enter valid id");
+                    throw new Exception("Incorrect Food Id");
                 }
             }
             get
             {
-                return foodid;
+                return _foodid;
             }
         }
     }

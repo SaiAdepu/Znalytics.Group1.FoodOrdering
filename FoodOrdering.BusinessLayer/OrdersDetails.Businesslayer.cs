@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using OrdersBusinessLayer;
-//using Orders.Entities;
+using FoodOrdering.BusinessLayer;
+using FoodOrdering.DataAccessLayer;
+using FoodOrdering.Entities;
+using OrdersDataAccessLayers;
 
-namespace OrdersBusinessLayer
+namespace FoodOrdering.BusinessLayer
 {
     /// <summary>
     /// Represents Business Layer of the Orders Details
@@ -11,21 +13,22 @@ namespace OrdersBusinessLayer
     //Interface of the BusinessLayer
     public class OrdersBusinessLayer //OrdersBusinessLayer
     {
-
+        OrdersDataAccess ordersDataAccess;
         //constructor for business layer
         public OrdersBusinessLayer()
         {
-            OrdersBusinessLayer OrdersBusinessLayer = new OrdersBusinessLayer();
+            OrdersDataAccess ordersDataAccess = new OrdersDataAccess();
         }
 
 
         //Adding Orders
-        public void AddOrders(OrdersBusinessLayer Orders)
+        public void AddOrders(Order order)
         {
+
             // validating the Orderid
-            if (Orders.orderid != null) ;
+            if (order.Orderid != null) 
             {
-                OrdersBusinessLayer.AddOrders((Iorders)orders);
+                ordersDataAccess.AddOrders(order);
             }
             else
             {
@@ -33,69 +36,61 @@ namespace OrdersBusinessLayer
             }
         }
 
-        //GetAll 
-        public List<orders> GetOrders()
+        public List<FoodItem> GetFoodItems()
         {
-            return orders.GetOrders();
+            AddFoodItemBusinessLayer afbl = new AddFoodItemBusinessLayer();
+            return afbl.GetFoodItemBusinessLayer();
+        }
+
+              //GetAll 
+        public List<Order> GetOrders()
+        {
+            return ordersDataAccess.Getorders();
 
         }
         //Updating Orders
-        public void UpdateOrders(orders)
+        public void UpdateOrders(Order order)
         {
-            if (orders.Orders != null)
+            try
             {
-                OrdersBusinessLayer.UpdateOrders(orders);
+                if (order != null)
+                {
+                    ordersDataAccess.UpdateOrder(order);
+                }
+            }catch(Exception e)
+            {
+                throw;
             }
         }
         //Updating Orderid
-        public void Updateorderid(orders)
+        public void Updateorderid(Order order)
         {
-            if (orders.Orderid != null)
+            try
             {
-                OrdersBusinessLayer.UpdateOrders(orders);
+                if (order.Orderid != null)
+                {
+                    ordersDataAccess.Updateorderid(order);
+                }
+            }catch(Exception e)
+            {
+                throw;
             }
         }
         //Updating orderdate
-        public void upadateorderdate(orders)
+        public void Upadateorderdate(Order order)
         {
-            if (orders.orderdate != null)
+            try
             {
-                OrdersBusinessLayer.UpdateOrders(orders);
+                if (order.OrderDate != null)
+                {
+                    ordersDataAccess.Upadateorderdate(order);
+                }
+            }catch(Exception e)
+            {
+                throw;
             }
         }
-        //Update userid
-        public void Upadateuserid(orders)
-        {
-            if (orders.userid != null) ;
-            {
-                OrdersBusinessLayer.UpdateOrders(orders);
-            }
-        }
-        //Update storeid
-        public void Upadatestoreid(orders)
-        {
-            if (orders.storeid != null) ;
-            {
-                OrdersBusinessLayer.UpdateOrders(orders);
-            }
-        }
-        //Update employeeid
-        public void Upadateemployeeid(orders)
-        {
-            if (orders.employeeid != null) ;
-            {
-                OrdersBusinessLayer.UpdateOrders(orders);
-            }
-        }
-        //Update foodid
-        public void Upadatefoodid(orders)
-        {
-            if (orders.foodid != null) ;
-            {
-                OrdersBusinessLayer.UpdateOrders(orders);
-            }
-        }
-
+     
     }
 
 }
