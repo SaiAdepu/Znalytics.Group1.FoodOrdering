@@ -1,91 +1,101 @@
-﻿//using System.Collections.Generic;
-//using OrdersDetails.BusinessLayer;
-//using OrdersDetail.Entities;
+﻿using System;
+using System.Collections.Generic;
+using OrdersBusinessLayer;
+//using Orders.Entities;
 
-//namespace OrdersDetails;
-//{
-//    class Program
-//{
-//    static void Main()
-//    {
-//        OrdersDetails.Businessslayer();
-//        Console.ReadKey();
-//    }
+namespace OrdersBusinessLayer
+{
+    /// <summary>
+    /// Represents Business Layer of the Orders Details
+    /// </summary>
+    //Interface of the BusinessLayer
+    public class OrdersBusinessLayer //OrdersBusinessLayer
+    {
 
-//    static void OrdersDetails.Businessslayer()
-//    {
-//        int choice = 0;
-//        do
-//        {
-//            System.Console.WriteLine("OrdersDetails");
-//            System Console.WriteLine("1. Add OrdersDetails);
-
-//            System.Console.WriteLine("2. View OrdersDetails");
-//            System.Console.WriteLine("3. Update OrdersDetails");
-//            System.Console.WriteLine("4. Delete OrdersDetails");
-//            System.Console.WriteLine("5. Exit");
-//            System.Console.Write("Enter choice: ");
-//            choice = int.Parse(Console.ReadLine());
-
-//            switch (choice)
-//            {
-//                case 1: Add OrdersDetails(); break;
-//                case 2: View OrdersDetails(); break;
-//                case 3: Update OrdersDetails(); break;
-//                case 4: Delete OrdersDetails(); break;
+        //constructor for business layer
+        public OrdersBusinessLayer()
+        {
+            OrdersBusinessLayer OrdersBusinessLayer = new OrdersBusinessLayer();
+        }
 
 
-//            }
-//        } while (choice != 5);
-//    }
+        //Adding Orders
+        public void AddOrders(OrdersBusinessLayer Orders)
+        {
+            // validating the Orderid
+            if (Orders.orderid != null) ;
+            {
+                OrdersBusinessLayer.AddOrders((Iorders)orders);
+            }
+            else
+            {
+                throw new Exception("orderid can't be null or empty");
+            }
+        }
 
-//    static void OrdersDetails()
-//    {
-//        OrdersDetails.Businesslayer ordersDetails.Businesslayer = new OrdersDetails.Businesslayer();
-//        OrdersDetails ordersDetails = new OrdersDetails();
+        //GetAll 
+        public List<orders> GetOrders()
+        {
+            return orders.GetOrders();
 
-//        System.Console.Writeline("Enter Orderid: ");
-//        OrdersDetails.Orderid = Console.ReadLine();
+        }
+        //Updating Orders
+        public void UpdateOrders(orders)
+        {
+            if (orders.Orders != null)
+            {
+                OrdersBusinessLayer.UpdateOrders(orders);
+            }
+        }
+        //Updating Orderid
+        public void Updateorderid(orders)
+        {
+            if (orders.Orderid != null)
+            {
+                OrdersBusinessLayer.UpdateOrders(orders);
+            }
+        }
+        //Updating orderdate
+        public void upadateorderdate(orders)
+        {
+            if (orders.orderdate != null)
+            {
+                OrdersBusinessLayer.UpdateOrders(orders);
+            }
+        }
+        //Update userid
+        public void Upadateuserid(orders)
+        {
+            if (orders.userid != null) ;
+            {
+                OrdersBusinessLayer.UpdateOrders(orders);
+            }
+        }
+        //Update storeid
+        public void Upadatestoreid(orders)
+        {
+            if (orders.storeid != null) ;
+            {
+                OrdersBusinessLayer.UpdateOrders(orders);
+            }
+        }
+        //Update employeeid
+        public void Upadateemployeeid(orders)
+        {
+            if (orders.employeeid != null) ;
+            {
+                OrdersBusinessLayer.UpdateOrders(orders);
+            }
+        }
+        //Update foodid
+        public void Upadatefoodid(orders)
+        {
+            if (orders.foodid != null) ;
+            {
+                OrdersBusinessLayer.UpdateOrders(orders);
+            }
+        }
 
-//        System Console.Writeline("Enter  OrderDate: ");
-//        OrdersDetails.OrderDate = Console.ReadLine();
+    }
 
-//        System Console.Writeline("Enter Userid: ");
-//        OrdersDetails.Userid = Console.ReadLine();
-
-//        System.Console.Writeline("Enter Storeid: ");
-//        OrdersDetails.Storeid = Console.ReadLine();
-
-//        System.Console.Writeline("Enter Employeeid: ");
-//        OrdersDetails.Employeeid = Console.ReadLine();
-
-//        System.Console.Writeline("Enter Foodid: ");
-//        OrdersDetails.Foodid = Console.ReadLine();
-
-//        OrdersDetails.sBusinesslayer.Add(OrdersDetails);
-//        System.Console.WriteLine("OrdersDetails Added Successfully.\n");
-//    }
-
-//    static void ViewOrdersDetails()
-//    {
-//        OrdersDetails.Businesslayer ordersDetails.Businesslayer = new OrdersDetails.Businesslayer();
-//        List<OrdersDetails> od = OrdersDetails.Businesslayer Get.OrdersDetails();
-
-//        foreach (OrdersDetails od in od)
-//        {
-//            System.Console.WriteLine(od.Orderid + ", " + od.OrderDate + "," + od.Userid + "," + od.Storeid + "," + od.Employeeid + "," + od.Foodid + ",");
-//        }
-//    }
-
-//    static void UpdateOrdersDetails()
-//    {
-//        OrdersDetails.Businesslayer OrdersDetails.Businesslayer = new OrdersDetails.Businesslayer();
-//        OrdersDetails od = new OrdersDetails();
-//        System.Console.Writeline("Enter Existing Orderid: ");
-//        OrdersDetails.Orderid = Console.ReadLine();
-
-//        OrdersDetails.Businesslayer.UpdateOrdersDetails(OrdersDetails);
-//        System.Console.WriteLine("OrdersDetails Updated successfully.\n");
-//    }
-//}
-//}
+}
